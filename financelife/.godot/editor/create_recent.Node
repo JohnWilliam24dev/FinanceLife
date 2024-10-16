@@ -1,0 +1,11 @@
+AnimationPlayer
+TextureRect
+TileMapLayer
+TileMap
+HSeparator
+VBoxContainer
+Button
+HBoxContainer
+MarginContainer
+Sprite2D
+Node2D
