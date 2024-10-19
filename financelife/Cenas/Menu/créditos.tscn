@@ -1,0 +1,227 @@
+[gd_scene load_steps=26 format=3 uid="uid://2bg7pgg8tg84"]
+
+[ext_resource type="Script" path="res://Scrips/Menu/créditos_Menu.gd" id="1_8lotx"]
+[ext_resource type="Texture2D" uid="uid://bnrhlde46dxi5" path="res://assents/Cenarios/Menu/Background Tela de crédito/1.png" id="1_vbnjr"]
+[ext_resource type="Script" path="res://Scrips/Menu/movingBackground.gd" id="2_12iko"]
+[ext_resource type="Texture2D" uid="uid://c1ed26xpwfc8k" path="res://assents/Cenarios/Menu/Background Tela de crédito/2.png" id="3_gg8hv"]
+[ext_resource type="Texture2D" uid="uid://bpxlsupw27h2w" path="res://assents/Cenarios/Menu/Background Tela de crédito/3.png" id="4_bhpwv"]
+[ext_resource type="Texture2D" uid="uid://dm3lrx2gdslkd" path="res://assents/Cenarios/Menu/Background Tela de crédito/4.png" id="5_6d0lj"]
+[ext_resource type="Theme" uid="uid://e4phmqgo0wcg" path="res://Scrips/Menu/fonte_Menu.tres" id="6_l584k"]
+[ext_resource type="FontFile" uid="uid://cgygq4u5j0y1w" path="res://assents/Fontes e Temas/Menu/RevMiniPixel.ttf" id="7_06t8p"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1t7u3"]
+font_size = 40
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pcafw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_w4swu"]
+font_size = 30
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jtnqt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_syfba"]
+font_size = 30
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b0vox"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nambk"]
+font_size = 30
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8h3ju"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tktgb"]
+font_size = 30
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5dy0h"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_i57nk"]
+font_size = 30
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vjyac"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_f2o0l"]
+font_size = 30
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_31k3t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xj7h3"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8xd5"]
+bg_color = Color(0.2, 0.2, 0.2, 0.12549)
+
+[sub_resource type="Theme" id="Theme_xwbqu"]
+default_font = ExtResource("7_06t8p")
+Button/font_sizes/font_size = 45
+Button/fonts/font = ExtResource("7_06t8p")
+Button/styles/focus = SubResource("StyleBoxFlat_xj7h3")
+Button/styles/normal = SubResource("StyleBoxFlat_q8xd5")
+
+[node name="Créditos" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8lotx")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.0
+offset_top = -60.0
+offset_right = 31.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.36, 2.45515)
+expand_mode = 2
+
+[node name="Animação Céu Estrelado" type="Node2D" parent="TextureRect"]
+
+[node name="Camada 4" type="Sprite2D" parent="TextureRect/Animação Céu Estrelado"]
+texture_filter = 1
+texture = ExtResource("1_vbnjr")
+script = ExtResource("2_12iko")
+
+[node name="Camada 3" type="Sprite2D" parent="TextureRect/Animação Céu Estrelado"]
+texture_filter = 1
+position = Vector2(3.18182, -26.5246)
+texture = ExtResource("3_gg8hv")
+script = ExtResource("2_12iko")
+
+[node name="Camada 2" type="Sprite2D" parent="TextureRect/Animação Céu Estrelado"]
+texture_filter = 1
+texture = ExtResource("4_bhpwv")
+script = ExtResource("2_12iko")
+
+[node name="Camada 1" type="Sprite2D" parent="TextureRect/Animação Céu Estrelado"]
+texture_filter = 1
+texture = ExtResource("5_6d0lj")
+script = ExtResource("2_12iko")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -168.0
+offset_top = -190.5
+offset_right = 168.0
+offset_bottom = 190.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Créditos" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("6_l584k")
+text = "Créditos"
+label_settings = SubResource("LabelSettings_1t7u3")
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_pcafw")
+
+[node name="nomeIntegrante 1" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("6_l584k")
+text = "*Pedro Ferreira*"
+label_settings = SubResource("LabelSettings_w4swu")
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_jtnqt")
+
+[node name="nomeIntegrante 2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("6_l584k")
+text = "*João*
+"
+label_settings = SubResource("LabelSettings_syfba")
+horizontal_alignment = 1
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_b0vox")
+
+[node name="nomeIntegrante 3" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("6_l584k")
+text = "*Daniel*"
+label_settings = SubResource("LabelSettings_nambk")
+horizontal_alignment = 1
+
+[node name="HSeparator4" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_8h3ju")
+
+[node name="nomeIntegrante 4" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("6_l584k")
+text = "*Sayd Aires*"
+label_settings = SubResource("LabelSettings_tktgb")
+horizontal_alignment = 1
+
+[node name="HSeparator5" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_5dy0h")
+
+[node name="nomeIntegrante 5" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("6_l584k")
+text = "*Matheus*"
+label_settings = SubResource("LabelSettings_i57nk")
+horizontal_alignment = 1
+
+[node name="HSeparator6" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_vjyac")
+
+[node name="nomeIntegrante 6" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("6_l584k")
+text = "*Liedson*"
+label_settings = SubResource("LabelSettings_f2o0l")
+horizontal_alignment = 1
+
+[node name="HSeparator7" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 50)
+layout_direction = 1
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_31k3t")
+
+[node name="volta_menu" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = SubResource("Theme_xwbqu")
+theme_override_fonts/font = ExtResource("7_06t8p")
+text = "  Menu Principal  "
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/volta_menu" to="." method="_on_volta_menu_pressed"]

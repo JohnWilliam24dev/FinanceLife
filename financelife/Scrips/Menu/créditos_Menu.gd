@@ -11,13 +11,6 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_inicio_botão_pressed():
-	get_tree().change_scene_to_file("res://Cenas/Menu/teste.tscn")
 
-
-func _on_créditos_botão_pressed():
-	get_tree().change_scene_to_file("res://Cenas/Menu/créditos.tscn")
-
-
-func _on_sair_button_pressed():
-	get_tree().quit()
+func _on_volta_menu_pressed() -> void:
+	get_tree().change_scene_to_file("res://Cenas/Menu/menu.tscn")

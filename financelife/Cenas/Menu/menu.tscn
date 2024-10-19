@@ -1,14 +1,14 @@
 [gd_scene load_steps=14 format=3 uid="uid://c0rvj10r0c7kc"]
 
 [ext_resource type="Script" path="res://Scrips/Menu/InteracaoMenu.gd" id="1_a1dkv"]
-[ext_resource type="Texture2D" uid="uid://desqu7hr2dr65" path="res://assents/Cenarios/Menu/Background Cidade Menu/Night/1.png" id="1_is0c4"]
-[ext_resource type="Texture2D" uid="uid://q5djil4h5ab" path="res://assents/Cenarios/Menu/Background Cidade Menu/Night/2.png" id="2_1iqli"]
-[ext_resource type="Texture2D" uid="uid://e74ysxc73rt7" path="res://assents/Cenarios/Menu/Background Cidade Menu/Night/3.png" id="4_q37d1"]
-[ext_resource type="Texture2D" uid="uid://gteupawidm1k" path="res://assents/Cenarios/Menu/Background Cidade Menu/Night/4.png" id="5_3pqla"]
+[ext_resource type="Texture2D" uid="uid://ddt03v6lvcupc" path="res://assents/Cenarios/Menu/Background Cidade Menu/city 1/1.png" id="2_aj20m"]
+[ext_resource type="Texture2D" uid="uid://bh4n61bqud1sr" path="res://assents/Cenarios/Menu/Background Cidade Menu/city 1/2.png" id="3_5xnfl"]
+[ext_resource type="Texture2D" uid="uid://bt8s4lwwpjvw" path="res://assents/Cenarios/Menu/Background Cidade Menu/city 1/3.png" id="4_dfc5k"]
 [ext_resource type="Script" path="res://Scrips/Menu/movingBackground.gd" id="5_lupii"]
-[ext_resource type="Texture2D" uid="uid://bicpx6884ffoy" path="res://assents/Cenarios/Menu/Background Cidade Menu/Night/5.png" id="6_idyoq"]
-[ext_resource type="Texture2D" uid="uid://cxoswuxlk5ums" path="res://assents/Cenarios/Menu/LogoTipoMenu/FinanceLifeLogoMenu.png" id="8_0m0yk"]
-[ext_resource type="Theme" uid="uid://cxifgpahfmjpl" path="res://assents/Fontes e Temas/Menu/menuTema.tres" id="8_foap8"]
+[ext_resource type="Texture2D" uid="uid://3uuo313r127f" path="res://assents/Cenarios/Menu/Background Cidade Menu/city 1/4.png" id="6_holvj"]
+[ext_resource type="Texture2D" uid="uid://cbnj0uqd0albl" path="res://assents/Cenarios/Menu/Background Cidade Menu/city 1/5.png" id="7_ld7w0"]
+[ext_resource type="Texture2D" uid="uid://cfxxpiet3g7ra" path="res://assents/Cenarios/Menu/LogoTipoMenu/FINANCE LIFE.png" id="8_d80g6"]
+[ext_resource type="Theme" uid="uid://e4phmqgo0wcg" path="res://Scrips/Menu/fonte_Menu.tres" id="9_6on11"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k3iun"]
 
@@ -106,49 +106,72 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
 script = ExtResource("1_a1dkv")
 
 [node name="bg" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.99999
+offset_top = -28.0
+offset_right = 34.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1335, 1.04)
+expand_mode = 1
 
 [node name="AnimaçãoBackgroud" type="Node2D" parent="bg"]
 scale = Vector2(2.06759, 2.15962)
 
 [node name="Camada 5" type="Sprite2D" parent="bg/AnimaçãoBackgroud"]
 texture_filter = 1
-texture = ExtResource("1_is0c4")
+texture = ExtResource("2_aj20m")
+script = ExtResource("5_lupii")
 
 [node name="Camada 4" type="Sprite2D" parent="bg/AnimaçãoBackgroud"]
 texture_filter = 1
-texture = ExtResource("2_1iqli")
+texture = ExtResource("3_5xnfl")
+script = ExtResource("5_lupii")
 
 [node name="Camada 3" type="Sprite2D" parent="bg/AnimaçãoBackgroud"]
 texture_filter = 1
-texture = ExtResource("4_q37d1")
+texture = ExtResource("4_dfc5k")
 script = ExtResource("5_lupii")
 
 [node name="Camada 2" type="Sprite2D" parent="bg/AnimaçãoBackgroud"]
 texture_filter = 1
-texture = ExtResource("5_3pqla")
+texture = ExtResource("6_holvj")
 script = ExtResource("5_lupii")
 
 [node name="Camada 1" type="Sprite2D" parent="bg/AnimaçãoBackgroud"]
 texture_filter = 1
-texture = ExtResource("6_idyoq")
+texture = ExtResource("7_ld7w0")
 script = ExtResource("5_lupii")
 
 [node name="LogoTipo" type="TextureRect" parent="bg"]
-layout_mode = 2
-offset_left = -417.0
-offset_top = -338.0
-offset_right = 663.0
-offset_bottom = 1448.0
-scale = Vector2(0.717371, 0.220497)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -437.0
+offset_top = -358.0
+offset_right = 643.0
+offset_bottom = 722.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.781707, 0.467857)
 size_flags_horizontal = 4
 size_flags_vertical = 6
-texture = ExtResource("8_0m0yk")
+texture = ExtResource("8_d80g6")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -159,8 +182,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -47.0
 offset_top = 137.0
-offset_right = 65.0
-offset_bottom = 238.0
+offset_right = 80.0
+offset_bottom = 239.0
 grow_horizontal = 2
 grow_vertical = 2
 rotation = 3.14159
@@ -179,7 +202,7 @@ size_flags_vertical = 4
 [node name="Inicio_Botão" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
-theme = ExtResource("8_foap8")
+theme = ExtResource("9_6on11")
 text = "   NOVO JOGO   "
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
@@ -189,7 +212,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_k3iun")
 [node name="Créditos_Botão" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
-theme = ExtResource("8_foap8")
+theme = ExtResource("9_6on11")
 text = " CRÉDITOS"
 
 [node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
@@ -199,7 +222,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_k3iun")
 [node name="Sair_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
-theme = ExtResource("8_foap8")
+theme = ExtResource("9_6on11")
 text = "SAIR
 "
 
