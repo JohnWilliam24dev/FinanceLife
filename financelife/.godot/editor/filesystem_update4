@@ -1,2 +1,4 @@
 res://Cenas/Menu/menu.tscn
 res://Scrips/Menu/fonte_Menu.tres
+res://Cenas/Menu/créditos.tscn
+res://Cenas/Cenas Globais/Fade_out.tscn

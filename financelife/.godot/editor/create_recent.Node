@@ -1,4 +1,6 @@
 AnimationPlayer
+ColorRect
+CanvasLayer
 TextureRect
 TileMapLayer
 TileMap
