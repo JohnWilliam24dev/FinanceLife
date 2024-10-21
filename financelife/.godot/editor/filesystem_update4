@@ -1,4 +1,4 @@
 res://Cenas/Menu/menu.tscn
 res://Scrips/Menu/fonte_Menu.tres
 res://Cenas/Menu/créditos.tscn
-res://Cenas/Cenas Globais/Fade_out.tscn
+res://Sprites players/players/child_2d.tscn

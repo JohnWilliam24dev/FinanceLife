@@ -1,67 +1,71 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1729368932
-icon.svg::CompressedTexture2D::1798151631854015586::1729353133::1729353205::1::::<><>::
-::res://assents/::1729353133
-::res://assents/Cenarios/::1729353133
-::res://assents/Cenarios/Menu/::1729355165
-::res://assents/Cenarios/Menu/Background Cidade Menu/::1729355165
-::res://assents/Cenarios/Menu/Background Cidade Menu/city 1/::1729355217
-1.png::CompressedTexture2D::7410620837776279632::1672355475::1729355217::1::::<><>::
-2.png::CompressedTexture2D::2938455592449827317::1672355493::1729355217::1::::<><>::
-3.png::CompressedTexture2D::111449367216331740::1672355504::1729355217::1::::<><>::
-4.png::CompressedTexture2D::2007816030030782737::1672355518::1729355217::1::::<><>::
-5.png::CompressedTexture2D::4870459294963133129::1672355532::1729355217::1::::<><>::
-6.png::CompressedTexture2D::1410743972742524723::1672355786::1729355217::1::::<><>::
-10.png::CompressedTexture2D::2852604028883043452::1672355689::1729355217::1::::<><>::
-::res://assents/Cenarios/Menu/Background Cidade Menu/Day/::1729353205
-1.png::CompressedTexture2D::6145865660505727696::1729353133::1729353205::1::::<><>::
-2.png::CompressedTexture2D::597028550846729487::1729353133::1729353205::1::::<><>::
-3.png::CompressedTexture2D::1557258491754191508::1729353133::1729353205::1::::<><>::
-4.png::CompressedTexture2D::6652183916714126325::1729353133::1729353205::1::::<><>::
-5.png::CompressedTexture2D::4738962913119015852::1729353133::1729353205::1::::<><>::
-::res://assents/Cenarios/Menu/Background Cidade Menu/Night/::1729353205
-1.png::CompressedTexture2D::7478185105336327464::1729353133::1729353205::1::::<><>::
-2.png::CompressedTexture2D::34857396837104865::1729353133::1729353205::1::::<><>::
-3.png::CompressedTexture2D::348620095611545930::1729353133::1729353205::1::::<><>::
-4.png::CompressedTexture2D::460635611865148678::1729353133::1729353205::1::::<><>::
-5.png::CompressedTexture2D::2953013697197514976::1729353133::1729353205::1::::<><>::
-::res://assents/Cenarios/Menu/Background Tela de crédito/::1729355217
-1.png::CompressedTexture2D::3334414900597323954::1665775789::1729355217::1::::<><>::
-2.png::CompressedTexture2D::6606240844870501532::1665775820::1729355217::1::::<><>::
-3.png::CompressedTexture2D::3487435132493677176::1665775832::1729355217::1::::<><>::
-4.png::CompressedTexture2D::8060030247290294467::1665775847::1729355217::1::::<><>::
-::res://assents/Cenarios/Menu/LogoTipoMenu/::1729355218
-FINANCE LIFE.png::CompressedTexture2D::5172689978928923666::1729347007::1729355218::1::::<><>::
-FinanceLifeLogoMenu.png::CompressedTexture2D::6417219339465348010::1729342617::1729355217::1::::<><>::
-::res://assents/Cenarios/Teste/::1729355217
-4b4491628a3d596cabcfc51eb8bd5d72.jpg::CompressedTexture2D::6660725720629080896::1729342617::1729355217::1::::<><>::
-::res://assents/Cenarios/Teste/1 - Grassland/::1729355217
-Extra_plants (16 x 16).png::CompressedTexture2D::2794247373641676643::1729342617::1729355217::1::::<><>::
-Grassland_entities (16 x 16).png::CompressedTexture2D::5197916098419009952::1729342617::1729355217::1::::<><>::
-Terrain (16 x 16).png::CompressedTexture2D::9006292530102812715::1729342617::1729355217::1::::<><>::
-::res://assents/Cenarios/Teste/1 - Grassland/Background parts/::1729355217
-_Complete_static_BG_(288 x 208).png::CompressedTexture2D::4743530228555652387::1729342617::1729355217::1::::<><>::
-1 - Foreground_scenery.png::CompressedTexture2D::4910834336232500753::1729342617::1729355217::1::::<><>::
-2 - Hills.png::CompressedTexture2D::6320771888874382196::1729342617::1729355217::1::::<><>::
-3 - Cloud_cover_1.png::CompressedTexture2D::7049430291993583397::1729342617::1729355217::1::::<><>::
-4 - Cloud_cover_2.png::CompressedTexture2D::6092755813553808362::1729342617::1729355217::1::::<><>::
-5 - Sky_color.png::CompressedTexture2D::8278266849391332692::1729342617::1729355217::1::::<><>::
-::res://assents/Fontes e Temas/::1729353133
-::res://assents/Fontes e Temas/Menu/::1729355217
-menuTema.tres::Theme::3028070051459865779::1729348664::0::1::::<><>::uid://cgygq4u5j0y1w::::res://assents/Fontes e Temas/Menu/RevMiniPixel.ttf
-RevMiniPixel.ttf::FontFile::5243913925420251650::1729342617::1729355217::1::::<><>::
-::res://Cenas/::1729367603
-Trasição.tscn::PackedScene::6309278207649680823::1729367603::0::1::::<><>::res://Scrips/Menu/fade_out.gd
-::res://Cenas/Cenas Globais/::1729368579
-Fade_out.tscn::PackedScene::8784787194626681258::1729368579::0::1::::<><>::res://Scrips/Menu/fade_out.gd
-::res://Cenas/Menu/::1729368579
-créditos.tscn::PackedScene::1897585400779034751::1729368579::0::1::::<><>::res://Scrips/Menu/créditos_Menu.gd<>uid://bnrhlde46dxi5::::res://assents/Cenarios/Menu/Background Tela de crédito/1.png<>res://Scrips/Menu/movingBackground.gd<>uid://c1ed26xpwfc8k::::res://assents/Cenarios/Menu/Background Tela de crédito/2.png<>uid://bpxlsupw27h2w::::res://assents/Cenarios/Menu/Background Tela de crédito/3.png<>uid://dm3lrx2gdslkd::::res://assents/Cenarios/Menu/Background Tela de crédito/4.png<>uid://e4phmqgo0wcg::::res://Scrips/Menu/fonte_Menu.tres<>uid://cgygq4u5j0y1w::::res://assents/Fontes e Temas/Menu/RevMiniPixel.ttf
-menu.tscn::PackedScene::6563949414182408406::1729368579::0::1::::<><>::res://Scrips/Menu/InteracaoMenu.gd<>uid://ddt03v6lvcupc::::res://assents/Cenarios/Menu/Background Cidade Menu/city 1/1.png<>uid://bh4n61bqud1sr::::res://assents/Cenarios/Menu/Background Cidade Menu/city 1/2.png<>uid://bt8s4lwwpjvw::::res://assents/Cenarios/Menu/Background Cidade Menu/city 1/3.png<>res://Scrips/Menu/movingBackground.gd<>uid://3uuo313r127f::::res://assents/Cenarios/Menu/Background Cidade Menu/city 1/4.png<>uid://cbnj0uqd0albl::::res://assents/Cenarios/Menu/Background Cidade Menu/city 1/5.png<>uid://cfxxpiet3g7ra::::res://assents/Cenarios/Menu/LogoTipoMenu/FINANCE LIFE.png<>uid://e4phmqgo0wcg::::res://Scrips/Menu/fonte_Menu.tres
-teste.tscn::PackedScene::8179151736311637604::1729342617::0::1::::<><>::uid://c15rgdqckqac3::::res://assents/Cenarios/Teste/4b4491628a3d596cabcfc51eb8bd5d72.jpg
-::res://Scrips/::1729355194
-::res://Scrips/Menu/::1729368548
-créditos_Menu.gd::GDScript::-1::1729350088::0::1::::<>Control<>::
-fade_out.gd::GDScript::-1::1729368548::0::1::::<>CanvasLayer<>::
-fonte_Menu.tres::Theme::341546240158096010::1729363135::0::1::::<><>::uid://cgygq4u5j0y1w::::res://assents/Fontes e Temas/Menu/RevMiniPixel.ttf
-InteracaoMenu.gd::GDScript::-1::1729368548::0::1::::<>Control<>::
-movingBackground.gd::GDScript::-1::1729342617::0::1::::<>Sprite2D<>::
+::res://::1729551888
+icon.svg::CompressedTexture2D::1798151631854015586::1729549949::1729551768::1::::<><>::
+::res://assents/::1729549949
+::res://assents/Cenarios/::1729549949
+::res://assents/Cenarios/Menu/::1729549949
+::res://assents/Cenarios/Menu/Background Cidade Menu/::1729549949
+::res://assents/Cenarios/Menu/Background Cidade Menu/city 1/::1729551768
+1.png::CompressedTexture2D::7410620837776279632::1729549949::1729551768::1::::<><>::
+2.png::CompressedTexture2D::2938455592449827317::1729549949::1729551768::1::::<><>::
+3.png::CompressedTexture2D::111449367216331740::1729549949::1729551768::1::::<><>::
+4.png::CompressedTexture2D::2007816030030782737::1729549949::1729551768::1::::<><>::
+5.png::CompressedTexture2D::4870459294963133129::1729549949::1729551768::1::::<><>::
+6.png::CompressedTexture2D::1410743972742524723::1729549949::1729551768::1::::<><>::
+10.png::CompressedTexture2D::2852604028883043452::1729549949::1729551768::1::::<><>::
+::res://assents/Cenarios/Menu/Background Cidade Menu/Day/::1729551768
+1.png::CompressedTexture2D::6145865660505727696::1729549949::1729551768::1::::<><>::
+2.png::CompressedTexture2D::597028550846729487::1729549949::1729551768::1::::<><>::
+3.png::CompressedTexture2D::1557258491754191508::1729549949::1729551768::1::::<><>::
+4.png::CompressedTexture2D::6652183916714126325::1729549949::1729551768::1::::<><>::
+5.png::CompressedTexture2D::4738962913119015852::1729549949::1729551768::1::::<><>::
+::res://assents/Cenarios/Menu/Background Cidade Menu/Night/::1729551768
+1.png::CompressedTexture2D::7478185105336327464::1729549949::1729551768::1::::<><>::
+2.png::CompressedTexture2D::34857396837104865::1729549949::1729551768::1::::<><>::
+3.png::CompressedTexture2D::348620095611545930::1729549949::1729551768::1::::<><>::
+4.png::CompressedTexture2D::460635611865148678::1729549949::1729551768::1::::<><>::
+5.png::CompressedTexture2D::2953013697197514976::1729549949::1729551768::1::::<><>::
+::res://assents/Cenarios/Menu/Background Tela de crédito/::1729551768
+1.png::CompressedTexture2D::3334414900597323954::1729549949::1729551768::1::::<><>::
+2.png::CompressedTexture2D::6606240844870501532::1729549949::1729551768::1::::<><>::
+3.png::CompressedTexture2D::3487435132493677176::1729549949::1729551768::1::::<><>::
+4.png::CompressedTexture2D::8060030247290294467::1729549949::1729551768::1::::<><>::
+::res://assents/Cenarios/Menu/LogoTipoMenu/::1729551768
+FINANCE LIFE.png::CompressedTexture2D::5172689978928923666::1729549949::1729551768::1::::<><>::
+FinanceLifeLogoMenu.png::CompressedTexture2D::6417219339465348010::1729549949::1729551768::1::::<><>::
+::res://assents/Cenarios/Teste/::1729551768
+4b4491628a3d596cabcfc51eb8bd5d72.jpg::CompressedTexture2D::6660725720629080896::1729549949::1729551768::1::::<><>::
+::res://assents/Cenarios/Teste/1 - Grassland/::1729551768
+Extra_plants (16 x 16).png::CompressedTexture2D::2794247373641676643::1729549949::1729551768::1::::<><>::
+Grassland_entities (16 x 16).png::CompressedTexture2D::5197916098419009952::1729549949::1729551768::1::::<><>::
+Terrain (16 x 16).png::CompressedTexture2D::9006292530102812715::1729549949::1729551768::1::::<><>::
+::res://assents/Cenarios/Teste/1 - Grassland/Background parts/::1729551768
+_Complete_static_BG_(288 x 208).png::CompressedTexture2D::4743530228555652387::1729549949::1729551768::1::::<><>::
+1 - Foreground_scenery.png::CompressedTexture2D::4910834336232500753::1729549949::1729551768::1::::<><>::
+2 - Hills.png::CompressedTexture2D::6320771888874382196::1729549949::1729551768::1::::<><>::
+3 - Cloud_cover_1.png::CompressedTexture2D::7049430291993583397::1729549949::1729551768::1::::<><>::
+4 - Cloud_cover_2.png::CompressedTexture2D::6092755813553808362::1729549949::1729551768::1::::<><>::
+5 - Sky_color.png::CompressedTexture2D::8278266849391332692::1729549949::1729551768::1::::<><>::
+::res://assents/Fontes e Temas/::1729549949
+::res://assents/Fontes e Temas/Menu/::1729551768
+menuTema.tres::Theme::3028070051459865779::1729549949::0::1::::<><>::uid://cgygq4u5j0y1w::::res://assents/Fontes e Temas/Menu/RevMiniPixel.ttf
+RevMiniPixel.ttf::FontFile::5243913925420251650::1729549949::1729551768::1::::<><>::
+::res://Cenas/::1729549949
+Trasição.tscn::PackedScene::6309278207649680823::1729549949::0::1::::<><>::res://Scrips/Menu/fade_out.gd
+::res://Cenas/Cenas Globais/::1729549949
+Fade_out.tscn::PackedScene::8784787194626681258::1729549949::0::1::::<><>::res://Scrips/Menu/fade_out.gd
+::res://Cenas/Menu/::1729549949
+créditos.tscn::PackedScene::1897585400779034751::1729549949::0::1::::<><>::res://Scrips/Menu/créditos_Menu.gd<>uid://bnrhlde46dxi5::::res://assents/Cenarios/Menu/Background Tela de crédito/1.png<>res://Scrips/Menu/movingBackground.gd<>uid://c1ed26xpwfc8k::::res://assents/Cenarios/Menu/Background Tela de crédito/2.png<>uid://bpxlsupw27h2w::::res://assents/Cenarios/Menu/Background Tela de crédito/3.png<>uid://dm3lrx2gdslkd::::res://assents/Cenarios/Menu/Background Tela de crédito/4.png<>uid://e4phmqgo0wcg::::res://Scrips/Menu/fonte_Menu.tres<>uid://cgygq4u5j0y1w::::res://assents/Fontes e Temas/Menu/RevMiniPixel.ttf
+menu.tscn::PackedScene::6563949414182408406::1729549949::0::1::::<><>::res://Scrips/Menu/InteracaoMenu.gd<>uid://ddt03v6lvcupc::::res://assents/Cenarios/Menu/Background Cidade Menu/city 1/1.png<>uid://bh4n61bqud1sr::::res://assents/Cenarios/Menu/Background Cidade Menu/city 1/2.png<>uid://bt8s4lwwpjvw::::res://assents/Cenarios/Menu/Background Cidade Menu/city 1/3.png<>res://Scrips/Menu/movingBackground.gd<>uid://3uuo313r127f::::res://assents/Cenarios/Menu/Background Cidade Menu/city 1/4.png<>uid://cbnj0uqd0albl::::res://assents/Cenarios/Menu/Background Cidade Menu/city 1/5.png<>uid://cfxxpiet3g7ra::::res://assents/Cenarios/Menu/LogoTipoMenu/FINANCE LIFE.png<>uid://e4phmqgo0wcg::::res://Scrips/Menu/fonte_Menu.tres
+teste.tscn::PackedScene::8179151736311637604::1729549949::0::1::::<><>::uid://c15rgdqckqac3::::res://assents/Cenarios/Teste/4b4491628a3d596cabcfc51eb8bd5d72.jpg
+::res://Scrips/::1729549949
+::res://Scrips/Menu/::1729551775
+créditos_Menu.gd::GDScript::-1::1729549949::0::1::::<>Control<>::
+fade_out.gd::GDScript::-1::1729549949::0::1::::<>CanvasLayer<>::
+fonte_Menu.tres::Theme::341546240158096010::1729551775::0::1::::<><>::uid://cgygq4u5j0y1w::::res://assents/Fontes e Temas/Menu/RevMiniPixel.ttf
+InteracaoMenu.gd::GDScript::-1::1729549949::0::1::::<>Control<>::
+movingBackground.gd::GDScript::-1::1729549949::0::1::::<>Sprite2D<>::
+::res://Sprites players/::1729551823
+::res://Sprites players/players/::1729551823
+child_2d.tscn::PackedScene::7798165117135760662::1729551766::0::1::::<><>::uid://bovbkkei0dhq5::::res://Untitled 10-16-2024 02-56-30 (2).png
+Untitled 10-16-2024 02-56-30 (2).png::CompressedTexture2D::3412495534202362626::1729551763::1729551889::1::::<><>::
