@@ -22,12 +22,16 @@ func _physics_process(delta: float) -> void:
 	var is_running = Input.is_action_pressed(\"ui_shift\")
 	var current_speed = SPEED
 
-	if is_running:
-		current_speed = RUN_SPEED
+	
 
 	var direction := Input.get_axis(\"ui_left\", \"ui_right\")
-	if direction != 0:
-		velocity.x = direction * current_speed
+	
+	if is_running:
+		velocity.x = direction * RUN_SPEED
+		sprite.play(\"correr\")
+		sprite.scale.x = direction
+	else:if direction != 0:
+		velocity.x = direction * SPEED
 		sprite.play(\"andar\")
 		sprite.scale.x = direction
 	else:
@@ -112,7 +116,7 @@ script = SubResource("GDScript_bh54d")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_uat7h")
-animation = &"correr"
+animation = &"andar"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 1)
