@@ -86,8 +86,9 @@ script = SubResource("GDScript_bh54d")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_uat7h")
-animation = &"parado"
-frame_progress = 0.824805
+animation = &"pai"
+frame = 1
+frame_progress = 0.208959
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
