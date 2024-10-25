@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://biqulbvgam3nl"]
 
-[ext_resource type="Texture2D" uid="uid://c76iibcx38gi7" path="res://Untitled 10-24-2024 02-32-50.png" id="1_0bkad"]
+[ext_resource type="Texture2D" uid="uid://c76iibcx38gi7" path="res://Sprites players/players/Untitled 10-24-2024 02-32-50.png" id="1_0bkad"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bi4fi"]
 atlas = ExtResource("1_0bkad")
@@ -43,7 +43,6 @@ radius = 35.0
 height = 222.0
 
 [node name="MAE" type="CharacterBody2D"]
-visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(14.5, -5)
@@ -52,6 +51,5 @@ animation = &"MAE"
 frame_progress = 0.725182
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(1.5, 0)
 shape = SubResource("CapsuleShape2D_r8ykg")

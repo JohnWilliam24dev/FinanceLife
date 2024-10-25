@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://djdqv1ats72uc"]
+[gd_scene load_steps=9 format=3 uid="uid://djdqv1ats72uc"]
+
+[ext_resource type="Texture2D" uid="uid://c76iibcx38gi7" path="res://Sprites players/players/Untitled 10-24-2024 02-32-50.png" id="1_hqlj2"]
 
 [sub_resource type="GDScript" id="GDScript_bh54d"]
 script/source = "extends CharacterBody2D
@@ -26,7 +28,7 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis(\"ui_left\", \"ui_right\")
 	if direction != 0:
 		velocity.x = direction * current_speed
-		sprite.play(\"andar\")
+		sprite.play(\"pai\")
 		sprite.scale.x = direction
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -35,26 +37,61 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 "
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bewye"]
+atlas = ExtResource("1_hqlj2")
+region = Rect2(188, 256, 79, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nbes"]
+atlas = ExtResource("1_hqlj2")
+region = Rect2(266, 256, 79, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tlef"]
+atlas = ExtResource("1_hqlj2")
+region = Rect2(348, 256, 79, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2002p"]
+atlas = ExtResource("1_hqlj2")
+region = Rect2(11, 256, 79, 256)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_uat7h"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bewye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nbes")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tlef")
+}],
 "loop": true,
-"name": &"mae",
+"name": &"pai",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2002p")
+}],
+"loop": true,
+"name": &"parado",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uoy8m"]
-size = Vector2(84, 182)
+size = Vector2(84, 162)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = SubResource("GDScript_bh54d")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_uat7h")
-animation = &"mae"
+animation = &"parado"
+frame_progress = 0.824805
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 1)
+visible = false
+position = Vector2(1, -10)
 shape = SubResource("RectangleShape2D_uoy8m")
 
 [node name="Camera2D" type="Camera2D" parent="."]
