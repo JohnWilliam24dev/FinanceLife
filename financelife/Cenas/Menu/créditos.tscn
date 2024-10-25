@@ -125,22 +125,25 @@ expand_mode = 2
 
 [node name="Camada 4" type="Sprite2D" parent="bg/Animação Céu Estrelado"]
 texture_filter = 1
+scale = Vector2(1.3, 1.3)
 texture = ExtResource("1_vbnjr")
 script = ExtResource("2_12iko")
 
 [node name="Camada 3" type="Sprite2D" parent="bg/Animação Céu Estrelado"]
 texture_filter = 1
-position = Vector2(3.18182, -26.5246)
+scale = Vector2(1.3, 1.3)
 texture = ExtResource("3_gg8hv")
 script = ExtResource("2_12iko")
 
 [node name="Camada 2" type="Sprite2D" parent="bg/Animação Céu Estrelado"]
 texture_filter = 1
+scale = Vector2(1.3, 1.3)
 texture = ExtResource("4_bhpwv")
 script = ExtResource("2_12iko")
 
 [node name="Camada 1" type="Sprite2D" parent="bg/Animação Céu Estrelado"]
 texture_filter = 1
+scale = Vector2(1.3, 1.3)
 texture = ExtResource("5_6d0lj")
 script = ExtResource("2_12iko")
 

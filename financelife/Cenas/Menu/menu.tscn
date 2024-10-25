@@ -48,12 +48,12 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-417, -338)]
+"values": [Vector2(-445.523, -481.731)]
 }
 
 [sub_resource type="Animation" id="Animation_diq5w"]
 resource_name = "TransiçãoInicial"
-length = 1.3
+length = 1.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -85,10 +85,10 @@ tracks/2/path = NodePath("bg/LogoTipo:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1.06667, 1.3),
+"times": PackedFloat32Array(1.06667, 1.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-417, -700), Vector2(-417, -338)]
+"values": [Vector2(-445.523, -900), Vector2(-445.523, -481.731)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rosih"]
@@ -130,52 +130,49 @@ expand_mode = 1
 scale = Vector2(2.06759, 2.15962)
 
 [node name="Camada 5" type="Sprite2D" parent="bg/AnimaçãoBackgroud"]
-visible = false
 texture_filter = 1
-position = Vector2(1.28007, -22.2618)
-scale = Vector2(1.06767, 1.26376)
+scale = Vector2(1.35, 1.35)
 texture = ExtResource("2_aj20m")
 script = ExtResource("5_lupii")
 
 [node name="Camada 4" type="Sprite2D" parent="bg/AnimaçãoBackgroud"]
 texture_filter = 1
-position = Vector2(-6.40037, -12.4666)
-scale = Vector2(0.968348, 1.06626)
+scale = Vector2(1.35, 1.35)
 texture = ExtResource("3_5xnfl")
 script = ExtResource("5_lupii")
 
 [node name="Camada 3" type="Sprite2D" parent="bg/AnimaçãoBackgroud"]
 texture_filter = 1
+scale = Vector2(1.35, 1.35)
 texture = ExtResource("4_dfc5k")
 script = ExtResource("5_lupii")
 
 [node name="Camada 2" type="Sprite2D" parent="bg/AnimaçãoBackgroud"]
 texture_filter = 1
+scale = Vector2(1.35, 1.35)
 texture = ExtResource("6_holvj")
 script = ExtResource("5_lupii")
 
 [node name="Camada 1" type="Sprite2D" parent="bg/AnimaçãoBackgroud"]
 texture_filter = 1
+scale = Vector2(1.35, 1.35)
 texture = ExtResource("7_ld7w0")
 script = ExtResource("5_lupii")
 
 [node name="LogoTipo" type="TextureRect" parent="bg"]
-texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -437.0
-offset_top = -358.0
-offset_right = 643.0
-offset_bottom = 722.0
+offset_left = -465.523
+offset_top = -920.0
+offset_right = 614.477
+offset_bottom = 160.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.781707, 0.467857)
-size_flags_horizontal = 4
-size_flags_vertical = 6
+scale = Vector2(0.807122, 0.52552)
 texture = ExtResource("8_d80g6")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -186,9 +183,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -47.0
-offset_top = 137.0
+offset_top = 500.0
 offset_right = 80.0
-offset_bottom = 239.0
+offset_bottom = 602.0
 grow_horizontal = 2
 grow_vertical = 2
 rotation = 3.14159
