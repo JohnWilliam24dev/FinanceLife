@@ -1,5 +1,0 @@
-.godot/*
-!.godot/.gitkeep
-.cache
-.bin
-.cfg
