@@ -1,0 +1,353 @@
+[gd_scene load_steps=28 format=3 uid="uid://bfd6g4rs7wvuo"]
+
+[ext_resource type="Texture2D" uid="uid://bovbkkei0dhq5" path="res://Sprites players/players/Untitled 10-16-2024 02-56-30 (2).png" id="1_qk1k4"]
+[ext_resource type="PackedScene" uid="uid://d0h0qieqnyl61" path="res://Utilitarios/CenaDeTransicao/transition.tscn" id="1_xdrjr"]
+[ext_resource type="Texture2D" uid="uid://dcmclxll0tkvp" path="res://assents/Cenarios/Cenas Jogo/Ato 1/Cidade_Cena 1/1.png" id="2_nn0w3"]
+[ext_resource type="Texture2D" uid="uid://4hlhdrnj8ut5" path="res://assents/Cenarios/Cenas Jogo/Ato 1/Cidade_Cena 1/2.png" id="3_sls33"]
+[ext_resource type="Texture2D" uid="uid://cwxlbvy6obtlo" path="res://assents/Cenarios/Cenas Jogo/Ato 1/Cidade_Cena 1/3.png" id="4_atpqd"]
+[ext_resource type="Texture2D" uid="uid://fs5o5ywgq3pw" path="res://assents/Cenarios/Cenas Jogo/Ato 1/Cidade_Cena 1/4.png" id="5_ayjhg"]
+[ext_resource type="Texture2D" uid="uid://dhv5jy0nbmj8i" path="res://assents/Cenarios/Cenas Jogo/Ato 1/Cidade_Cena 1/5.png" id="6_7meg6"]
+[ext_resource type="Shader" path="res://Shadens/Movimentação BackGround.gdshader" id="6_kmuvi"]
+[ext_resource type="Texture2D" uid="uid://cf0wdvvaq5l00" path="res://assents/Cenarios/Cenas Jogo/Ato 1/Cidade_Cena 1/6.png" id="7_11ce1"]
+[ext_resource type="Theme" uid="uid://e4phmqgo0wcg" path="res://Scrips/Menu/fonte_Menu.tres" id="9_bxmif"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bcakk"]
+shader = ExtResource("6_kmuvi")
+shader_parameter/move_speed = 0.01
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_25hb7"]
+shader = ExtResource("6_kmuvi")
+shader_parameter/move_speed = 0.01
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_htf6i"]
+shader = ExtResource("6_kmuvi")
+shader_parameter/move_speed = 0.01
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j0yh5"]
+shader = ExtResource("6_kmuvi")
+shader_parameter/move_speed = 0.02
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rww3y"]
+shader = ExtResource("6_kmuvi")
+shader_parameter/move_speed = 0.02
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_84rof"]
+shader = ExtResource("6_kmuvi")
+shader_parameter/move_speed = 0.05
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1xjl"]
+atlas = ExtResource("1_qk1k4")
+region = Rect2(226, 0, 94, 197)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o51cg"]
+atlas = ExtResource("1_qk1k4")
+region = Rect2(320, 0, 94, 197)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upedg"]
+atlas = ExtResource("1_qk1k4")
+region = Rect2(422, 0, 94, 197)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lx3n7"]
+atlas = ExtResource("1_qk1k4")
+region = Rect2(122, 204, 115, 197)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfnuq"]
+atlas = ExtResource("1_qk1k4")
+region = Rect2(237, 204, 115, 197)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxghn"]
+atlas = ExtResource("1_qk1k4")
+region = Rect2(352, 204, 115, 197)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sw06a"]
+atlas = ExtResource("1_qk1k4")
+region = Rect2(24, 0, 90, 197)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3xjrr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1xjl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o51cg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upedg")
+}],
+"loop": true,
+"name": &"andar",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lx3n7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfnuq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxghn")
+}],
+"loop": true,
+"name": &"correr",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sw06a")
+}],
+"loop": true,
+"name": &"parado",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_tbfes"]
+resource_name = "Cena 1 Caminhada na chuva"
+length = 26.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Label:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.36667, 1.46667, 2.7, 3.7, 4.6, 5.46667, 6.43334, 7.53334, 8.53334, 9.5, 10.6, 11.6, 12.5667, 13.6667, 14.6, 15.5667, 16.6667, 17.6334, 17.6667, 18.6, 18.6334, 19.7, 19.7334, 20.6, 20.6334, 21.5667, 21.6, 22.6667, 22.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.36667, 4.3, 4.53334, 7.3, 7.6, 10.4, 10.6667, 13.4334, 13.7, 16.5, 16.7, 19.4667, 19.7667, 22.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["\"Se um dia eu pudesse ver…\"", "\"Se um dia eu pudesse ver…\"", "\"Meu passado inteiro…\"", "\"Meu passado inteiro…\"", "\"E fizesse parar de chover…\"", "\"E fizesse parar de chover…\"", "\"Nos primeiros erros…\"", "\"Nos primeiros erros…\"", "\"Meu corpo viraria sol…\"", "\"Meu corpo viraria sol…\"", "\"Minha mente viraria sol\"", "\"Minha mente viraria sol\"", "\"Mas só chove…. chove e chove.\"", "\"Mas só chove…. chove e chove.\""]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BG/Asfalto/6:material:shader_parameter/move_speed")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(1.36667, 23.1334, 23.1667, 25.9667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.05, 0.05, 0.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BG/Asfalto/6:texture_repeat")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.43333, 22.8334, 23.2667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [2, 2, 0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("anim:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.53333, 23.1333, 25.7667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(662, 648), Vector2(662, 648), Vector2(1500, 648)]
+}
+
+[sub_resource type="Animation" id="Animation_5msba"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Label:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["\"Se um dia eu pudesse ver…\""]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BG/Asfalto/6:material:shader_parameter/move_speed")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.05]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BG/Asfalto/6:texture_repeat")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("anim:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(662, 648)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hvknc"]
+_data = {
+"Cena 1 Caminhada na chuva": SubResource("Animation_tbfes"),
+"RESET": SubResource("Animation_5msba")
+}
+
+[node name="Ato 1_A Brincadeira" type="Node2D"]
+
+[node name="Transition" parent="." instance=ExtResource("1_xdrjr")]
+
+[node name="BG" type="ParallaxBackground" parent="."]
+scale = Vector2(1.2, 1.2)
+transform = Transform2D(1.2, 0, 0, 1.2, 0, 0)
+
+[node name="Nuvem" type="ParallaxLayer" parent="BG"]
+position = Vector2(573.333, 378.333)
+scale = Vector2(1, 0.893637)
+
+[node name="1" type="Sprite2D" parent="BG/Nuvem"]
+self_modulate = Color(1, 1, 0.572549, 0.235294)
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_bcakk")
+position = Vector2(-40, -63.3333)
+scale = Vector2(1.86424, 2.22118)
+texture = ExtResource("2_nn0w3")
+
+[node name="CF 1" type="ParallaxLayer" parent="BG"]
+position = Vector2(537.5, 314.167)
+scale = Vector2(0.930559, 1.39572)
+
+[node name="2" type="Sprite2D" parent="BG/CF 1"]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_25hb7")
+position = Vector2(-3, -100)
+scale = Vector2(2, 2)
+texture = ExtResource("3_sls33")
+
+[node name="CF 2" type="ParallaxLayer" parent="BG"]
+
+[node name="3" type="Sprite2D" parent="BG/CF 2"]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_htf6i")
+position = Vector2(537.5, 333.333)
+scale = Vector2(1.89745, 2.06221)
+texture = ExtResource("4_atpqd")
+
+[node name="CF 3" type="ParallaxLayer" parent="BG"]
+
+[node name="4" type="Sprite2D" parent="BG/CF 3"]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_j0yh5")
+position = Vector2(533.333, 285)
+scale = Vector2(1.85646, 2.29393)
+texture = ExtResource("5_ayjhg")
+
+[node name="CF 4" type="ParallaxLayer" parent="BG"]
+
+[node name="5" type="Sprite2D" parent="BG/CF 4"]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_rww3y")
+position = Vector2(549.167, 291.667)
+scale = Vector2(1.88599, 1.67709)
+texture = ExtResource("6_7meg6")
+
+[node name="Asfalto" type="ParallaxLayer" parent="BG"]
+position = Vector2(6.66667, 9.16667)
+scale = Vector2(0.929114, 1.0078)
+
+[node name="6" type="Sprite2D" parent="BG/Asfalto"]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_84rof")
+position = Vector2(570, 332.5)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_11ce1")
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+texture_filter = 1
+position = Vector2(662, 648)
+sprite_frames = SubResource("SpriteFrames_3xjrr")
+animation = &"andar"
+autoplay = "andar"
+frame_progress = 0.0422602
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(623, 400)
+offset = Vector2(20, 0)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 331.0
+offset_top = 96.0
+offset_right = 1056.0
+offset_bottom = 147.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("9_bxmif")
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 50
+text = "\"Se um dia eu pudesse ver…\""
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hvknc")
+}
+autoplay = "Cena 1 Caminhada na chuva"

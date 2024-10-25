@@ -194,7 +194,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_jtnqt")
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("6_l584k")
-text = "*João*
+text = "*João Guilherme*
 "
 label_settings = SubResource("LabelSettings_syfba")
 horizontal_alignment = 1
@@ -207,7 +207,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_b0vox")
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("6_l584k")
-text = "*Daniel*"
+text = "*Daniel Santos*"
 label_settings = SubResource("LabelSettings_nambk")
 horizontal_alignment = 1
 
@@ -231,7 +231,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_5dy0h")
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("6_l584k")
-text = "*Matheus*"
+text = "*Matheus Alcantara*"
 label_settings = SubResource("LabelSettings_i57nk")
 horizontal_alignment = 1
 
@@ -243,7 +243,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_vjyac")
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("6_l584k")
-text = "*Liedson*"
+text = "*Liédson Paiva*"
 label_settings = SubResource("LabelSettings_f2o0l")
 horizontal_alignment = 1
 

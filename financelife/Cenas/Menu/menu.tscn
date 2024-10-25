@@ -117,10 +117,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -5.99999
-offset_top = -28.0
-offset_right = 34.0
-offset_bottom = 12.0
+offset_left = 12.0
+offset_top = 44.0
+offset_right = 52.0
+offset_bottom = 84.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.1335, 1.04)
@@ -130,12 +130,17 @@ expand_mode = 1
 scale = Vector2(2.06759, 2.15962)
 
 [node name="Camada 5" type="Sprite2D" parent="bg/AnimaçãoBackgroud"]
+visible = false
 texture_filter = 1
+position = Vector2(1.28007, -22.2618)
+scale = Vector2(1.06767, 1.26376)
 texture = ExtResource("2_aj20m")
 script = ExtResource("5_lupii")
 
 [node name="Camada 4" type="Sprite2D" parent="bg/AnimaçãoBackgroud"]
 texture_filter = 1
+position = Vector2(-6.40037, -12.4666)
+scale = Vector2(0.968348, 1.06626)
 texture = ExtResource("3_5xnfl")
 script = ExtResource("5_lupii")
 
