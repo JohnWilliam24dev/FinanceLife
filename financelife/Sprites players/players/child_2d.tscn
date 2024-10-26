@@ -29,16 +29,16 @@ func _physics_process(delta: float) -> void:
 	if is_running:
 		velocity.x = direction * RUN_SPEED
 		if direction != 0:
-			sprite.play(\"correr\")
+			sprite.play(\"Filho correndo\")
 			sprite.scale.x = direction
 		
 	else:if direction == 0:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		sprite.play(\"parado\")
+		sprite.play(\"Filho parado\")
 		
 	else:if direction != 0:
 		velocity.x = direction * SPEED
-		sprite.play(\"andar\")
+		sprite.play(\"Filho andando\")
 		sprite.scale.x = direction
 	
 
@@ -86,7 +86,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_upedg")
 }],
 "loop": true,
-"name": &"andar",
+"name": &"Filho andando",
 "speed": 5.0
 }, {
 "frames": [{
@@ -100,7 +100,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_dxghn")
 }],
 "loop": true,
-"name": &"correr",
+"name": &"Filho correndo",
 "speed": 5.0
 }, {
 "frames": [{
@@ -108,19 +108,19 @@ animations = [{
 "texture": SubResource("AtlasTexture_sw06a")
 }],
 "loop": true,
-"name": &"parado",
+"name": &"Filho parado",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uoy8m"]
 size = Vector2(84, 182)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Child" type="CharacterBody2D"]
 script = SubResource("GDScript_bh54d")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_uat7h")
-animation = &"andar"
+animation = &"Filho parado"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 1)

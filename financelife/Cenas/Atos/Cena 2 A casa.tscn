@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cscdy1rh37obt"]
+
+[ext_resource type="PackedScene" uid="uid://djdqv1ats72uc" path="res://Sprites players/players/child_2d.tscn" id="1_bctd0"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_bctd0")]
+position = Vector2(608, 444)
