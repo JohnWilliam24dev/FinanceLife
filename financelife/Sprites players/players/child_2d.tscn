@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 			sprite.play(\"correr\")
 
 	var is_running = Input.is_action_pressed(\"ui_shift\")
-	var current_speed = SPEED
+	
 
 	
 
