@@ -119,11 +119,23 @@ size = Vector2(84, 182)
 script = SubResource("GDScript_bh54d")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
+position = Vector2(912, 692)
 sprite_frames = SubResource("SpriteFrames_uat7h")
 animation = &"Filho parado"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 1)
+position = Vector2(906, 696)
 shape = SubResource("RectangleShape2D_uoy8m")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(864, 526)
+zoom = Vector2(1.5, 1.5)
+limit_left = 65
+limit_right = 1350
+drag_horizontal_enabled = true
+drag_left_margin = 0.12
+drag_top_margin = 0.12
+drag_right_margin = 0.12
+drag_bottom_margin = 0.12
+editor_draw_limits = true
+editor_draw_drag_margin = true
