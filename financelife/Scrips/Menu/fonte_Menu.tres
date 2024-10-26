@@ -10,6 +10,7 @@ bg_color = Color(0.2, 0.2, 0.2, 0.12549)
 
 [resource]
 default_font = ExtResource("1_pvnwp")
+default_font_size = 8
 Button/fonts/font = ExtResource("1_pvnwp")
 Button/styles/focus = SubResource("StyleBoxFlat_xj7h3")
 Button/styles/normal = SubResource("StyleBoxFlat_q8xd5")

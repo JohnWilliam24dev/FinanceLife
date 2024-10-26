@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu0behinkly0l"
-path="res://.godot/imported/1.png-348cfb3da78f600d355dc022142ef491.ctex"
+uid="uid://6a8omwmwnf5h"
+path="res://.godot/imported/6.png-853a33bbe5fcdded918f833580643f17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assents/Cenarios/Cenas Jogo/Ato 1/Casa_Cena 2/NightForest/Layers/1.png"
-dest_files=["res://.godot/imported/1.png-348cfb3da78f600d355dc022142ef491.ctex"]
+source_file="res://assents/Cenarios/Cenas Jogo/Ato 1/Casa_Cena 2/Cenarios/NightForest/Layers/6.png"
+dest_files=["res://.godot/imported/6.png-853a33bbe5fcdded918f833580643f17.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjtmqwyxstwvj"
-path="res://.godot/imported/tileset_B.png-e766efc79851f7f9fced2ae10b8e5ded.ctex"
+uid="uid://bcd4eb0uoli3u"
+path="res://.godot/imported/tileset_C.png-baa2eb50720931ceaae8d01dd4853182.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assents/Cenarios/Cenas Jogo/Ato 1/Casa_Cena 2/tileset_B.png"
-dest_files=["res://.godot/imported/tileset_B.png-e766efc79851f7f9fced2ae10b8e5ded.ctex"]
+source_file="res://assents/Cenarios/Cenas Jogo/Ato 1/Casa_Cena 2/tileSet/tileset_C.png"
+dest_files=["res://.godot/imported/tileset_C.png-baa2eb50720931ceaae8d01dd4853182.ctex"]
 
 [params]
 

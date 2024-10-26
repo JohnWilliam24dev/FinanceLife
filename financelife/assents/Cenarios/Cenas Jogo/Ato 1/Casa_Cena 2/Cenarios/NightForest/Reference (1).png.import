@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dofbtpkp3ufoc"
-path="res://.godot/imported/Reference (1).png-01f7d3512ac1173cface6fbf16c4cdf5.ctex"
+path="res://.godot/imported/Reference (1).png-42cda3ca2897409b3fcf1354f21d5266.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assents/Cenarios/Cenas Jogo/Ato 1/Casa_Cena 2/NightForest/Reference (1).png"
-dest_files=["res://.godot/imported/Reference (1).png-01f7d3512ac1173cface6fbf16c4cdf5.ctex"]
+source_file="res://assents/Cenarios/Cenas Jogo/Ato 1/Casa_Cena 2/Cenarios/NightForest/Reference (1).png"
+dest_files=["res://.godot/imported/Reference (1).png-42cda3ca2897409b3fcf1354f21d5266.ctex"]
 
 [params]
 
