@@ -28,15 +28,19 @@ func _physics_process(delta: float) -> void:
 	
 	if is_running:
 		velocity.x = direction * RUN_SPEED
-		sprite.play(\"correr\")
-		sprite.scale.x = direction
+		if direction != 0:
+			sprite.play(\"correr\")
+			sprite.scale.x = direction
+		
+	else:if direction == 0:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		sprite.play(\"parado\")
+		
 	else:if direction != 0:
 		velocity.x = direction * SPEED
 		sprite.play(\"andar\")
 		sprite.scale.x = direction
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		sprite.play(\"parado\")
+	
 
 	move_and_slide()
 "
