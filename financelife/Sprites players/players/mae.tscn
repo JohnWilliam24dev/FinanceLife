@@ -18,7 +18,7 @@ region = Rect2(215, 0, 103, 256)
 atlas = ExtResource("1_0bkad")
 region = Rect2(315, 0, 102, 256)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_g1j8h"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_wwlm8"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -38,18 +38,22 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r8ykg"]
-radius = 35.0
-height = 222.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yox5m"]
+size = Vector2(81.0835, 220)
 
-[node name="MAE" type="CharacterBody2D"]
+[node name="Mãe" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(14.5, -5)
-sprite_frames = SubResource("SpriteFrames_g1j8h")
+texture_filter = 1
+position = Vector2(16.85, -5)
+scale = Vector2(1.24563, 1.2)
+sprite_frames = SubResource("SpriteFrames_wwlm8")
 animation = &"MAE"
-frame_progress = 0.725182
+autoplay = "MAE"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, 0)
-shape = SubResource("CapsuleShape2D_r8ykg")
+light_mask = 4
+visibility_layer = 4
+position = Vector2(-7.49999, 7.99999)
+scale = Vector2(1.24563, 1.2)
+shape = SubResource("RectangleShape2D_yox5m")

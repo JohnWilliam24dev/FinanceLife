@@ -1,16 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwyjyr72ms787"]
+[gd_scene load_steps=7 format=3 uid="uid://bovyiu7s4nd4e"]
 
-[ext_resource type="Shader" uid="uid://c41kmqlrs4dya" path="res://Utilitarios/CenaDeTransicao/Shaders_Transition.tres" id="1_7vn57"]
+[ext_resource type="Shader" uid="uid://c41kmqlrs4dya" path="res://Utilitarios/CenaDeTransicao/Shaders_Transition.tres" id="1_5c8rc"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dtxnp"]
-shader = ExtResource("1_7vn57")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m542m"]
+shader = ExtResource("1_5c8rc")
 shader_parameter/screen_width = 1920.0
 shader_parameter/screen_height = 1080.0
 shader_parameter/center = Vector2(0.5, 0.5)
-shader_parameter/player = Vector2(0.5, 0.5)
+shader_parameter/player = Vector2(50, 50)
 shader_parameter/progress = 0.0
 shader_parameter/pixel_size = 15.0
-shader_parameter/circle_size = 1.5
+shader_parameter/circle_size = 0.749
 shader_parameter/curtains = 1.0
 shader_parameter/type = 2
 
@@ -68,10 +68,10 @@ _data = {
 "transition_out": SubResource("Animation_qyupl")
 }
 
-[node name="Transition" type="CanvasLayer"]
+[node name="Transição Out" type="CanvasLayer"]
 
-[node name="Fill" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_dtxnp")
+[node name="Fill 2" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_m542m")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -79,7 +79,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Animation" type="AnimationPlayer" parent="Fill"]
+[node name="Animation" type="AnimationPlayer" parent="Fill 2"]
 libraries = {
 "": SubResource("AnimationLibrary_oahsn")
 }

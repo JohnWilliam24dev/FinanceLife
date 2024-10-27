@@ -1,11 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwdq6m6xe06od"]
+[gd_scene load_steps=7 format=3 uid="uid://dwdq6m6xe06od"]
 
+[ext_resource type="Script" path="res://Scrips/Ato 1/cena_de_transição_mãe_chamando_filho_troca_de_cena.gd" id="1_pmicg"]
 [ext_resource type="Theme" uid="uid://e4phmqgo0wcg" path="res://Scrips/Menu/fonte_Menu.tres" id="2_4ir7x"]
 [ext_resource type="Texture2D" uid="uid://fwoaoqp7epn8" path="res://assents/Cenarios/Cenas Jogo/Ato 1/Casa_Cena 2/Cenarios/ac01f481c6e3b1ba929d4898423176ff.jpg" id="2_i18b6"]
 
 [sub_resource type="Animation" id="Animation_5qneq"]
 resource_name = "Cutsene Ato 1 Cena 2"
-length = 30.0
+length = 12.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -13,7 +14,7 @@ tracks/0/path = NodePath("CanvasLayer/Panel:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 9.13333, 9.93333),
+"times": PackedFloat32Array(1.5, 2.5, 10.6333, 11.4333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -25,7 +26,7 @@ tracks/1/path = NodePath("CanvasLayer/Panel/VBoxContainer2/Label2:text")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9, 6, 6.1, 7.13333, 7.23333, 7.33333, 7.43333, 7.53333, 7.63333, 7.73333, 7.83333, 7.93333, 8.03333, 8.13333, 8.23333),
+"times": PackedFloat32Array(1.5, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9, 6, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7, 6.8, 6.9, 7, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 8.63333, 8.73333, 8.83333, 8.93333, 9.03333, 9.13333, 9.23333, 9.33333, 9.43333, 9.53333, 9.63333, 9.73333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": ["", "F", "Fi", "Fil", "Filh", "Filho", "Filho!", "Filho! D", "Filho! De", "Filho! Des", "Filho! Desc", "Filho! Desce", "Filho! Desce ", "Filho! Desce a", "Filho! Desce aq", "Filho! Desce aqu", "Filho! Desce aqui", "Filho! Desce aqui q", "Filho! Desce aqui qu", "Filho! Desce aqui que", "Filho! Desce aqui que ", "Filho! Desce aqui que s", "Filho! Desce aqui que se", "Filho! Desce aqui que seu", "Filho! Desce aqui que seu ", "Filho! Desce aqui que seu p", "Filho! Desce aqui que seu pa", "Filho! Desce aqui que seu pai", "Filho! Desce aqui que seu pai ", "Filho! Desce aqui que seu pai t", "Filho! Desce aqui que seu pai tr", "Filho! Desce aqui que seu pai tro", "Filho! Desce aqui que seu pai trou", "Filho! Desce aqui que seu pai troux", "Filho! Desce aqui que seu pai trouxe", "Filho! Desce aqui que seu pai trouxe ", "Filho! Desce aqui que seu pai trouxe a", "Filho! Desce aqui que seu pai trouxe al", "Filho! Desce aqui que seu pai trouxe alg", "Filho! Desce aqui que seu pai trouxe algo", "Filho! Desce aqui que seu pai trouxe algo ", "Filho! Desce aqui que seu pai trouxe algo p", "Filho! Desce aqui que seu pai trouxe algo pa", "Filho! Desce aqui que seu pai trouxe algo par", "Filho! Desce aqui que seu pai trouxe algo para", "Filho! Desce aqui que seu pai trouxe algo para ", "Filho! Desce aqui que seu pai trouxe algo para v", "Filho! Desce aqui que seu pai trouxe algo para vo", "Filho! Desce aqui que seu pai trouxe algo para voc", "Filho! Desce aqui que seu pai trouxe algo para você", "Filho! Desce aqui que seu pai trouxe algo para você!", "", "J", "Já", "Já ", "Já v", "Já vo", "Já vou", "Já vou ", "Já vou m", "Já vou mã", "Já vou mãe", "Já vou mãe!"]
@@ -37,7 +38,7 @@ tracks/2/path = NodePath("CanvasLayer/Panel/VBoxContainer/Label:text")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 7.13333, 7.23333, 7.33333, 7.43333, 7.53333),
+"times": PackedFloat32Array(1.5, 8.63333, 8.73333, 8.83333, 8.93333, 9.03333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": ["Mãe", "F", "Fi", "Fil", "Filh", "Filho"]
@@ -95,13 +96,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_pmicg")
 
 [node name="BackGround" type="TextureRect" parent="."]
 texture_filter = 1
 layout_mode = 0
 offset_right = 564.0
 offset_bottom = 423.0
-scale = Vector2(2.26386, 1.89181)
+scale = Vector2(2.9, 2.9)
 texture = ExtResource("2_i18b6")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

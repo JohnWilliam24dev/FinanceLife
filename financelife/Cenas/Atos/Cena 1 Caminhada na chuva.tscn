@@ -1,6 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://bfd6g4rs7wvuo"]
+[gd_scene load_steps=27 format=3 uid="uid://bfd6g4rs7wvuo"]
 
-[ext_resource type="PackedScene" uid="uid://d0h0qieqnyl61" path="res://Utilitarios/CenaDeTransicao/transition.tscn" id="1_xdrjr"]
+[ext_resource type="Script" path="res://Scrips/Utilitarios/Troca de cena atraves de cutcecne.gd" id="1_vor2e"]
+[ext_resource type="Shader" uid="uid://c41kmqlrs4dya" path="res://Utilitarios/CenaDeTransicao/Shaders_Transition.tres" id="2_ewjg5"]
+[ext_resource type="PackedScene" uid="uid://ckswjkl7c765b" path="res://Utilitarios/CenaDeTransicao/transition in.tscn" id="2_f0y0m"]
 [ext_resource type="Texture2D" uid="uid://dcmclxll0tkvp" path="res://assents/Cenarios/Cenas Jogo/Ato 1/Cidade_Cena 1/1.png" id="2_nn0w3"]
 [ext_resource type="Texture2D" uid="uid://4hlhdrnj8ut5" path="res://assents/Cenarios/Cenas Jogo/Ato 1/Cidade_Cena 1/2.png" id="3_sls33"]
 [ext_resource type="Texture2D" uid="uid://cwxlbvy6obtlo" path="res://assents/Cenarios/Cenas Jogo/Ato 1/Cidade_Cena 1/3.png" id="4_atpqd"]
@@ -127,6 +129,18 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(662, 648), Vector2(662, 648), Vector2(1500, 648)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Transição Out/Fill 2:material:shader_parameter/progress")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 25, 26),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0]
+}
 
 [sub_resource type="Animation" id="Animation_5msba"]
 length = 0.001
@@ -190,6 +204,18 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(662, 648)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Transição Out/Fill 2:material:shader_parameter/progress")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hvknc"]
 _data = {
@@ -197,11 +223,22 @@ _data = {
 "RESET": SubResource("Animation_5msba")
 }
 
-[node name="Ato 1_A Brincadeira" type="Node2D"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m542m"]
+shader = ExtResource("2_ewjg5")
+shader_parameter/screen_width = 1920.0
+shader_parameter/screen_height = 1080.0
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/player = Vector2(0.5, 0.5)
+shader_parameter/progress = 0.0
+shader_parameter/pixel_size = 15.0
+shader_parameter/circle_size = 1.5
+shader_parameter/curtains = 1.0
+shader_parameter/type = 2
 
-[node name="Transition" parent="." instance=ExtResource("1_xdrjr")]
-scale = Vector2(1.3, 1.3)
-transform = Transform2D(1.3, 0, 0, 1.3, 0, 0)
+[node name="Ato 1_A Brincadeira" type="Node2D"]
+script = ExtResource("1_vor2e")
+
+[node name="Transição IN" parent="." instance=ExtResource("2_f0y0m")]
 
 [node name="BG" type="ParallaxBackground" parent="."]
 scale = Vector2(1.2, 1.2)
@@ -217,7 +254,7 @@ texture_filter = 1
 texture_repeat = 2
 material = SubResource("ShaderMaterial_bcakk")
 position = Vector2(-40, -63.3333)
-scale = Vector2(1.86424, 2.22118)
+scale = Vector2(2.6, 2.6)
 texture = ExtResource("2_nn0w3")
 
 [node name="CF 1" type="ParallaxLayer" parent="BG"]
@@ -229,7 +266,7 @@ texture_filter = 1
 texture_repeat = 2
 material = SubResource("ShaderMaterial_25hb7")
 position = Vector2(-3, -100)
-scale = Vector2(2, 2)
+scale = Vector2(2.6, 2.6)
 texture = ExtResource("3_sls33")
 
 [node name="CF 2" type="ParallaxLayer" parent="BG"]
@@ -239,7 +276,7 @@ texture_filter = 1
 texture_repeat = 2
 material = SubResource("ShaderMaterial_htf6i")
 position = Vector2(537.5, 333.333)
-scale = Vector2(1.89745, 2.06221)
+scale = Vector2(2.6, 2.6)
 texture = ExtResource("4_atpqd")
 
 [node name="CF 3" type="ParallaxLayer" parent="BG"]
@@ -249,7 +286,7 @@ texture_filter = 1
 texture_repeat = 2
 material = SubResource("ShaderMaterial_j0yh5")
 position = Vector2(533.333, 285)
-scale = Vector2(1.85646, 2.29393)
+scale = Vector2(2.6, 2.6)
 texture = ExtResource("5_ayjhg")
 
 [node name="CF 4" type="ParallaxLayer" parent="BG"]
@@ -259,11 +296,11 @@ texture_filter = 1
 texture_repeat = 2
 material = SubResource("ShaderMaterial_rww3y")
 position = Vector2(549.167, 291.667)
-scale = Vector2(1.88599, 1.67709)
+scale = Vector2(2.6, 2.6)
 texture = ExtResource("6_7meg6")
 
 [node name="Asfalto" type="ParallaxLayer" parent="BG"]
-position = Vector2(6.66667, 9.16667)
+position = Vector2(65.8333, -105.833)
 scale = Vector2(0.929114, 1.0078)
 
 [node name="6" type="Sprite2D" parent="BG/Asfalto"]
@@ -271,7 +308,7 @@ texture_filter = 1
 texture_repeat = 2
 material = SubResource("ShaderMaterial_84rof")
 position = Vector2(570, 332.5)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("7_11ce1")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
@@ -313,4 +350,14 @@ text = "\"Se um dia eu pudesse ver…\""
 libraries = {
 "": SubResource("AnimationLibrary_hvknc")
 }
-autoplay = "Cena 1 Caminhada na chuva"
+
+[node name="Transição Out" type="CanvasLayer" parent="."]
+
+[node name="Fill 2" type="ColorRect" parent="Transição Out"]
+material = SubResource("ShaderMaterial_m542m")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

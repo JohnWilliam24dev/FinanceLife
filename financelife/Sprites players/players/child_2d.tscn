@@ -113,18 +113,18 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uoy8m"]
-size = Vector2(84, 182)
+size = Vector2(84, 187)
 
 [node name="Child" type="CharacterBody2D"]
 script = SubResource("GDScript_bh54d")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
-position = Vector2(912, 692)
+position = Vector2(905, 700)
 sprite_frames = SubResource("SpriteFrames_uat7h")
-animation = &"Filho parado"
+animation = &"Filho correndo"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(906, 696)
+position = Vector2(906, 693.5)
 shape = SubResource("RectangleShape2D_uoy8m")
 
 [node name="Camera2D" type="Camera2D" parent="."]

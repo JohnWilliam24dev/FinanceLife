@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwyjyr72ms787"]
+[gd_scene load_steps=7 format=3 uid="uid://ckswjkl7c765b"]
 
-[ext_resource type="Shader" uid="uid://c41kmqlrs4dya" path="res://Utilitarios/CenaDeTransicao/Shaders_Transition.tres" id="1_7vn57"]
+[ext_resource type="Shader" uid="uid://c41kmqlrs4dya" path="res://Utilitarios/CenaDeTransicao/Shaders_Transition.tres" id="1_ddyrf"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dtxnp"]
-shader = ExtResource("1_7vn57")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m542m"]
+shader = ExtResource("1_ddyrf")
 shader_parameter/screen_width = 1920.0
 shader_parameter/screen_height = 1080.0
 shader_parameter/center = Vector2(0.5, 0.5)
@@ -68,10 +68,10 @@ _data = {
 "transition_out": SubResource("Animation_qyupl")
 }
 
-[node name="Transition" type="CanvasLayer"]
+[node name="Transição IN" type="CanvasLayer"]
 
 [node name="Fill" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_dtxnp")
+material = SubResource("ShaderMaterial_m542m")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

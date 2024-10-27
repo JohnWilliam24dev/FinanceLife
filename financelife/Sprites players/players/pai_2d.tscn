@@ -46,5 +46,8 @@ animations = [{
 [node name="Pai" type="Node2D"]
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
+position = Vector2(10.25, 21.5)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_yyu3h")
 animation = &"Pai parado"
+flip_h = true

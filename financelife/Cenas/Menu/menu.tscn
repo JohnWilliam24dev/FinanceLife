@@ -182,14 +182,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -47.0
-offset_top = 137.0
-offset_right = 80.0
-offset_bottom = 239.0
+offset_left = -49.0
+offset_top = 161.0
+offset_right = 78.0
+offset_bottom = 263.0
 grow_horizontal = 2
 grow_vertical = 2
 rotation = 3.14159
-scale = Vector2(-2.88338, -2.4232)
+scale = Vector2(-6.96605, -4.58593)
 pivot_offset = Vector2(68.3652, 59.3156)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
