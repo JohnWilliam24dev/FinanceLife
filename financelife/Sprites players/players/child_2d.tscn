@@ -8,7 +8,26 @@ script/source = "extends CharacterBody2D
 const SPEED = 300.0
 const RUN_SPEED = 1000.0
 const JUMP_VELOCITY = -400.0
+@export var abstinence_max = 10 # var relacionada a barra
 @onready var sprite := $anim
+@onready var addicted_bar: ProgressBar = $ProgressBar  # var relacionada a barra
+
+
+# as funcoes ABAIXO vao interagir com a barra de vicio addicted_Bar	
+
+func _ready():
+	addicted_bar.max_value = abstinence_max
+
+func increment_addictionBar(coefficient: float, currentInvestmentCapital: float) -> void:
+	var incrementValue: float = coefficient * currentInvestmentCapital
+	addicted_bar.value += incrementValue
+
+func decrement_addictionBar(coefficient: float, currentInvestmentCapital: float) -> void:
+	var incrementValue: float = coefficient * currentInvestmentCapital
+	addicted_bar.value -= incrementValue
+
+# as funcoes ACIMA vao interagir com a barra de vicio addicted_Bar	
+
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
