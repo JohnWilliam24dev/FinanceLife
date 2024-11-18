@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdp6wt4wmexy8"]
+
+[ext_resource type="Script" path="res://Cenas/Barra de Aderência/BarraAderencia.gd" id="1_eq4y2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bsdvf"]
+bg_color = Color(0.889232, 0.476299, 3.85046e-07, 1)
+border_color = Color(0.988331, 0.748985, 0.424335, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gsxal"]
+bg_color = Color(0.937255, 1, 0, 1)
+draw_center = false
+
+[node name="BarraAderencia" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_eq4y2")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = -237.0
+offset_top = -28.0
+offset_right = 239.0
+offset_bottom = 33.0
+theme_override_styles/background = SubResource("StyleBoxFlat_bsdvf")
+theme_override_styles/fill = SubResource("StyleBoxFlat_gsxal")
+show_percentage = false
