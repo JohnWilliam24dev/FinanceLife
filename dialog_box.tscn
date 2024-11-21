@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4bkcjqo26hdf"]
+
+[ext_resource type="Script" path="res://Scrips/Ato 1/dialog_box.gd" id="1_3mjdv"]
+[ext_resource type="Texture2D" uid="uid://gdnq1relhk2w" path="res://assents/Fontes e Temas/Menu/Dialog_Box(16 x 16).png" id="1_lvaud"]
+[ext_resource type="FontFile" uid="uid://cgygq4u5j0y1w" path="res://assents/Fontes e Temas/Menu/RevMiniPixel.ttf" id="2_y2llp"]
+
+[node name="dialog_box" type="MarginContainer"]
+offset_right = 24.0
+offset_bottom = 14.0
+script = ExtResource("1_3mjdv")
+
+[node name="background" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_lvaud")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="label_margin" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="text_label" type="Label" parent="label_margin"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_y2llp")
+theme_override_font_sizes/font_size = 8
+text = "Olá"
+vertical_alignment = 1
+
+[node name="letter_timer_display" type="Timer" parent="."]
+
+[connection signal="timeout" from="letter_timer_display" to="." method="_on_letter_timer_display_timeout"]
