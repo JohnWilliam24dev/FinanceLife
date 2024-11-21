@@ -50,7 +50,7 @@ scale = Vector2(1.24563, 1.2)
 sprite_frames = SubResource("SpriteFrames_wwlm8")
 animation = &"MAE"
 autoplay = "MAE"
-frame_progress = 0.0153559
+frame_progress = 0.184893
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 4
