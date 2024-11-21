@@ -14,10 +14,9 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-		if !is_on_floor():
-			sprite.play(\"correr\")
+
+	if !is_on_floor():
+		sprite.play(\"correr\")
 
 	var is_running = Input.is_action_pressed(\"ui_shift\")
 	
@@ -26,11 +25,10 @@ func _physics_process(delta: float) -> void:
 
 	var direction := Input.get_axis(\"ui_left\", \"ui_right\")
 	
-	if is_running:
+	if is_running and direction != 0:
 		velocity.x = direction * RUN_SPEED
-		if direction != 0:
-			sprite.play(\"Filho correndo\")
-			sprite.scale.x = direction
+		sprite.play(\"Filho correndo\")
+		sprite.scale.x = direction
 		
 	else:if direction == 0:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
