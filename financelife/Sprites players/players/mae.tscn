@@ -2,36 +2,36 @@
 
 [ext_resource type="Texture2D" uid="uid://c76iibcx38gi7" path="res://Sprites players/players/Untitled 10-24-2024 02-32-50.png" id="1_0bkad"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1nig6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bi4fi"]
 atlas = ExtResource("1_0bkad")
-region = Rect2(7, 0, 105, 244)
+region = Rect2(9, 0, 103, 256)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1g6uc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fd4t"]
 atlas = ExtResource("1_0bkad")
-region = Rect2(112, 0, 105, 244)
+region = Rect2(112, 0, 103, 256)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qf0s6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_egiw1"]
 atlas = ExtResource("1_0bkad")
-region = Rect2(217, 0, 95, 244)
+region = Rect2(215, 0, 103, 256)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4hix0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnok2"]
 atlas = ExtResource("1_0bkad")
-region = Rect2(315, 0, 95, 244)
+region = Rect2(315, 0, 102, 256)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wwlm8"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1nig6")
+"texture": SubResource("AtlasTexture_bi4fi")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1g6uc")
+"texture": SubResource("AtlasTexture_2fd4t")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qf0s6")
+"texture": SubResource("AtlasTexture_egiw1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4hix0")
+"texture": SubResource("AtlasTexture_cnok2")
 }],
 "loop": true,
 "name": &"MAE",
@@ -45,16 +45,15 @@ size = Vector2(81.0835, 220)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(3, -2)
+position = Vector2(16.85, -5)
 scale = Vector2(1.24563, 1.2)
 sprite_frames = SubResource("SpriteFrames_wwlm8")
 animation = &"MAE"
 autoplay = "MAE"
-frame_progress = 0.184893
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 4
 visibility_layer = 4
-position = Vector2(-12, 12)
+position = Vector2(-7.49999, 7.99999)
 scale = Vector2(1.24563, 1.2)
 shape = SubResource("RectangleShape2D_yox5m")

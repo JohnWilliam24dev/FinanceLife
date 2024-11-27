@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://cscdy1rh37obt"]
+[gd_scene load_steps=35 format=4 uid="uid://cscdy1rh37obt"]
 
 [ext_resource type="Shader" uid="uid://c41kmqlrs4dya" path="res://Utilitarios/CenaDeTransicao/Shaders_Transition.tres" id="1_2iwho"]
 [ext_resource type="PackedScene" uid="uid://djdqv1ats72uc" path="res://Sprites players/players/child_2d.tscn" id="1_bctd0"]
@@ -8,6 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://bcd4eb0uoli3u" path="res://assents/Cenarios/Cenas Jogo/Ato 1/Casa_Cena 2/tileSet/tileset_C.png" id="3_cgkwo"]
 [ext_resource type="Texture2D" uid="uid://c76iibcx38gi7" path="res://Sprites players/players/Untitled 10-24-2024 02-32-50.png" id="3_sq2qu"]
 [ext_resource type="PackedScene" uid="uid://biqulbvgam3nl" path="res://Sprites players/players/mae.tscn" id="6_5r3jd"]
+[ext_resource type="Script" path="res://Scrips/mensagem_pai/tile_map_layer.gd" id="7_0tofm"]
+[ext_resource type="Script" path="res://Scrips/mensagem_mae/mae.gd" id="9_j1dma"]
+[ext_resource type="Script" path="res://Scrips/mensagem_nut/nut.gd" id="12_kl54s"]
+[ext_resource type="FontFile" uid="uid://cgygq4u5j0y1w" path="res://assents/Fontes e Temas/Menu/RevMiniPixel.ttf" id="12_r0lty"]
+[ext_resource type="Texture2D" uid="uid://bq22d72ga0hhy" path="res://Sprites players/players/porco_sem_fundo.png" id="13_c2w7l"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7a183"]
 shader = ExtResource("1_2iwho")
@@ -5102,6 +5107,23 @@ sources/1 = SubResource("TileSetAtlasSource_58gti")
 pattern_0 = SubResource("TileMapPattern_e5j38")
 pattern_1 = SubResource("TileMapPattern_bha0a")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqel3"]
+size = Vector2(372.059, 404.412)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3b1oy"]
+bg_color = Color(0, 0, 0, 0.670588)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.0980392, 0.215686, 0.262745, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_it7vw"]
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dffkf"]
 texture = ExtResource("3_sq2qu")
 8:1/0 = 0
@@ -5641,14 +5663,33 @@ texture = ExtResource("3_sq2qu")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_dffkf")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8c814"]
+size = Vector2(204.286, 173.571)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dy3v6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kn0ij"]
+size = Vector2(364, 212)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_stipn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_c2w7l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Transição" type="CanvasLayer" parent="."]
-visible = false
 scale = Vector2(1.3, 1.3)
 transform = Transform2D(1.3, 0, 0, 1.3, 0, 0)
 
 [node name="Fill 2" type="ColorRect" parent="Transição"]
+visible = false
 material = SubResource("ShaderMaterial_7a183")
 anchors_preset = 15
 anchor_right = 1.0
@@ -5682,14 +5723,6 @@ layer_2/tile_data = PackedInt32Array(589836, 720900, 6, 655372, 720900, 7, 52429
 layer_3/name = "Objeto 3"
 layer_3/tile_data = PackedInt32Array(393227, 851972, 6, 458763, 851972, 7)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="TileMap"]
-light_mask = 8
-visibility_layer = 8
-position = Vector2(202.25, 131.75)
-scale = Vector2(0.35, 0.35)
-tile_map_data = PackedByteArray("AAASAAAAAAACABEAABARAAAAAAADABEAABATAAEAAAABABIAABASAAEAAAACABIAABARAAEAAAADABIAABAQAAEAAAAEABIAABATAAIAAAABABMAABASAAIAAAACABMAABARAAIAAAADABMAABAQAAIAAAAEABMAABATAAMAAAABABQAABASAAMAAAACABQAABARAAMAAAADABQAABATAAQAAAABABUAABASAAQAAAACABUAABARAAQAAAADABUAABAUAAUAAAAAABYAABATAAUAAAABABYAABASAAUAAAACABYAABARAAUAAAADABYAABAQAAUAAAAEABYAABAUAAYAAAAAABcAABATAAYAAAABABcAABASAAYAAAACABcAABARAAYAAAADABcAABAQAAYAAAAEABcAABAUAAcAAAAAABgAABATAAcAAAABABgAABASAAcAAAACABgAABARAAcAAAADABgAABAQAAcAAAAEABgAABATAAgAAAABABkAABASAAgAAAACABkAABARAAgAAAADABkAABATAAkAAAABABoAABASAAkAAAACABoAABARAAkAAAADABoAABATAAoAAAABABsAABASAAoAAAACABsAABARAAoAAAADABsAABAQAAoAAAAEABsAABATAAsAAAABABwAABASAAsAAAACABwAABARAAsAAAADABwAABAQAAsAAAAEABwAABA=")
-tile_set = SubResource("TileSet_xhg25")
-
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_bctd0")]
 z_index = 1
 texture_filter = 1
@@ -5700,3 +5733,75 @@ z_as_relative = false
 texture_filter = 1
 position = Vector2(1107, 560)
 scale = Vector2(0.85, 0.85)
+script = ExtResource("9_j1dma")
+
+[node name="Area2D" type="Area2D" parent="Mae"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mae/Area2D"]
+position = Vector2(-125.735, 69.5588)
+shape = SubResource("RectangleShape2D_dqel3")
+
+[node name="Label" type="Label" parent="Mae"]
+offset_left = -151.0
+offset_top = -215.0
+offset_right = 82.0
+offset_bottom = -175.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_r0lty")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_3b1oy")
+label_settings = SubResource("LabelSettings_it7vw")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+light_mask = 8
+visibility_layer = 8
+position = Vector2(808, 527)
+scale = Vector2(1.4, 1.4)
+tile_map_data = PackedByteArray("AAASAAAAAAACABEAABARAAAAAAADABEAABATAAEAAAABABIAABASAAEAAAACABIAABARAAEAAAADABIAABAQAAEAAAAEABIAABATAAIAAAABABMAABASAAIAAAACABMAABARAAIAAAADABMAABAQAAIAAAAEABMAABATAAMAAAABABQAABASAAMAAAACABQAABARAAMAAAADABQAABATAAQAAAABABUAABASAAQAAAACABUAABARAAQAAAADABUAABAUAAUAAAAAABYAABATAAUAAAABABYAABASAAUAAAACABYAABARAAUAAAADABYAABAQAAUAAAAEABYAABAUAAYAAAAAABcAABATAAYAAAABABcAABASAAYAAAACABcAABARAAYAAAADABcAABAQAAYAAAAEABcAABAUAAcAAAAAABgAABATAAcAAAABABgAABASAAcAAAACABgAABARAAcAAAADABgAABAQAAcAAAAEABgAABATAAgAAAABABkAABASAAgAAAACABkAABARAAgAAAADABkAABATAAkAAAABABoAABASAAkAAAACABoAABARAAkAAAADABoAABATAAoAAAABABsAABASAAoAAAACABsAABARAAoAAAADABsAABAQAAoAAAAEABsAABATAAsAAAABABwAABASAAsAAAACABwAABARAAsAAAADABwAABAQAAsAAAAEABwAABA=")
+tile_set = SubResource("TileSet_xhg25")
+script = ExtResource("7_0tofm")
+
+[node name="Area2D" type="Area2D" parent="TileMapLayer"]
+visible = false
+position = Vector2(293.571, 100)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer/Area2D"]
+position = Vector2(-41.4286, 3.21429)
+shape = SubResource("RectangleShape2D_8c814")
+
+[node name="Label" type="Label" parent="TileMapLayer"]
+visible = false
+offset_left = 189.286
+offset_top = -103.571
+offset_right = 370.286
+offset_bottom = 5.42856
+label_settings = SubResource("LabelSettings_dy3v6")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="nut" type="Node2D" parent="."]
+script = ExtResource("12_kl54s")
+
+[node name="Area2D" type="Area2D" parent="nut"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="nut/Area2D"]
+position = Vector2(664, 626)
+shape = SubResource("RectangleShape2D_kn0ij")
+
+[node name="texture" type="AnimatedSprite2D" parent="nut"]
+position = Vector2(666, 617)
+scale = Vector2(0.186901, 0.186)
+sprite_frames = SubResource("SpriteFrames_stipn")
+
+[node name="Label" type="Label" parent="nut"]
+offset_left = 568.0
+offset_top = 438.0
+offset_right = 770.0
+offset_bottom = 554.0
+
+[connection signal="body_entered" from="Mae/Area2D" to="Mae" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Mae/Area2D" to="Mae" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="TileMapLayer/Area2D" to="TileMapLayer" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="TileMapLayer/Area2D" to="TileMapLayer" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="nut/Area2D" to="nut" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="nut/Area2D" to="nut" method="_on_area_2d_body_exited"]
