@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://cscdy1rh37obt"]
+[gd_scene load_steps=24 format=4 uid="uid://cscdy1rh37obt"]
 
 [ext_resource type="Shader" uid="uid://c41kmqlrs4dya" path="res://Utilitarios/CenaDeTransicao/Shaders_Transition.tres" id="1_2iwho"]
 [ext_resource type="PackedScene" uid="uid://djdqv1ats72uc" path="res://Sprites players/players/child_2d.tscn" id="1_bctd0"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bcd4eb0uoli3u" path="res://assents/Cenarios/Cenas Jogo/Ato 1/Casa_Cena 2/tileSet/tileset_C.png" id="3_cgkwo"]
 [ext_resource type="Texture2D" uid="uid://c76iibcx38gi7" path="res://Sprites players/players/Untitled 10-24-2024 02-32-50.png" id="3_sq2qu"]
 [ext_resource type="PackedScene" uid="uid://biqulbvgam3nl" path="res://Sprites players/players/mae.tscn" id="6_5r3jd"]
+[ext_resource type="Script" path="res://Scrips/Ato 1/tile_inter_pai.gd" id="7_gpns7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7a183"]
 shader = ExtResource("1_2iwho")
@@ -5689,6 +5690,7 @@ position = Vector2(202.25, 131.75)
 scale = Vector2(0.35, 0.35)
 tile_map_data = PackedByteArray("AAASAAAAAAACABEAABARAAAAAAADABEAABATAAEAAAABABIAABASAAEAAAACABIAABARAAEAAAADABIAABAQAAEAAAAEABIAABATAAIAAAABABMAABASAAIAAAACABMAABARAAIAAAADABMAABAQAAIAAAAEABMAABATAAMAAAABABQAABASAAMAAAACABQAABARAAMAAAADABQAABATAAQAAAABABUAABASAAQAAAACABUAABARAAQAAAADABUAABAUAAUAAAAAABYAABATAAUAAAABABYAABASAAUAAAACABYAABARAAUAAAADABYAABAQAAUAAAAEABYAABAUAAYAAAAAABcAABATAAYAAAABABcAABASAAYAAAACABcAABARAAYAAAADABcAABAQAAYAAAAEABcAABAUAAcAAAAAABgAABATAAcAAAABABgAABASAAcAAAACABgAABARAAcAAAADABgAABAQAAcAAAAEABgAABATAAgAAAABABkAABASAAgAAAACABkAABARAAgAAAADABkAABATAAkAAAABABoAABASAAkAAAACABoAABARAAkAAAADABoAABATAAoAAAABABsAABASAAoAAAACABsAABARAAoAAAADABsAABAQAAoAAAAEABsAABATAAsAAAABABwAABASAAsAAAACABwAABARAAsAAAADABwAABAQAAsAAAAEABwAABA=")
 tile_set = SubResource("TileSet_xhg25")
+script = ExtResource("7_gpns7")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_bctd0")]
 z_index = 1
