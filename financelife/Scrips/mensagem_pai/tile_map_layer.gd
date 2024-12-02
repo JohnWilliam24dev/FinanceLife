@@ -1,15 +1,14 @@
 extends TileMapLayer
 
-@onready var label: Label = $Label
+@onready var label: Label = $Area2D/Label
 
 var player_in_area: bool = false
 
 func _process(delta: float) -> void:
 	if player_in_area and Input.is_action_just_pressed("interect"):
-		label.text = "Filho, 
-		descobri um jogo 
-		novo e muito divertido hoje!
-		 Vamos Jogar?"
+		label.text = "Filho, descobri um jogo novo 
+					 e muito divertido hoje!
+		 			 Vamos Jogar?"
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
