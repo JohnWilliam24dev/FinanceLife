@@ -1,6 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://t6jsp3vj05e7"]
+[gd_scene load_steps=8 format=3 uid="uid://t6jsp3vj05e7"]
 
 [ext_resource type="Script" path="res://Scrips/Jogo de tabuleiro/TesteSaldo.gd" id="1_5ojb3"]
+[ext_resource type="Script" path="res://carta_info.gd" id="2_68vob"]
+[ext_resource type="Script" path="res://menu_de_ações.gd" id="2_nooq3"]
+[ext_resource type="Script" path="res://tabuleiro.gd" id="3_bkbh3"]
+[ext_resource type="Texture2D" uid="uid://8aw5sbaf4wxp" path="res://assents/tabuleiro/pixil-frame-0.png" id="4_0al0x"]
+[ext_resource type="Script" path="res://saldo.gd" id="5_qym0p"]
+[ext_resource type="Script" path="res://acoes.gd" id="6_xwmal"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Jogo de tabuleiro" type="Node2D"]
 script = ExtResource("1_5ojb3")
+
+[node name="Carta info" type="Node2D" parent="."]
+script = ExtResource("2_68vob")
+
+[node name="Menu de ações" type="Node2D" parent="."]
+script = ExtResource("2_nooq3")
+
+[node name="Tabuleiro" type="Node2D" parent="."]
+script = ExtResource("3_bkbh3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Tabuleiro"]
+position = Vector2(332.5, 134.5)
+scale = Vector2(7.65, 7.18)
+texture = ExtResource("4_0al0x")
+
+[node name="Saldo" type="Node2D" parent="."]
+script = ExtResource("5_qym0p")
+
+[node name="acoes" type="Node2D" parent="."]
+script = ExtResource("6_xwmal")

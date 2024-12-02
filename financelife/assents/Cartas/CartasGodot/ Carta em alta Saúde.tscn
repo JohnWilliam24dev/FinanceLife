@@ -1,0 +1,139 @@
+[gd_scene load_steps=13 format=3 uid="uid://dtn3um3kyry8n"]
+
+[ext_resource type="Script" path="res://Scrips/Jogo de tabuleiro/ManagerCards.gd" id="1_btn1u"]
+[ext_resource type="Texture2D" uid="uid://1qxh7spvd0ai" path="res://assents/Cartas/_ Carta em alta Saúde.png" id="1_gp40v"]
+[ext_resource type="Texture2D" uid="uid://b2440hf64xlve" path="res://assents/Cartas/_Carta em alta Transporte.png" id="3_rjicn"]
+[ext_resource type="Texture2D" uid="uid://cm66n8t5vfipq" path="res://assents/Cartas/_Carta em baixa Saúde.png" id="4_matgd"]
+[ext_resource type="Texture2D" uid="uid://l0e5el423ebd" path="res://assents/Cartas/Carta em alta Alimentação.png" id="5_0ku6w"]
+[ext_resource type="Texture2D" uid="uid://dtg0i7dkr6s82" path="res://assents/Cartas/Carta em alta Siderúrgica.png" id="6_x4ndm"]
+[ext_resource type="Texture2D" uid="uid://dankf77rn57yd" path="res://assents/Cartas/Carta em alta Tecnologia.png" id="7_ywwro"]
+[ext_resource type="Texture2D" uid="uid://bpsc27tnvrkey" path="res://assents/Cartas/Carta em baixa Alimentação.png" id="8_uncm1"]
+[ext_resource type="Texture2D" uid="uid://c2ftupjjdruiw" path="res://assents/Cartas/Carta em Baixa Siderúrgica.png" id="9_b6opp"]
+[ext_resource type="Texture2D" uid="uid://bk5wms57a4mve" path="res://assents/Cartas/Carta em baixa Transporte.png" id="10_mwabc"]
+[ext_resource type="Texture2D" uid="uid://r0yuvdeju8qj" path="res://assents/Cartas/Cópia de Carta em Baixa Tecnologia.png" id="11_ag1q6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r7wyk"]
+size = Vector2(395, 520)
+
+[node name="CartManag" type="Node2D"]
+script = ExtResource("1_btn1u")
+
+[node name="CarAltSaúde" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CarAltSaúde"]
+position = Vector2(-2, 9)
+texture = ExtResource("1_gp40v")
+
+[node name="Area2D" type="Area2D" parent="CarAltSaúde"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CarAltSaúde/Area2D"]
+position = Vector2(2.5, 8)
+shape = SubResource("RectangleShape2D_r7wyk")
+
+[node name="CarAltTrans" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CarAltTrans"]
+position = Vector2(-2, 9)
+texture = ExtResource("3_rjicn")
+
+[node name="Area2D" type="Area2D" parent="CarAltTrans"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CarAltTrans/Area2D"]
+position = Vector2(2.5, 8)
+shape = SubResource("RectangleShape2D_r7wyk")
+
+[node name="CarBaiSaúde" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CarBaiSaúde"]
+position = Vector2(-2, 9)
+texture = ExtResource("4_matgd")
+
+[node name="Area2D" type="Area2D" parent="CarBaiSaúde"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CarBaiSaúde/Area2D"]
+position = Vector2(2.5, 8)
+shape = SubResource("RectangleShape2D_r7wyk")
+
+[node name="CarAltAlim" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CarAltAlim"]
+position = Vector2(-2, 9)
+texture = ExtResource("5_0ku6w")
+
+[node name="Area2D" type="Area2D" parent="CarAltAlim"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CarAltAlim/Area2D"]
+position = Vector2(2.5, 8)
+shape = SubResource("RectangleShape2D_r7wyk")
+
+[node name="CarAltSid" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CarAltSid"]
+position = Vector2(-2, 9)
+texture = ExtResource("6_x4ndm")
+
+[node name="Area2D" type="Area2D" parent="CarAltSid"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CarAltSid/Area2D"]
+position = Vector2(2.5, 8)
+shape = SubResource("RectangleShape2D_r7wyk")
+
+[node name="CarAltTecno" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CarAltTecno"]
+position = Vector2(-2, 9)
+texture = ExtResource("7_ywwro")
+
+[node name="Area2D" type="Area2D" parent="CarAltTecno"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CarAltTecno/Area2D"]
+position = Vector2(2.5, 8)
+shape = SubResource("RectangleShape2D_r7wyk")
+
+[node name="CarBaiAlim" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CarBaiAlim"]
+position = Vector2(-2, 9)
+texture = ExtResource("8_uncm1")
+
+[node name="Area2D" type="Area2D" parent="CarBaiAlim"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CarBaiAlim/Area2D"]
+position = Vector2(2.5, 8)
+shape = SubResource("RectangleShape2D_r7wyk")
+
+[node name="CarBaiSid" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CarBaiSid"]
+position = Vector2(-2, 9)
+texture = ExtResource("9_b6opp")
+
+[node name="Area2D" type="Area2D" parent="CarBaiSid"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CarBaiSid/Area2D"]
+position = Vector2(2.5, 8)
+shape = SubResource("RectangleShape2D_r7wyk")
+
+[node name="CarBaiTrans" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CarBaiTrans"]
+position = Vector2(-2, 9)
+texture = ExtResource("10_mwabc")
+
+[node name="Area2D" type="Area2D" parent="CarBaiTrans"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CarBaiTrans/Area2D"]
+position = Vector2(2.5, 8)
+shape = SubResource("RectangleShape2D_r7wyk")
+
+[node name="CarBaiTecno" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CarBaiTecno"]
+position = Vector2(-2, 9)
+texture = ExtResource("11_ag1q6")
+
+[node name="Area2D" type="Area2D" parent="CarBaiTecno"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CarBaiTecno/Area2D"]
+position = Vector2(2.5, 8)
+shape = SubResource("RectangleShape2D_r7wyk")
