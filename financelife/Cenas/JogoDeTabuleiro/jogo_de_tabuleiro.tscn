@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://djkpwwnuhpoe2"]
+[gd_scene load_steps=16 format=3 uid="uid://djkpwwnuhpoe2"]
 
 [ext_resource type="Script" path="res://tabuleiro.gd" id="1_iwsqn"]
 [ext_resource type="Texture2D" uid="uid://dxfcolaj3p1yq" path="res://assents/tabuleiro/BackGroud/image.png" id="2_lu2ht"]
@@ -6,11 +6,15 @@
 [ext_resource type="Theme" uid="uid://e4phmqgo0wcg" path="res://Scrips/Menu/fonte_Menu.tres" id="3_qutbl"]
 [ext_resource type="Texture2D" uid="uid://c548p68oyc1f7" path="res://assents/tabuleiro/Metas/Metas.png" id="5_fkm1x"]
 [ext_resource type="Texture2D" uid="uid://bbw0tj17fgnlo" path="res://assents/tabuleiro/SituaAção/Ação transporte.png" id="6_rf2sk"]
-[ext_resource type="FontFile" uid="uid://cgygq4u5j0y1w" path="res://assents/Fontes e Temas/Menu/RevMiniPixel.ttf" id="7_hof42"]
 [ext_resource type="Texture2D" uid="uid://ottdcllwsvoy" path="res://assents/tabuleiro/SituaAção/Ação tecnologia.png" id="7_m4pth"]
 [ext_resource type="Texture2D" uid="uid://cufhuj66bd30p" path="res://assents/tabuleiro/SituaAção/Ação Siderugica.png" id="8_ogrb2"]
 [ext_resource type="Texture2D" uid="uid://b1d5bgenap4yt" path="res://assents/tabuleiro/SituaAção/Ação Saúde.png" id="9_yobsh"]
 [ext_resource type="Texture2D" uid="uid://bg7m73nyk5cmg" path="res://assents/tabuleiro/SituaAção/Ação alimentação.png" id="10_2dime"]
+[ext_resource type="Texture2D" uid="uid://b56hnar4lqjx8" path="res://assents/tabuleiro/Menu de Ações/Alimentação.png" id="11_oslgv"]
+[ext_resource type="Texture2D" uid="uid://ds02j31watdop" path="res://assents/tabuleiro/Menu de Ações/Saúde.png" id="12_4eak6"]
+[ext_resource type="Texture2D" uid="uid://3dab0driso43" path="res://assents/tabuleiro/Menu de Ações/Siderurgica.png" id="13_dkp5k"]
+[ext_resource type="Texture2D" uid="uid://dk2r0pr5xjp5t" path="res://assents/tabuleiro/Menu de Ações/Tecnologia.png" id="14_545ae"]
+[ext_resource type="Texture2D" uid="uid://bmedw88bfikbu" path="res://assents/tabuleiro/Menu de Ações/Transporte.png" id="15_ycac5"]
 
 [node name="JogoDeTabuleiro" type="Control"]
 layout_mode = 3
@@ -91,14 +95,10 @@ scale = Vector2(0.555208, 0.559259)
 texture = ExtResource("6_rf2sk")
 
 [node name="ValorAçãoTrans" type="Label" parent="SituaçAçãoTrans"]
-offset_left = -135.085
-offset_top = 16.0928
-offset_right = 154.915
-offset_bottom = 138.093
-theme = ExtResource("3_qutbl")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("7_hof42")
-theme_override_font_sizes/font_size = 80
+offset_left = -115.272
+offset_top = 21.457
+offset_right = 143.728
+offset_bottom = 143.457
 
 [node name="SituaçAçãoTecno" type="Sprite2D" parent="."]
 position = Vector2(639, 175)
@@ -106,14 +106,10 @@ scale = Vector2(0.555208, 0.559259)
 texture = ExtResource("7_m4pth")
 
 [node name="ValorAçãoTecno" type="Label" parent="SituaçAçãoTecno"]
-offset_left = -140.488
-offset_top = 19.6689
-offset_right = 149.512
-offset_bottom = 141.669
-theme = ExtResource("3_qutbl")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("7_hof42")
-theme_override_font_sizes/font_size = 80
+offset_left = -115.272
+offset_top = 21.457
+offset_right = 143.728
+offset_bottom = 143.457
 
 [node name="SituaçAçãoSider" type="Sprite2D" parent="."]
 position = Vector2(644, 368)
@@ -121,14 +117,10 @@ scale = Vector2(0.555208, 0.559259)
 texture = ExtResource("8_ogrb2")
 
 [node name="ValorAçãoSider" type="Label" parent="SituaçAçãoSider"]
-offset_left = -136.886
-offset_top = 14.3047
-offset_right = 153.114
-offset_bottom = 136.305
-theme = ExtResource("3_qutbl")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("7_hof42")
-theme_override_font_sizes/font_size = 80
+offset_left = -115.272
+offset_top = 21.457
+offset_right = 143.728
+offset_bottom = 143.457
 
 [node name="SituaçAçãoSaúde" type="Sprite2D" parent="."]
 position = Vector2(1056, 173)
@@ -136,14 +128,10 @@ scale = Vector2(0.555208, 0.559259)
 texture = ExtResource("9_yobsh")
 
 [node name="ValorAçãoSau" type="Label" parent="SituaçAçãoSaúde"]
-offset_left = -135.084
-offset_top = 8.94041
-offset_right = 154.916
-offset_bottom = 130.94
-theme = ExtResource("3_qutbl")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("7_hof42")
-theme_override_font_sizes/font_size = 80
+offset_left = -115.272
+offset_top = 21.457
+offset_right = 143.728
+offset_bottom = 143.457
 
 [node name="SituaçAçãoAlimen" type="Sprite2D" parent="."]
 position = Vector2(1065, 375)
@@ -151,11 +139,112 @@ scale = Vector2(0.555208, 0.559259)
 texture = ExtResource("10_2dime")
 
 [node name="ValorAçãoAlime" type="Label" parent="SituaçAçãoAlimen"]
-offset_left = -124.278
-offset_top = 12.5166
-offset_right = 165.722
-offset_bottom = 134.517
+offset_left = -115.272
+offset_top = 21.457
+offset_right = 143.728
+offset_bottom = 143.457
+
+[node name="ticketAlimentacao" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -134.0
+offset_top = -93.0
+offset_right = 448.0
+offset_bottom = 264.0
+texture = ExtResource("11_oslgv")
+expand_mode = 1
+
+[node name="valorInvestidoAlimentacao" type="Label" parent="ticketAlimentacao"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 250.0
+offset_top = 188.0
+offset_right = 313.0
+offset_bottom = 207.0
 theme = ExtResource("3_qutbl")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("7_hof42")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 8
+text = "(VALOR INVEST)"
+
+[node name="btnComprar" type="Button" parent="ticketAlimentacao"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 214.0
+offset_right = 277.0
+offset_bottom = 245.0
+text = "Comprar"
+
+[node name="btnVender" type="Button" parent="ticketAlimentacao"]
+layout_mode = 0
+offset_left = 289.0
+offset_top = 214.0
+offset_right = 353.0
+offset_bottom = 245.0
+text = "Vender
+"
+
+[node name="ticketSaude" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.016
+anchor_bottom = 0.025
+offset_left = -130.0
+offset_top = 55.0
+offset_right = 423.52
+offset_bottom = 392.0
+texture = ExtResource("12_4eak6")
+expand_mode = 1
+
+[node name="valorInvestidoSaude" type="Label" parent="ticketSaude"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 242.0
+offset_top = 188.0
+offset_right = 305.0
+offset_bottom = 211.0
+theme = ExtResource("3_qutbl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "(VALOR INVEST)"
+
+[node name="btnComprar" type="Button" parent="ticketSaude"]
+layout_mode = 0
+offset_left = 195.0
+offset_top = 214.0
+offset_right = 272.0
+offset_bottom = 245.0
+text = "Comprar"
+
+[node name="btnVender" type="Button" parent="ticketSaude"]
+layout_mode = 0
+offset_left = 286.0
+offset_top = 215.0
+offset_right = 350.0
+offset_bottom = 246.0
+text = "Vender
+"
+
+[node name="ticketSiderurgica" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -139.0
+offset_top = 212.0
+offset_right = 458.0
+offset_bottom = 541.0
+texture = ExtResource("13_dkp5k")
+expand_mode = 1
+
+[node name="ticketTecnologia" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -139.0
+offset_top = 346.0
+offset_right = 463.0
+offset_bottom = 681.0
+texture = ExtResource("14_545ae")
+expand_mode = 1
+
+[node name="ticketTransporte" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -135.0
+offset_top = 486.0
+offset_right = 455.0
+offset_bottom = 821.0
+texture = ExtResource("15_ycac5")
+expand_mode = 1
