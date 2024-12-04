@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://djkpwwnuhpoe2"]
+[gd_scene load_steps=5 format=3 uid="uid://djkpwwnuhpoe2"]
 
 [ext_resource type="Script" path="res://tabuleiro.gd" id="1_iwsqn"]
 [ext_resource type="Texture2D" uid="uid://dxfcolaj3p1yq" path="res://assents/tabuleiro/BackGroud/image.png" id="2_lu2ht"]
+[ext_resource type="Texture2D" uid="uid://cx20a35fbvyxl" path="res://assents/tabuleiro/Saldo/Calculadora.png" id="3_f4sdg"]
+[ext_resource type="Theme" uid="uid://e4phmqgo0wcg" path="res://Scrips/Menu/fonte_Menu.tres" id="3_qutbl"]
 
 [node name="JogoDeTabuleiro" type="Control"]
 layout_mode = 3
@@ -12,7 +14,29 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iwsqn")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 position = Vector2(801.5, 409.5)
 scale = Vector2(1.66216, 1.65741)
 texture = ExtResource("2_lu2ht")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(801.5, 752)
+texture = ExtResource("3_f4sdg")
+
+[node name="Saldo" type="Label" parent="Sprite2D"]
+offset_left = -301.0
+offset_top = -14.0
+offset_right = -51.0
+offset_bottom = 66.0
+theme = ExtResource("3_qutbl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "Saldo:"
+
+[node name="SaldoValor" type="Label" parent="Sprite2D"]
+offset_left = -51.5
+offset_right = 275.5
+offset_bottom = 80.0
+theme = ExtResource("3_qutbl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60

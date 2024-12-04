@@ -1,4 +1,4 @@
-extends Object
+extends Control
 class_name tabuleiroclass
 
 var acoes_lista: Array = []  
@@ -58,9 +58,16 @@ func _buscar_acao_por_nicho(nicho: String) -> acoes:
 			return acao
 	return null
 
+
+
 func _ready() -> void:
-	# Inicializar saldo
+	var label_saldo_valor: Label #Criar a conexão entre o Label e o codigo
+	label_saldo_valor = $Sprite2D/SaldoValor
+	 
 	saldo = saldos.new(1000.0)  # O jogador começa com 1000 de saldo
+	
+	label_saldo_valor.text = "R$ %.2f" % saldo.puxar_saldo()
+	
 
 	# Inicializar menu de ações
 	menu = MenuDeAcoes.new()
