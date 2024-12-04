@@ -5731,7 +5731,6 @@ script = ExtResource("9_j1dma")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mae/Area2D"]
 position = Vector2(-22.3529, 63.6028)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_dqel3")
 
 [node name="Label" type="Label" parent="Mae"]
@@ -5762,7 +5761,6 @@ position = Vector2(293.571, 100)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer/Area2D"]
 position = Vector2(-17.8567, 3.21429)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_8c814")
 
 [node name="Label" type="Label" parent="TileMapLayer/Area2D"]

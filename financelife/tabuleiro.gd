@@ -6,6 +6,8 @@ var saldo: saldos
 var menu: MenuDeAcoes
 func D6() -> int:
 	return floor(randf_range(1, 6))
+func D66() -> int:
+	return floor(randf_range(-6, 6))
 func D8() -> int:
 	return floor(randf_range(4, 8))
 func adicionar_acao(nicho: String, preco: float):
@@ -45,33 +47,24 @@ func subida(acao: acoes) -> void:
 
 func queda(acao: acoes) -> void:
 	acao.preco -= D6()
-
-func mudar_valor_acoes(nicho1: String, resultado1: bool, nicho2: String, resultado2: bool):
+func volatil(acao: acoes) -> void:
+	acao.preco += D66()
+func mudar_valor_acoes(nicho1: String, resultado1: bool):
 	var acao1 = _buscar_acao_por_nicho(nicho1)
-	var acao2 = _buscar_acao_por_nicho(nicho2)
 	
-	if not acao1 or not acao2:
+	
+	if not acao1:
 		return  
 	
-	if nicho1 == nicho2 and resultado1 == resultado2:
-		if resultado1:
-			subida(acao1)
-		else:
-			queda(acao1)
-	elif nicho1 != nicho2 and resultado1 != resultado2:
-		if resultado1:
-			subida(acao1)
-			queda(acao2)
-		else:
-			queda(acao1)
-			subida(acao2)
-	elif nicho1 != nicho2 and resultado1 == resultado2:
-		if resultado1:
-			subida(acao1)
-			subida(acao2)
-		else:
-			queda(acao1)
-			queda(acao2)
+	if resultado1==true:
+		subida(acao1)
+	else:
+		queda(acao1)
+	for acao in acoes_lista:
+		if acao.nicho!=acao1.nicho:
+			volatil(acao)
+			
+			
 
 func _buscar_acao_por_nicho(nicho: String) -> acoes:
 	for acao in acoes_lista:
@@ -105,7 +98,7 @@ func _ready() -> void:
 	# Cartas fictícias para alterar valores
 	var carta1 = carta_informacao.new("Transporte", true)
 	var carta2 = carta_informacao.new("Saúde", false)
-	mudar_valor_acoes(carta1.nicho, carta1.informacao, carta2.nicho, carta2.informacao)
+	mudar_valor_acoes(carta1.nicho, carta1.informacao)
 
 	# Exibir ações atualizadas
 	print("---------------------------------------------------------------------------------------------")
