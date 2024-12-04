@@ -18,8 +18,25 @@ func inicializar_acoes():
 	adicionar_acao("Saúde", D8())
 	adicionar_acao("Alimentação", D8())
 	
-	var label_saldo_valor: Label 
-	label_saldo_valor = $Sprite2D/SaldoValor
+	var label_valor_acao_trans: Label 
+	label_valor_acao_trans = $"SituaçAçãoTrans/ValorAçãoTrans"
+	label_valor_acao_trans.text = "R$ %.2f" % acoes_lista[0].preco
+	
+	var label_valor_acao_side: Label 
+	label_valor_acao_side = $"SituaçAçãoSider/ValorAçãoSider"
+	label_valor_acao_side.text = "R$ %.2f" % acoes_lista[1].preco
+	
+	var label_valor_acao_tecno: Label 
+	label_valor_acao_tecno = $"SituaçAçãoTecno/ValorAçãoTecno"
+	label_valor_acao_tecno.text = "R$ %.2f" % acoes_lista[2].preco
+	
+	var label_valor_acao_saude: Label 
+	label_valor_acao_saude = $"SituaçAçãoSaúde/ValorAçãoSau"
+	label_valor_acao_saude.text = "R$ %.2f" % acoes_lista[3].preco
+	
+	var label_valor_acao_alim: Label 
+	label_valor_acao_alim = $"SituaçAçãoAlimen/ValorAçãoAlime"
+	label_valor_acao_alim.text = "R$ %.2f" % acoes_lista[4].preco
 	
 
 
