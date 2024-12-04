@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://djkpwwnuhpoe2"]
+[gd_scene load_steps=17 format=3 uid="uid://djkpwwnuhpoe2"]
 
 [ext_resource type="Script" path="res://tabuleiro.gd" id="1_iwsqn"]
 [ext_resource type="Texture2D" uid="uid://dxfcolaj3p1yq" path="res://assents/tabuleiro/BackGroud/image.png" id="2_lu2ht"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c548p68oyc1f7" path="res://assents/tabuleiro/Metas/Metas.png" id="5_fkm1x"]
 [ext_resource type="Texture2D" uid="uid://bbw0tj17fgnlo" path="res://assents/tabuleiro/SituaAção/Ação transporte.png" id="6_rf2sk"]
 [ext_resource type="Texture2D" uid="uid://ottdcllwsvoy" path="res://assents/tabuleiro/SituaAção/Ação tecnologia.png" id="7_m4pth"]
+[ext_resource type="FontFile" uid="uid://cgygq4u5j0y1w" path="res://assents/Fontes e Temas/Menu/RevMiniPixel.ttf" id="8_b5nva"]
 [ext_resource type="Texture2D" uid="uid://cufhuj66bd30p" path="res://assents/tabuleiro/SituaAção/Ação Siderugica.png" id="8_ogrb2"]
 [ext_resource type="Texture2D" uid="uid://b1d5bgenap4yt" path="res://assents/tabuleiro/SituaAção/Ação Saúde.png" id="9_yobsh"]
 [ext_resource type="Texture2D" uid="uid://bg7m73nyk5cmg" path="res://assents/tabuleiro/SituaAção/Ação alimentação.png" id="10_2dime"]
@@ -99,6 +100,11 @@ offset_left = -115.272
 offset_top = 21.457
 offset_right = 143.728
 offset_bottom = 143.457
+theme = ExtResource("3_qutbl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_b5nva")
+theme_override_font_sizes/font_size = 80
+text = "(valor)"
 
 [node name="SituaçAçãoTecno" type="Sprite2D" parent="."]
 position = Vector2(639, 175)
@@ -110,6 +116,11 @@ offset_left = -115.272
 offset_top = 21.457
 offset_right = 143.728
 offset_bottom = 143.457
+theme = ExtResource("3_qutbl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_b5nva")
+theme_override_font_sizes/font_size = 80
+text = "(valor)"
 
 [node name="SituaçAçãoSider" type="Sprite2D" parent="."]
 position = Vector2(644, 368)
@@ -121,6 +132,11 @@ offset_left = -115.272
 offset_top = 21.457
 offset_right = 143.728
 offset_bottom = 143.457
+theme = ExtResource("3_qutbl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_b5nva")
+theme_override_font_sizes/font_size = 80
+text = "(valor)"
 
 [node name="SituaçAçãoSaúde" type="Sprite2D" parent="."]
 position = Vector2(1056, 173)
@@ -132,6 +148,11 @@ offset_left = -115.272
 offset_top = 21.457
 offset_right = 143.728
 offset_bottom = 143.457
+theme = ExtResource("3_qutbl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_b5nva")
+theme_override_font_sizes/font_size = 80
+text = "(valor)"
 
 [node name="SituaçAçãoAlimen" type="Sprite2D" parent="."]
 position = Vector2(1065, 375)
@@ -143,6 +164,11 @@ offset_left = -115.272
 offset_top = 21.457
 offset_right = 143.728
 offset_bottom = 143.457
+theme = ExtResource("3_qutbl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_b5nva")
+theme_override_font_sizes/font_size = 80
+text = "(valor)"
 
 [node name="ticketAlimentacao" type="TextureRect" parent="."]
 layout_mode = 0
