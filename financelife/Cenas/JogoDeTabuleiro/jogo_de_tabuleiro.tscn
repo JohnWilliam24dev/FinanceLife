@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://djkpwwnuhpoe2"]
+[gd_scene load_steps=11 format=3 uid="uid://djkpwwnuhpoe2"]
 
 [ext_resource type="Script" path="res://tabuleiro.gd" id="1_iwsqn"]
 [ext_resource type="Texture2D" uid="uid://dxfcolaj3p1yq" path="res://assents/tabuleiro/BackGroud/image.png" id="2_lu2ht"]
 [ext_resource type="Texture2D" uid="uid://cx20a35fbvyxl" path="res://assents/tabuleiro/Saldo/Calculadora.png" id="3_f4sdg"]
 [ext_resource type="Theme" uid="uid://e4phmqgo0wcg" path="res://Scrips/Menu/fonte_Menu.tres" id="3_qutbl"]
+[ext_resource type="Texture2D" uid="uid://c548p68oyc1f7" path="res://assents/tabuleiro/Metas/Metas.png" id="5_fkm1x"]
+[ext_resource type="Texture2D" uid="uid://bbw0tj17fgnlo" path="res://assents/tabuleiro/SituaAção/Ação transporte.png" id="6_rf2sk"]
+[ext_resource type="Texture2D" uid="uid://ottdcllwsvoy" path="res://assents/tabuleiro/SituaAção/Ação tecnologia.png" id="7_m4pth"]
+[ext_resource type="Texture2D" uid="uid://cufhuj66bd30p" path="res://assents/tabuleiro/SituaAção/Ação Siderugica.png" id="8_ogrb2"]
+[ext_resource type="Texture2D" uid="uid://b1d5bgenap4yt" path="res://assents/tabuleiro/SituaAção/Ação Saúde.png" id="9_yobsh"]
+[ext_resource type="Texture2D" uid="uid://bg7m73nyk5cmg" path="res://assents/tabuleiro/SituaAção/Ação alimentação.png" id="10_2dime"]
 
 [node name="JogoDeTabuleiro" type="Control"]
 layout_mode = 3
@@ -20,7 +26,8 @@ scale = Vector2(1.66216, 1.65741)
 texture = ExtResource("2_lu2ht")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(801.5, 752)
+position = Vector2(809, 763)
+scale = Vector2(0.915885, 0.881481)
 texture = ExtResource("3_f4sdg")
 
 [node name="Saldo" type="Label" parent="Sprite2D"]
@@ -34,9 +41,100 @@ theme_override_font_sizes/font_size = 80
 text = "Saldo:"
 
 [node name="SaldoValor" type="Label" parent="Sprite2D"]
-offset_left = -51.5
-offset_right = 275.5
-offset_bottom = 80.0
+offset_left = -35.7578
+offset_top = -7.94118
+offset_right = 291.242
+offset_bottom = 72.0588
 theme = ExtResource("3_qutbl")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
+
+[node name="Metas" type="Sprite2D" parent="."]
+position = Vector2(1441, 188)
+scale = Vector2(0.484375, 0.461111)
+texture = ExtResource("5_fkm1x")
+
+[node name="Meta 1" type="Label" parent="Metas"]
+offset_left = -173.419
+offset_top = -149.639
+offset_right = 266.581
+offset_bottom = -39.6386
+theme = ExtResource("3_qutbl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "R$ 1000.00"
+
+[node name="Meta 2" type="Label" parent="Metas"]
+offset_left = -167.225
+offset_top = -34.6988
+offset_right = 272.775
+offset_bottom = 75.3012
+theme = ExtResource("3_qutbl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "R$ 500.00"
+
+[node name="Meta 3" type="Label" parent="Metas"]
+offset_left = -173.419
+offset_top = 88.9156
+offset_right = 266.581
+offset_bottom = 198.916
+theme = ExtResource("3_qutbl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "R$ 250.00"
+
+[node name="SituaçAçãoTrans" type="Sprite2D" parent="."]
+position = Vector2(654, 568)
+scale = Vector2(0.555208, 0.559259)
+texture = ExtResource("6_rf2sk")
+
+[node name="ValorAçãoTrans" type="Label" parent="SituaçAçãoTrans"]
+offset_left = -115.272
+offset_top = 21.457
+offset_right = 143.728
+offset_bottom = 143.457
+
+[node name="SituaçAçãoTecno" type="Sprite2D" parent="."]
+position = Vector2(639, 175)
+scale = Vector2(0.555208, 0.559259)
+texture = ExtResource("7_m4pth")
+
+[node name="ValorAçãoTecno" type="Label" parent="SituaçAçãoTecno"]
+offset_left = -115.272
+offset_top = 21.457
+offset_right = 143.728
+offset_bottom = 143.457
+
+[node name="SituaçAçãoSider" type="Sprite2D" parent="."]
+position = Vector2(644, 368)
+scale = Vector2(0.555208, 0.559259)
+texture = ExtResource("8_ogrb2")
+
+[node name="ValorAçãoSider" type="Label" parent="SituaçAçãoSider"]
+offset_left = -115.272
+offset_top = 21.457
+offset_right = 143.728
+offset_bottom = 143.457
+
+[node name="SituaçAçãoSaúde" type="Sprite2D" parent="."]
+position = Vector2(1056, 173)
+scale = Vector2(0.555208, 0.559259)
+texture = ExtResource("9_yobsh")
+
+[node name="ValorAçãoSau" type="Label" parent="SituaçAçãoSaúde"]
+offset_left = -115.272
+offset_top = 21.457
+offset_right = 143.728
+offset_bottom = 143.457
+
+[node name="SituaçAçãoAlimen" type="Sprite2D" parent="."]
+position = Vector2(1065, 375)
+scale = Vector2(0.555208, 0.559259)
+texture = ExtResource("10_2dime")
+
+[node name="ValorAçãoAlime" type="Label" parent="SituaçAçãoAlimen"]
+offset_left = -115.272
+offset_top = 21.457
+offset_right = 143.728
+offset_bottom = 143.457

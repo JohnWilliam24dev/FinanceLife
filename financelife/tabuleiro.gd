@@ -17,6 +17,10 @@ func inicializar_acoes():
 	adicionar_acao("Tecnologia", D8())
 	adicionar_acao("Saúde", D8())
 	adicionar_acao("Alimentação", D8())
+	
+	var label_saldo_valor: Label 
+	label_saldo_valor = $Sprite2D/SaldoValor
+	
 
 
 func subida(acao: acoes) -> void:
