@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://djkpwwnuhpoe2"]
+[gd_scene load_steps=3 format=3 uid="uid://djkpwwnuhpoe2"]
+
+[ext_resource type="Script" path="res://tabuleiro.gd" id="1_iwsqn"]
+[ext_resource type="Texture2D" uid="uid://dxfcolaj3p1yq" path="res://assents/tabuleiro/BackGroud/image.png" id="2_lu2ht"]
 
 [node name="JogoDeTabuleiro" type="Control"]
 layout_mode = 3
@@ -7,3 +10,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_iwsqn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(801.5, 409.5)
+scale = Vector2(1.66216, 1.65741)
+texture = ExtResource("2_lu2ht")
