@@ -38,3 +38,38 @@ func comprar_acao() -> void:
 		print("Compra realizada: %d ações de %s por %f cada." % [quantidade_atual, nicho_atual, preco_total / quantidade_atual])
 	else:
 		print("Compra não realizada. Saldo insuficiente.")
+# Calcula o valor total da venda
+func calcular_valor_total_venda(nicho: String, quantidade: int) -> float:
+	var acao = tabuleiro_ref._buscar_acao_por_nicho(nicho)
+	if not acao:
+		print("Ação não encontrada!")
+		return 0.0
+
+	return acao.preco * quantidade
+
+# Vende a ação com base na quantidade atual
+func vender_acao() -> void:
+	if nicho_atual == "":
+		print("Selecione um nicho antes de vender!")
+		return
+
+	var acao = tabuleiro_ref._buscar_acao_por_nicho(nicho_atual)
+	if not acao:
+		print("Ação não encontrada no tabuleiro.")
+		return
+
+	if acao.quantidade < quantidade_atual:
+		print("Venda não realizada. Quantidade insuficiente de ações.")
+		return
+
+	var valor_total = calcular_valor_total_venda(nicho_atual, quantidade_atual)
+	acao.quantidade -= quantidade_atual
+	saldo_ref.adicionar_saldo(valor_total)
+	print("Venda realizada: %d ações de %s por %f cada." % [quantidade_atual, nicho_atual, valor_total / quantidade_atual])
+
+# Atualiza a quantidade e exibe o valor total para venda em tempo real
+func atualizar_valor_em_tempo_real_venda(nicho: String, quantidade: int) -> void:
+	nicho_atual = nicho
+	quantidade_atual = quantidade
+	var valor_total = calcular_valor_total_venda(nicho, quantidade)
+	print("Valor total para vender %d ações de %s: %f" % [quantidade, nicho, valor_total])
