@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://djkpwwnuhpoe2"]
+[gd_scene load_steps=29 format=3 uid="uid://djkpwwnuhpoe2"]
 
 [ext_resource type="Script" path="res://tabuleiro.gd" id="1_iwsqn"]
 [ext_resource type="Texture2D" uid="uid://dxfcolaj3p1yq" path="res://assents/tabuleiro/BackGroud/image.png" id="2_lu2ht"]
@@ -16,6 +16,31 @@
 [ext_resource type="Texture2D" uid="uid://3dab0driso43" path="res://assents/tabuleiro/Menu de Ações/Siderurgica.png" id="13_dkp5k"]
 [ext_resource type="Texture2D" uid="uid://dk2r0pr5xjp5t" path="res://assents/tabuleiro/Menu de Ações/Tecnologia.png" id="14_545ae"]
 [ext_resource type="Texture2D" uid="uid://bmedw88bfikbu" path="res://assents/tabuleiro/Menu de Ações/Transporte.png" id="15_ycac5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u4gqx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g775d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iird1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4y1ip"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pmrx5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h6gp8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wuaep"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rfofx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lna07"]
+
+[sub_resource type="Theme" id="Theme_oqjbi"]
+resource_local_to_scene = true
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2y6lm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eqdqr"]
 
 [node name="JogoDeTabuleiro" type="Control"]
 layout_mode = 3
@@ -182,14 +207,14 @@ expand_mode = 1
 [node name="valorInvestidoAlimentacao" type="Label" parent="ticketAlimentacao"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 250.0
-offset_top = 188.0
-offset_right = 313.0
-offset_bottom = 207.0
+offset_left = 229.0
+offset_top = 191.0
+offset_right = 348.0
+offset_bottom = 210.0
 theme = ExtResource("3_qutbl")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 8
-text = "(VALOR INVEST)"
+theme_override_font_sizes/font_size = 15
+text = "R$ 0000,0000"
 
 [node name="btnComprar" type="Button" parent="ticketAlimentacao"]
 layout_mode = 0
@@ -197,6 +222,18 @@ offset_left = 200.0
 offset_top = 214.0
 offset_right = 277.0
 offset_bottom = 245.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_u4gqx")
 text = "Comprar"
 
 [node name="btnVender" type="Button" parent="ticketAlimentacao"]
@@ -205,6 +242,18 @@ offset_left = 289.0
 offset_top = 214.0
 offset_right = 353.0
 offset_bottom = 245.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g775d")
 text = "Vender
 "
 
@@ -220,23 +269,24 @@ offset_bottom = 392.0
 texture = ExtResource("12_4eak6")
 expand_mode = 1
 
-[node name="valorInvestidoSaude" type="Label" parent="ticketSaude"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 242.0
-offset_top = 188.0
-offset_right = 305.0
-offset_bottom = 211.0
-theme = ExtResource("3_qutbl")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "(VALOR INVEST)"
-
 [node name="btnComprar" type="Button" parent="ticketSaude"]
 layout_mode = 0
 offset_left = 195.0
 offset_top = 214.0
 offset_right = 272.0
 offset_bottom = 245.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_iird1")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_iird1")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_iird1")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_iird1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_iird1")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_iird1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_iird1")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_iird1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_iird1")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_iird1")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iird1")
 text = "Comprar"
 
 [node name="btnVender" type="Button" parent="ticketSaude"]
@@ -245,8 +295,32 @@ offset_left = 286.0
 offset_top = 215.0
 offset_right = 350.0
 offset_bottom = 246.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4y1ip")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_4y1ip")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4y1ip")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_4y1ip")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_4y1ip")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_4y1ip")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4y1ip")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_4y1ip")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4y1ip")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_4y1ip")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4y1ip")
 text = "Vender
 "
+
+[node name="valorInvestidoSaude" type="Label" parent="ticketSaude"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 225.0
+offset_top = 192.0
+offset_right = 344.0
+offset_bottom = 211.0
+theme = ExtResource("3_qutbl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "R$ 0000,0000"
 
 [node name="ticketSiderurgica" type="TextureRect" parent="."]
 layout_mode = 0
@@ -257,6 +331,59 @@ offset_bottom = 541.0
 texture = ExtResource("13_dkp5k")
 expand_mode = 1
 
+[node name="btnComprar" type="Button" parent="ticketSiderurgica"]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 196.0
+offset_right = 282.0
+offset_bottom = 227.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pmrx5")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_pmrx5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_pmrx5")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_pmrx5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_pmrx5")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_pmrx5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_pmrx5")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_pmrx5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_pmrx5")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_pmrx5")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_h6gp8")
+text = "Comprar"
+
+[node name="btnVender" type="Button" parent="ticketSiderurgica"]
+layout_mode = 0
+offset_left = 298.0
+offset_top = 196.0
+offset_right = 362.0
+offset_bottom = 227.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wuaep")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_wuaep")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wuaep")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_wuaep")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_wuaep")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_wuaep")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wuaep")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_wuaep")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wuaep")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_wuaep")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wuaep")
+text = "Vender
+"
+
+[node name="valorInvestidoSiderurgica" type="Label" parent="ticketSiderurgica"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 235.0
+offset_top = 173.0
+offset_right = 354.0
+offset_bottom = 192.0
+theme = ExtResource("3_qutbl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "R$ 0000,0000"
+
 [node name="ticketTecnologia" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = -139.0
@@ -266,6 +393,59 @@ offset_bottom = 681.0
 texture = ExtResource("14_545ae")
 expand_mode = 1
 
+[node name="valorInvestidoTecnologia" type="Label" parent="ticketTecnologia"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 237.0
+offset_top = 177.0
+offset_right = 356.0
+offset_bottom = 196.0
+theme = ExtResource("3_qutbl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "R$ 0000,0000"
+
+[node name="btnComprar" type="Button" parent="ticketTecnologia"]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 198.0
+offset_right = 282.0
+offset_bottom = 229.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rfofx")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_rfofx")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rfofx")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_rfofx")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_rfofx")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_rfofx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rfofx")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_rfofx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rfofx")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_rfofx")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rfofx")
+text = "Comprar"
+
+[node name="btnVender" type="Button" parent="ticketTecnologia"]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 200.0
+offset_right = 366.0
+offset_bottom = 231.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lna07")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_lna07")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_lna07")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_lna07")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_lna07")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_lna07")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_lna07")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_lna07")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lna07")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_lna07")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lna07")
+text = "Vender
+"
+
 [node name="ticketTransporte" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = -135.0
@@ -274,3 +454,57 @@ offset_right = 455.0
 offset_bottom = 821.0
 texture = ExtResource("15_ycac5")
 expand_mode = 1
+
+[node name="btnComprar" type="Button" parent="ticketTransporte"]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 200.0
+offset_right = 278.0
+offset_bottom = 231.0
+theme = SubResource("Theme_oqjbi")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2y6lm")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_2y6lm")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_2y6lm")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_2y6lm")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_2y6lm")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_2y6lm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2y6lm")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_2y6lm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2y6lm")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_2y6lm")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2y6lm")
+text = "Comprar"
+
+[node name="btnVender" type="Button" parent="ticketTransporte"]
+layout_mode = 0
+offset_left = 297.0
+offset_top = 201.0
+offset_right = 361.0
+offset_bottom = 232.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eqdqr")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_eqdqr")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_eqdqr")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_eqdqr")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_eqdqr")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_eqdqr")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_eqdqr")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_eqdqr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eqdqr")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_eqdqr")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eqdqr")
+text = "Vender
+"
+
+[node name="valorInvestidoTransporte" type="Label" parent="ticketTransporte"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 233.0
+offset_top = 177.0
+offset_right = 352.0
+offset_bottom = 196.0
+theme = ExtResource("3_qutbl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "R$ 0000,0000"
