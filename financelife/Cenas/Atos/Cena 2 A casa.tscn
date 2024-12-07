@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://cscdy1rh37obt"]
+[gd_scene load_steps=33 format=4 uid="uid://cscdy1rh37obt"]
 
 [ext_resource type="Shader" uid="uid://c41kmqlrs4dya" path="res://Utilitarios/CenaDeTransicao/Shaders_Transition.tres" id="1_2iwho"]
 [ext_resource type="PackedScene" uid="uid://djdqv1ats72uc" path="res://Sprites players/players/child_2d.tscn" id="1_bctd0"]
@@ -5108,12 +5108,6 @@ sources/1 = SubResource("TileSetAtlasSource_58gti")
 pattern_0 = SubResource("TileMapPattern_e5j38")
 pattern_1 = SubResource("TileMapPattern_bha0a")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqel3"]
-size = Vector2(143.529, 413.971)
-
-[sub_resource type="LabelSettings" id="LabelSettings_it7vw"]
-font = ExtResource("12_r0lty")
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dffkf"]
 texture = ExtResource("3_sq2qu")
 8:1/0 = 0
@@ -5656,8 +5650,9 @@ sources/0 = SubResource("TileSetAtlasSource_dffkf")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8c814"]
 size = Vector2(84.2858, 173.571)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kn0ij"]
-size = Vector2(110, 147)
+[sub_resource type="LabelSettings" id="LabelSettings_it7vw"]
+font = ExtResource("12_r0lty")
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_stipn"]
 animations = [{
@@ -5727,25 +5722,6 @@ position = Vector2(904, 556)
 scale = Vector2(0.85, 0.85)
 script = ExtResource("9_j1dma")
 
-[node name="Area2D" type="Area2D" parent="Mae"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mae/Area2D"]
-position = Vector2(-22.3529, 63.6028)
-shape = SubResource("RectangleShape2D_dqel3")
-
-[node name="Label" type="Label" parent="Mae"]
-visible = false
-texture_filter = 1
-offset_left = -119.0
-offset_top = -171.0
-offset_right = 121.0
-offset_bottom = -135.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_r0lty")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = ExtResource("11_u7qta")
-label_settings = SubResource("LabelSettings_it7vw")
-
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 light_mask = 8
 visibility_layer = 8
@@ -5764,6 +5740,7 @@ position = Vector2(-17.8567, 3.21429)
 shape = SubResource("RectangleShape2D_8c814")
 
 [node name="Label" type="Label" parent="TileMapLayer/Area2D"]
+visible = false
 texture_filter = 1
 offset_left = -126.428
 offset_top = -145.714
@@ -5779,12 +5756,6 @@ label_settings = SubResource("LabelSettings_it7vw")
 
 [node name="nut" type="Node2D" parent="."]
 script = ExtResource("12_kl54s")
-
-[node name="Area2D" type="Area2D" parent="nut"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="nut/Area2D"]
-position = Vector2(680, 658.5)
-shape = SubResource("RectangleShape2D_kn0ij")
 
 [node name="texture" type="AnimatedSprite2D" parent="nut"]
 position = Vector2(680, 626)
@@ -5804,9 +5775,5 @@ theme_override_font_sizes/font_size = 8
 theme_override_styles/normal = ExtResource("11_u7qta")
 label_settings = SubResource("LabelSettings_2gh4i")
 
-[connection signal="body_entered" from="Mae/Area2D" to="Mae" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Mae/Area2D" to="Mae" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="TileMapLayer/Area2D" to="TileMapLayer" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="TileMapLayer/Area2D" to="TileMapLayer" method="_on_area_2d_body_exited"]
-[connection signal="body_entered" from="nut/Area2D" to="nut" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="nut/Area2D" to="nut" method="_on_area_2d_body_exited"]

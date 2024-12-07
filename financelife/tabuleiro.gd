@@ -189,23 +189,23 @@ func _ready() -> void:
 
 
 func _on_btn_comprar_alim_pressed() -> void:
-	pass # Replace with function body.
+	menu.comprar_acao("Alimentação",quantiAcaoAlim)
 
 func _on_btn_comprar_side_pressed() -> void:
-	pass # Replace with function body.
+	menu.comprar_acao("Siderúrgica",quantiAcaoSider)
 
 
 func _on_btn_comprar_tecno_pressed() -> void:
-	pass # Replace with function body.
+	menu.comprar_acao("Tecnologia",quantiAcaoTrans)
 
 
 func _on_btn_comprar_trans_pressed() -> void:
-	pass # Replace with function body.
+	menu.comprar_acao("Transporte",quantiAcaoTrans)
 
 
 func _on_btn_comprar_sau_pressed() -> void:
-	pass # Replace with function body.
-
+	menu.comprar_acao("Saúde",quantiAcaoSau)
+	
 #Metodos de realizar vendas unitarias
 
 
