@@ -178,7 +178,7 @@ func _ready() -> void:
 	for acao in acoes_lista:
 		print("Nicho: %s, Preço: %f" % [acao.nicho, acao.preco])
 		
-	
+	var fim =saldo.meta
 	
 
 #Metodos de Realizar comprar
