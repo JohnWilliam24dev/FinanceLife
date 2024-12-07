@@ -4,6 +4,12 @@ class_name tabuleiroclass
 @onready var botao_proximo_turno: Button = $BotaoProximoTurno
 
 var _current_carta_sprite: Sprite2D = null
+var quantiAcaoAlim: int=0
+var quantiAcaoSider: int=0
+var quantiAcaoTecno: int=0
+var quantiAcaoTrans: int=0
+var quantiAcaoSau: int=0
+
 var acoes_lista: Array = []  
 var saldo: saldos
 var menu: MenuDeAcoes
@@ -134,11 +140,7 @@ func _ready() -> void:
 	menu.configurar(self, saldo)
 	inicializar_acoes()
 	
-	var quantiAcaoAlim: int=0
-	var quantiAcaoSider: int=0
-	var quantiAcaoTecno: int=0
-	var quantiAcaoTrans: int=0
-	var quantiAcaoSau: int=0
+	
 	
 	var btn_comprar = $ticketAlimentacao/btnComprar
 	

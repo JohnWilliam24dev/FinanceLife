@@ -19,3 +19,8 @@ func subtrair_saldo(valor: float) -> bool:
 	else:
 		print("Saldo insuficiente!")
 		return false
+func meta()->bool:
+	if(saldo==2000):
+		return true
+	else:
+		return false
