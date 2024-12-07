@@ -140,6 +140,10 @@ func _ready() -> void:
 	menu.configurar(self, saldo)
 	inicializar_acoes()
 	
+	var label_Lucro_Atual: Label = $Lucro/LucroAtual
+	#Criar a instancia do Lucro e imprimir o valor
+	#saldo = saldos.new(100.0)
+	#label_Lucro_Atual.text = " %.2f" % saldo.puxar_saldo()
 	
 	
 	var btn_comprar = $ticketAlimentacao/btnComprar
