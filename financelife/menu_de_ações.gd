@@ -31,19 +31,19 @@ func atualizar_preco_em_tempo_real(nicho: String, quantidade: int) -> void:
 # Compra a ação com base na quantidade atual
 func comprar_acao(nicho:String,quantidade:int) -> void:
 	if nicho == "Alimentação":
-		tabuleiro_ref.quantiAcaoAlim+=quantidade
+		tabuleiro_ref.quantiAcaoAlim=tabuleiro_ref.quantiAcaoAlim+1
 		return
 	elif nicho == "Transporte":
-		tabuleiro_ref.quantiAcaoTrans+=quantidade
+		tabuleiro_ref.quantiAcaoTrans=tabuleiro_ref.quantiAcaoTrans+1
 		return
 	elif nicho == "Tecnologia":
-		tabuleiro_ref.quantiAcaoTecno+=quantidade
+		tabuleiro_ref.quantiAcaoTecno=tabuleiro_ref.quantiAcaoTecno+1
 		return
 	elif nicho == "Siderúrgica":
-		tabuleiro_ref.quantiAcaoSider+=quantidade
+		tabuleiro_ref.quantiAcaoSider=tabuleiro_ref.quantiAcaoSider+1
 		return
 	elif nicho == "Saúde":
-		tabuleiro_ref.quantiAcaoSau+=quantidade
+		tabuleiro_ref.quantiAcaoSau=tabuleiro_ref.quantiAcaoSau+1
 		return
 	var preco_total = calcular_preco_total(nicho, quantidade)
 	valor_de_compra=preco_total
@@ -57,14 +57,24 @@ func comprar_acao(nicho:String,quantidade:int) -> void:
 
 # Vende a ação com base na quantidade atual
 func vender_acao(nicho:String,quantidades:int) -> void:
-	if nicho_atual == "":
-		print("Selecione um nicho antes de vender!")
+	if nicho == "Alimentação":
+		tabuleiro_ref.quantiAcaoAlim=tabuleiro_ref.quantiAcaoAlim-1
+		return
+	elif nicho == "Transporte":
+		tabuleiro_ref.quantiAcaoTrans=tabuleiro_ref.quantiAcaoTrans-1
+		return
+	elif nicho == "Tecnologia":
+		tabuleiro_ref.quantiAcaoTecno=tabuleiro_ref.quantiAcaoTecno-1
+		return
+	elif nicho == "Siderúrgica":
+		tabuleiro_ref.quantiAcaoSider=tabuleiro_ref.quantiAcaoSider-1
+		return
+	elif nicho == "Saúde":
+		tabuleiro_ref.quantiAcaoSau=tabuleiro_ref.quantiAcaoSau-1
 		return
 
 	var acao = tabuleiro_ref._buscar_acao_por_nicho(nicho_atual)
-	if not acao:
-		print("Ação não encontrada no tabuleiro.")
-		return
+	
 
 	if acao.quantidade < quantidades:
 		print("Venda não realizada. Quantidade insuficiente de ações.")
@@ -75,7 +85,8 @@ func vender_acao(nicho:String,quantidades:int) -> void:
 	saldo_ref.adicionar_saldo(valor_total)
 	print("Venda realizada: %d ações de %s por %f cada." % [quantidades, nicho_atual, valor_total / quantidade_atual])
 
-# Atualiza a quantidade e exibe o valor total para venda em tempo real
+   
+	   
 func atualizar_valor_em_tempo_real_venda(nicho: String, quantidade: int) -> void:
 	nicho_atual = nicho
 	quantidade_atual = quantidade
