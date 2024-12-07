@@ -127,12 +127,37 @@ func exibir_carta(carta: carta_informacao):
 func _ready() -> void:
 	botao_proximo_turno.connect("pressed", Callable(self, "nova_rodada"))
 	var label_saldo_valor: Label = $Sprite2D/SaldoValor
-	saldo = saldos.new(1000.0)
+	saldo = saldos.new(100.0)
 	label_saldo_valor.text = "R$ %.2f" % saldo.puxar_saldo()
 
 	menu = MenuDeAcoes.new()
 	menu.configurar(self, saldo)
 	inicializar_acoes()
+	
+	var quantiAcaoAlim: int=0
+	var quantiAcaoSider: int=0
+	var quantiAcaoTecno: int=0
+	var quantiAcaoTrans: int=0
+	var quantiAcaoSau: int=0
+	
+	var btn_comprar = $ticketAlimentacao/btnComprar
+	
+	var label_valor_alim: Label = $ticketAlimentacao/valorInvestido
+	label_valor_alim.text = "R$ %.2f" % menu.calcular_preco_total("Alimentação",quantiAcaoAlim)
+	
+	var label_valor_sider: Label = $ticketSiderúgica/valorInvestido
+	label_valor_sider.text = "R$ %.2f" % menu.calcular_preco_total("Siderúrgica",quantiAcaoAlim)
+	
+	var label_valor_tecno: Label = $ticketTecnologia/valorInvestido
+	label_valor_tecno.text = "R$ %.2f" % menu.calcular_preco_total("Tecnologia",quantiAcaoAlim)
+	
+	var label_valor_trasp: Label = $ticketTrasporte/valorInvestido
+	label_valor_trasp.text = "R$ %.2f" % menu.calcular_preco_total("Transporte",quantiAcaoAlim)
+	
+	var label_valor_sau: Label = $ticketSaúde/valorInvestido
+	label_valor_sau.text = "R$ %.2f" % menu.calcular_preco_total("Saúde",quantiAcaoAlim)
+	
+	
 
 	print("Ações iniciais:")
 	for acao in acoes_lista:

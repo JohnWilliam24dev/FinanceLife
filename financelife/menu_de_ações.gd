@@ -29,9 +29,9 @@ func atualizar_preco_em_tempo_real(nicho: String, quantidade: int) -> void:
 
 # Compra a ação com base na quantidade atual
 func comprar_acao() -> void:
-	if nicho_atual == "":
-		print("Selecione um nicho antes de comprar!")
-		return
+	#if nicho_atual == "":
+		#print("Selecione um nicho antes de comprar!")
+		#return
 
 	var preco_total = calcular_preco_total(nicho_atual, quantidade_atual)
 	if saldo_ref.subtrair_saldo(preco_total):
