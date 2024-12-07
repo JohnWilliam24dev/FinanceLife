@@ -174,3 +174,74 @@ func _ready() -> void:
 	print("Ações após aplicação da carta:")
 	for acao in acoes_lista:
 		print("Nicho: %s, Preço: %f" % [acao.nicho, acao.preco])
+		
+	
+	
+
+#Metodos de Realizar comprar
+
+
+
+func _on_btn_comprar_alim_pressed() -> void:
+	pass # Replace with function body.
+
+func _on_btn_comprar_side_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_btn_comprar_tecno_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_btn_comprar_trans_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_btn_comprar_sau_pressed() -> void:
+	pass # Replace with function body.
+
+#Metodos de realizar vendas unitarias
+
+
+
+func _on_btn_vender_alim_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_btn_vender_side_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_btn_vender_tecno_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_btn_vender_trans_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_btn_vender_sau_pressed() -> void:
+	pass # Replace with function body.
+
+
+#Metodos de realizar venda total
+
+
+func _on_btn_vender_tudo_alim_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_btn_vender_tudo_side_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_btn_vender_tudo_tecno_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_btn_vender_tudo_trans_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_btn_vender_tudo_sau_pressed() -> void:
+	pass # Replace with function body.

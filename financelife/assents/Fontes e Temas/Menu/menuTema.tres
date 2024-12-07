@@ -3,10 +3,10 @@
 [ext_resource type="FontFile" uid="uid://cgygq4u5j0y1w" path="res://assents/Fontes e Temas/Menu/RevMiniPixel.ttf" id="1_0vktm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0rsny"]
-bg_color = Color(0.979596, 0.19941, 0.807002, 1)
+bg_color = Color(0.556863, 0.435294, 0.254902, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vqw3o"]
-bg_color = Color(0.422256, 0.0102281, 0.352267, 1)
+bg_color = Color(0.556863, 0.435294, 0.254902, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -21,7 +21,7 @@ border_width_bottom = 1
 border_blend = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oa0xc"]
-bg_color = Color(0.422256, 0.0102281, 0.352267, 1)
+bg_color = Color(0.557415, 0.435473, 0.256157, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2eglf"]
 bg_color = Color(1, 0.752941, 0.796078, 1)
