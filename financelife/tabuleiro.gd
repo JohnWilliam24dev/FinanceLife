@@ -4,11 +4,11 @@ class_name tabuleiroclass
 @onready var botao_proximo_turno: Button = $BotaoProximoTurno
 
 var _current_carta_sprite: Sprite2D = null
-var quantiAcaoAlim: int=0
-var quantiAcaoSider: int=0
-var quantiAcaoTecno: int=0
-var quantiAcaoTrans: int=0
-var quantiAcaoSau: int=0
+var quantiAcaoAlim: int=1
+var quantiAcaoSider: int=1
+var quantiAcaoTecno: int=1
+var quantiAcaoTrans: int=1
+var quantiAcaoSau: int=1
 
 var acoes_lista: Array = []  
 var saldo: saldos
@@ -152,16 +152,16 @@ func _ready() -> void:
 	label_valor_alim.text = "R$ %.2f" % menu.calcular_preco_total("Alimentação",quantiAcaoAlim)
 	
 	var label_valor_sider: Label = $ticketSiderúgica/valorInvestido
-	label_valor_sider.text = "R$ %.2f" % menu.calcular_preco_total("Siderúrgica",quantiAcaoAlim)
+	label_valor_sider.text = "R$ %.2f" % menu.calcular_preco_total("Siderúrgica",quantiAcaoSider)
 	
 	var label_valor_tecno: Label = $ticketTecnologia/valorInvestido
-	label_valor_tecno.text = "R$ %.2f" % menu.calcular_preco_total("Tecnologia",quantiAcaoAlim)
+	label_valor_tecno.text = "R$ %.2f" % menu.calcular_preco_total("Tecnologia",quantiAcaoTecno)
 	
 	var label_valor_trasp: Label = $ticketTrasporte/valorInvestido
-	label_valor_trasp.text = "R$ %.2f" % menu.calcular_preco_total("Transporte",quantiAcaoAlim)
+	label_valor_trasp.text = "R$ %.2f" % menu.calcular_preco_total("Transporte",quantiAcaoTrans)
 	
 	var label_valor_sau: Label = $ticketSaúde/valorInvestido
-	label_valor_sau.text = "R$ %.2f" % menu.calcular_preco_total("Saúde",quantiAcaoAlim)
+	label_valor_sau.text = "R$ %.2f" % menu.calcular_preco_total("Saúde",quantiAcaoSau)
 	
 	
 
@@ -172,7 +172,7 @@ func _ready() -> void:
 	var cartas_sorteadas = sortear_cartas(1)
 	for carta in cartas_sorteadas:
 		print("Carta sorteada - Nicho: %s, Impacto Positivo: %s" % [carta.nicho, str(carta.informacao)])
-		mudar_valor_acoes(carta.nicho, carta.informacao)
+		
 
 	exibir_carta(cartas_sorteadas[0])
 
@@ -183,27 +183,40 @@ func _ready() -> void:
 		
 	
 	
+	
 
 #Metodos de Realizar comprar
 
 
 
 func _on_btn_comprar_alim_pressed() -> void:
+	print(1)
+	var label_valor_alim: Label = $ticketAlimentacao/valorInvestido
+	label_valor_alim.text = "R$ %.2f" % menu.calcular_preco_total("Alimentação",quantiAcaoAlim)
+	
 	menu.comprar_acao("Alimentação",quantiAcaoAlim)
 
 func _on_btn_comprar_side_pressed() -> void:
+	var label_valor_sider: Label = $ticketSiderúgica/valorInvestido
+	label_valor_sider.text = "R$ %.2f" % menu.calcular_preco_total("Siderúrgica",quantiAcaoSider)
 	menu.comprar_acao("Siderúrgica",quantiAcaoSider)
 
 
 func _on_btn_comprar_tecno_pressed() -> void:
-	menu.comprar_acao("Tecnologia",quantiAcaoTrans)
+	var label_valor_tecno: Label = $ticketTecnologia/valorInvestido
+	label_valor_tecno.text = "R$ %.2f" % menu.calcular_preco_total("Tecnologia",quantiAcaoTecno)
+	menu.comprar_acao("Tecnologia",quantiAcaoTecno)
 
 
 func _on_btn_comprar_trans_pressed() -> void:
+	var label_valor_trasp: Label = $ticketTrasporte/valorInvestido
+	label_valor_trasp.text = "R$ %.2f" % menu.calcular_preco_total("Transporte",quantiAcaoTrans)
 	menu.comprar_acao("Transporte",quantiAcaoTrans)
 
 
 func _on_btn_comprar_sau_pressed() -> void:
+	var label_valor_sau: Label = $ticketSaúde/valorInvestido
+	label_valor_sau.text = "R$ %.2f" % menu.calcular_preco_total("Saúde",quantiAcaoSau)
 	menu.comprar_acao("Saúde",quantiAcaoSau)
 	
 #Metodos de realizar vendas unitarias
