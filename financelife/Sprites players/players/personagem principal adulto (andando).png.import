@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://q5djil4h5ab"
-path="res://.godot/imported/2.png-212351797cd2aeea12d75bfb551bf68a.ctex"
+uid="uid://waa7eqpgyaqu"
+path="res://.godot/imported/personagem principal adulto (andando).png-d30c0fc30d51b9348db454528893b2a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assents/Cenarios/Menu/Background Cidade Menu/Night/2.png"
-dest_files=["res://.godot/imported/2.png-212351797cd2aeea12d75bfb551bf68a.ctex"]
+source_file="res://Sprites players/players/personagem principal adulto (andando).png"
+dest_files=["res://.godot/imported/personagem principal adulto (andando).png-d30c0fc30d51b9348db454528893b2a9.ctex"]
 
 [params]
 

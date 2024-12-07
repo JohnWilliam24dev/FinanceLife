@@ -45,18 +45,18 @@ font_size = 30
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_31k3t"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xj7h3"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yak2y"]
 bg_color = Color(0.2, 0.2, 0.2, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8xd5"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13eev"]
 bg_color = Color(0.2, 0.2, 0.2, 0.12549)
 
 [sub_resource type="Theme" id="Theme_xwbqu"]
 default_font = ExtResource("7_06t8p")
 Button/font_sizes/font_size = 45
 Button/fonts/font = ExtResource("7_06t8p")
-Button/styles/focus = SubResource("StyleBoxFlat_xj7h3")
-Button/styles/normal = SubResource("StyleBoxFlat_q8xd5")
+Button/styles/focus = SubResource("StyleBoxFlat_yak2y")
+Button/styles/normal = SubResource("StyleBoxFlat_13eev")
 
 [sub_resource type="Animation" id="Animation_wvpum"]
 resource_name = "AnimaCrédito"

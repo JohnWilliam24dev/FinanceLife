@@ -144,12 +144,9 @@ func _ready() -> void:
 	#Criar a instancia do Lucro e imprimir o valor
 	#saldo = saldos.new(100.0)
 	#label_Lucro_Atual.text = " %.2f" % saldo.puxar_saldo()
+
 	
 	
-	var btn_comprar = $ticketAlimentacao/btnComprar
-	
-	var label_valor_alim: Label = $ticketAlimentacao/valorInvestido
-	label_valor_alim.text = "R$ %.2f" % menu.calcular_preco_total("Alimentação",quantiAcaoAlim)
 	
 	var label_valor_sider: Label = $ticketSiderúgica/valorInvestido
 	label_valor_sider.text = "R$ %.2f" % menu.calcular_preco_total("Siderúrgica",quantiAcaoAlim)
@@ -189,7 +186,9 @@ func _ready() -> void:
 
 
 func _on_btn_comprar_alim_pressed() -> void:
-	menu.comprar_acao("Alimentação",quantiAcaoAlim)
+	var label_valor_alim: Label = $ticketAlimentacao/valorInvestido
+	label_valor_alim.text = "R$ %.2f" % menu.calcular_preco_total("Alimentação",quantiAcaoAlim)
+	menu.comprar_acao("Alimentação",1)
 
 func _on_btn_comprar_side_pressed() -> void:
 	menu.comprar_acao("Siderúrgica",quantiAcaoSider)

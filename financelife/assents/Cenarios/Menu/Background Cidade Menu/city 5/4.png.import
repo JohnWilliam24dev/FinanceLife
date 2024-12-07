@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e74ysxc73rt7"
-path="res://.godot/imported/3.png-ec440d0696231a4e840707be1d88c552.ctex"
+uid="uid://dqt1dkepqmdty"
+path="res://.godot/imported/4.png-0d961a8ed25a39897b973e5ca77004d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assents/Cenarios/Menu/Background Cidade Menu/Night/3.png"
-dest_files=["res://.godot/imported/3.png-ec440d0696231a4e840707be1d88c552.ctex"]
+source_file="res://assents/Cenarios/Menu/Background Cidade Menu/city 5/4.png"
+dest_files=["res://.godot/imported/4.png-0d961a8ed25a39897b973e5ca77004d8.ctex"]
 
 [params]
 

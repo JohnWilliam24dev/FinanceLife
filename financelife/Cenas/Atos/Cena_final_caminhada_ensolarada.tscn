@@ -1,0 +1,173 @@
+[gd_scene load_steps=23 format=3 uid="uid://d0reiheej3hb0"]
+
+[ext_resource type="PackedScene" uid="uid://ckswjkl7c765b" path="res://Utilitarios/CenaDeTransicao/transition in.tscn" id="1_dne0x"]
+[ext_resource type="Script" path="res://Scrips/Ato 1/cena_final_caminhada_ensolarada.gd" id="1_v342s"]
+[ext_resource type="Shader" path="res://Shadens/Movimentação BackGround.gdshader" id="2_ofy3f"]
+[ext_resource type="Texture2D" uid="uid://buno5phb1ugtx" path="res://assents/Cenarios/Menu/Background Cidade Menu/city 5/1.png" id="3_obig7"]
+[ext_resource type="Texture2D" uid="uid://do6voguqygy5b" path="res://assents/Cenarios/Menu/Background Cidade Menu/city 5/2.png" id="4_qrvad"]
+[ext_resource type="Texture2D" uid="uid://bcq1b83gmo28q" path="res://assents/Cenarios/Menu/Background Cidade Menu/city 5/3.png" id="5_5yrln"]
+[ext_resource type="Texture2D" uid="uid://dqt1dkepqmdty" path="res://assents/Cenarios/Menu/Background Cidade Menu/city 5/4.png" id="6_pypwx"]
+[ext_resource type="Texture2D" uid="uid://cq377gtu27rfh" path="res://assents/Cenarios/Menu/Background Cidade Menu/city 5/5.png" id="7_ahq7d"]
+[ext_resource type="Texture2D" uid="uid://cf0wdvvaq5l00" path="res://assents/Cenarios/Cenas Jogo/Ato 1/Cidade_Cena 1/6.png" id="8_5okvg"]
+[ext_resource type="Texture2D" uid="uid://waa7eqpgyaqu" path="res://Sprites players/players/personagem principal adulto (andando).png" id="9_0o0rm"]
+[ext_resource type="Theme" uid="uid://e4phmqgo0wcg" path="res://Scrips/Menu/fonte_Menu.tres" id="10_3uyfj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r0c1d"]
+shader = ExtResource("2_ofy3f")
+shader_parameter/move_speed = 0.01
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ddqko"]
+shader = ExtResource("2_ofy3f")
+shader_parameter/move_speed = 0.01
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c8aoq"]
+shader = ExtResource("2_ofy3f")
+shader_parameter/move_speed = 0.01
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_llxho"]
+shader = ExtResource("2_ofy3f")
+shader_parameter/move_speed = 0.02
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aeheo"]
+shader = ExtResource("2_ofy3f")
+shader_parameter/move_speed = 0.02
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_asgom"]
+shader = ExtResource("2_ofy3f")
+shader_parameter/move_speed = 0.05
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hu61w"]
+atlas = ExtResource("9_0o0rm")
+region = Rect2(0, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abugd"]
+atlas = ExtResource("9_0o0rm")
+region = Rect2(256, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0kxe"]
+atlas = ExtResource("9_0o0rm")
+region = Rect2(384, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01a7v"]
+atlas = ExtResource("9_0o0rm")
+region = Rect2(512, 0, 128, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ewhsh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hu61w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abugd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0kxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01a7v")
+}],
+"loop": true,
+"name": &"andar",
+"speed": 2.0
+}]
+
+[node name="Cena Final-Caminhada ensolada" type="Node2D"]
+script = ExtResource("1_v342s")
+
+[node name="Transição IN" parent="." instance=ExtResource("1_dne0x")]
+
+[node name="BG" type="ParallaxBackground" parent="."]
+scale = Vector2(1.2, 1.2)
+transform = Transform2D(1.2, 0, 0, 1.2, 0, 0)
+
+[node name="Nuvem" type="ParallaxLayer" parent="BG"]
+position = Vector2(573.333, 378.333)
+scale = Vector2(1, 0.893637)
+
+[node name="1" type="Sprite2D" parent="BG/Nuvem"]
+self_modulate = Color(1, 1, 0.572549, 0.235294)
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_r0c1d")
+position = Vector2(-40, -63.3333)
+scale = Vector2(2.6, 2.6)
+texture = ExtResource("3_obig7")
+
+[node name="CF 1" type="ParallaxLayer" parent="BG"]
+position = Vector2(537.5, 314.167)
+scale = Vector2(0.930559, 1.39572)
+
+[node name="2" type="Sprite2D" parent="BG/CF 1"]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_ddqko")
+position = Vector2(-3, -100)
+scale = Vector2(2.6, 2.6)
+texture = ExtResource("4_qrvad")
+
+[node name="CF 2" type="ParallaxLayer" parent="BG"]
+
+[node name="3" type="Sprite2D" parent="BG/CF 2"]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_c8aoq")
+position = Vector2(537.5, 333.333)
+scale = Vector2(2.6, 2.6)
+texture = ExtResource("5_5yrln")
+
+[node name="CF 3" type="ParallaxLayer" parent="BG"]
+
+[node name="4" type="Sprite2D" parent="BG/CF 3"]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_llxho")
+position = Vector2(533.333, 285)
+scale = Vector2(2.6, 2.6)
+texture = ExtResource("6_pypwx")
+
+[node name="CF 4" type="ParallaxLayer" parent="BG"]
+
+[node name="5" type="Sprite2D" parent="BG/CF 4"]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_aeheo")
+position = Vector2(549.167, 291.667)
+scale = Vector2(2.6, 2.6)
+texture = ExtResource("7_ahq7d")
+
+[node name="Asfalto" type="ParallaxLayer" parent="BG"]
+position = Vector2(65.8333, -105.833)
+scale = Vector2(0.929114, 1.0078)
+
+[node name="6" type="Sprite2D" parent="BG/Asfalto"]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_asgom")
+position = Vector2(570, 332.5)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("8_5okvg")
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+texture_filter = 1
+position = Vector2(662, 648)
+sprite_frames = SubResource("SpriteFrames_ewhsh")
+animation = &"andar"
+autoplay = "andar"
+frame_progress = 0.27077
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(623, 400)
+offset = Vector2(20, 0)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 302.0
+offset_top = 42.0
+offset_right = 1202.0
+offset_bottom = 122.0
+theme = ExtResource("10_3uyfj")
+theme_override_colors/font_color = Color(1, 0.843137, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "\"Obrigado por jogar!\""
