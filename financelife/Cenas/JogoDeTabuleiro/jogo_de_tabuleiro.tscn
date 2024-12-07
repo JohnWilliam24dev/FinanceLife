@@ -21,9 +21,9 @@
 [ext_resource type="Theme" uid="uid://bje24vjgkssut" path="res://assents/Fontes e Temas/Menu/menuTema.tres" id="17_xucgm"]
 [ext_resource type="Texture2D" uid="uid://c1nwl347qagwx" path="res://assents/tabuleiro/Metas/Meta (2).png" id="20_5g8dt"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g775d"]
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u4gqx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g775d"]
 
 [node name="JogoDeTabuleiro" type="Control"]
 layout_mode = 3
@@ -213,28 +213,6 @@ theme = ExtResource("13_03x08")
 text = "Vender
 "
 
-[node name="btnVenderTudoAlim" type="Button" parent="ticketAlimentacao"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 82.0
-offset_top = 112.0
-offset_right = 181.0
-offset_bottom = 143.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_g775d")
-text = "Vender Tudo
-"
-
 [node name="ticketSiderúgica" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 13.0
@@ -297,28 +275,6 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_g775d")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_g775d")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_g775d")
 text = "Vender
-"
-
-[node name="btnVenderTudoSide" type="Button" parent="ticketSiderúgica"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 85.0
-offset_top = 114.0
-offset_right = 184.0
-offset_bottom = 145.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_g775d")
-text = "Vender Tudo
 "
 
 [node name="ticketTecnologia" type="TextureRect" parent="."]
@@ -385,28 +341,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_g775d")
 text = "Vender
 "
 
-[node name="btnVenderTudoTecno" type="Button" parent="ticketTecnologia"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 86.0
-offset_top = 113.0
-offset_right = 185.0
-offset_bottom = 144.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_g775d")
-text = "Vender Tudo
-"
-
 [node name="ticketTrasporte" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 13.0
@@ -471,28 +405,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_g775d")
 text = "Vender
 "
 
-[node name="btnVenderTudoTrans" type="Button" parent="ticketTrasporte"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 88.0
-offset_top = 115.0
-offset_right = 187.0
-offset_bottom = 146.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_g775d")
-text = "Vender Tudo
-"
-
 [node name="ticketSaúde" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 13.0
@@ -546,28 +458,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_g775d")
 text = "Vender
 "
 
-[node name="btnVenderTudoSau" type="Button" parent="ticketSaúde"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 83.0
-offset_top = 112.0
-offset_right = 182.0
-offset_bottom = 143.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_g775d")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_g775d")
-text = "Vender Tudo
-"
-
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(1347, 573)
 
@@ -614,16 +504,11 @@ text = " 0,00"
 
 [connection signal="pressed" from="ticketAlimentacao/btnComprarAlim" to="." method="_on_btn_comprar_alim_pressed"]
 [connection signal="pressed" from="ticketAlimentacao/btnVenderAlim" to="." method="_on_btn_vender_alim_pressed"]
-[connection signal="pressed" from="ticketAlimentacao/btnVenderTudoAlim" to="." method="_on_btn_vender_tudo_alim_pressed"]
 [connection signal="pressed" from="ticketSiderúgica/btnComprarSide" to="." method="_on_btn_comprar_side_pressed"]
 [connection signal="pressed" from="ticketSiderúgica/btnVenderSide" to="." method="_on_btn_vender_side_pressed"]
-[connection signal="pressed" from="ticketSiderúgica/btnVenderTudoSide" to="." method="_on_btn_vender_tudo_side_pressed"]
 [connection signal="pressed" from="ticketTecnologia/btnComprarTecno" to="." method="_on_btn_comprar_tecno_pressed"]
 [connection signal="pressed" from="ticketTecnologia/btnVenderTecno" to="." method="_on_btn_vender_tecno_pressed"]
-[connection signal="pressed" from="ticketTecnologia/btnVenderTudoTecno" to="." method="_on_btn_vender_tudo_tecno_pressed"]
 [connection signal="pressed" from="ticketTrasporte/btnComprarTrans" to="." method="_on_btn_comprar_trans_pressed"]
 [connection signal="pressed" from="ticketTrasporte/btnVenderTrans" to="." method="_on_btn_vender_trans_pressed"]
-[connection signal="pressed" from="ticketTrasporte/btnVenderTudoTrans" to="." method="_on_btn_vender_tudo_trans_pressed"]
 [connection signal="pressed" from="ticketSaúde/btnComprarSau" to="." method="_on_btn_comprar_sau_pressed"]
 [connection signal="pressed" from="ticketSaúde/btnVenderSau" to="." method="_on_btn_vender_sau_pressed"]
-[connection signal="pressed" from="ticketSaúde/btnVenderTudoSau" to="." method="_on_btn_vender_tudo_sau_pressed"]
