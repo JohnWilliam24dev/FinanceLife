@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://djkpwwnuhpoe2"]
+[gd_scene load_steps=31 format=3 uid="uid://djkpwwnuhpoe2"]
 
 [ext_resource type="Script" path="res://tabuleiro.gd" id="1_iwsqn"]
 [ext_resource type="Texture2D" uid="uid://dxfcolaj3p1yq" path="res://assents/tabuleiro/BackGroud/image.png" id="2_lu2ht"]
@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://3dab0driso43" path="res://assents/tabuleiro/Menu de Ações/Siderurgica.png" id="13_dkp5k"]
 [ext_resource type="Texture2D" uid="uid://dk2r0pr5xjp5t" path="res://assents/tabuleiro/Menu de Ações/Tecnologia.png" id="14_545ae"]
 [ext_resource type="Texture2D" uid="uid://bmedw88bfikbu" path="res://assents/tabuleiro/Menu de Ações/Transporte.png" id="15_ycac5"]
+[ext_resource type="Texture2D" uid="uid://ck2410coto4ek" path="res://assents/tabuleiro/Área da carta/Área da carta.png" id="17_ultk0"]
+[ext_resource type="Theme" uid="uid://bje24vjgkssut" path="res://assents/Fontes e Temas/Menu/menuTema.tres" id="17_xucgm"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u4gqx"]
 
@@ -508,3 +510,21 @@ theme = ExtResource("3_qutbl")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 15
 text = "R$ 0000,0000"
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+position = Vector2(1385, 569)
+
+[node name="BotaoProximoTurno" type="Button" parent="."]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 738.0
+offset_right = 247.0
+offset_bottom = 807.0
+theme = ExtResource("17_xucgm")
+text = "Girar"
+
+[node name="ÁreaDaCarta" type="Sprite2D" parent="."]
+position = Vector2(1422, 636)
+scale = Vector2(0.860972, 0.795591)
+texture = ExtResource("17_ultk0")
