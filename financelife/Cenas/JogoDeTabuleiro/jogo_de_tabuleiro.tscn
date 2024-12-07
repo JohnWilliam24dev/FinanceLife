@@ -27,14 +27,16 @@
 
 [node name="JogoDeTabuleiro" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 1.248
+anchor_bottom = 1.084
+offset_right = 0.559937
+offset_bottom = -0.200073
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iwsqn")
 
 [node name="Background" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 position = Vector2(801.5, 409.5)
 scale = Vector2(1.66216, 1.65741)
@@ -581,8 +583,8 @@ theme = ExtResource("17_xucgm")
 text = "Proximo Turno->"
 
 [node name="ÁreaDaCarta" type="Sprite2D" parent="."]
-position = Vector2(1422, 636)
-scale = Vector2(0.860972, 0.795591)
+position = Vector2(1422, 613.5)
+scale = Vector2(0.860972, 0.814629)
 texture = ExtResource("17_ultk0")
 
 [node name="Lucro" type="Sprite2D" parent="."]
