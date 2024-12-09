@@ -9,6 +9,7 @@ var quantiAcaoSider: int=abs(0)
 var quantiAcaoTecno: int=abs(0)
 var quantiAcaoTrans: int=abs(0)
 var quantiAcaoSau: int=abs(0)
+var carta_anterior: carta_informacao = null
 
 @onready var label_saldo_valor: Label = $Sprite2D/SaldoValor
 
@@ -54,20 +55,29 @@ func queda(acao: acoes) -> void:
 func volatil(acao: acoes) -> void:
 	acao.preco += D66()
 
-func mudar_valor_acoes(nicho1: String, resultado1: bool):
-	var acao1 = _buscar_acao_por_nicho(nicho1)
+func mudar_valor_acoes(carta: carta_informacao):
+	var acao1 = _buscar_acao_por_nicho(carta.nicho)
 	if not acao1:
+		print("Erro: Ação não encontrada para nicho '%s'" % carta.nicho)
 		return
 	
-	if resultado1 == true:
-		subida(acao1)
+	if carta.informacao:
+		print("Subida para o nicho '%s'" % acao1.nicho)
+		subida(acao1)  # Aumenta o valor da ação
 	else:
-		queda(acao1)
+		print("Queda para o nicho '%s'" % acao1.nicho)
+		queda(acao1)  # Reduz o valor da ação
 	
+	print("Preço após impacto direto: R$ %.2f" % acao1.preco)
+	
+	# Volatilidade nas outras ações
 	for acao in acoes_lista:
 		if acao.nicho != acao1.nicho:
+			print("Volatilidade para o nicho '%s'" % acao.nicho)
 			volatil(acao)
+			print("Novo preço do nicho '%s': R$ %.2f" % [acao.nicho, acao.preco])
 	
+	# Atualiza os valores na interface
 	atualizar_valores_acoes()
 
 func _buscar_acao_por_nicho(nicho: String) -> acoes:
@@ -77,16 +87,22 @@ func _buscar_acao_por_nicho(nicho: String) -> acoes:
 	return null
 
 func nova_rodada():
+	# Remove a carta exibida anteriormente, se houver
 	if _current_carta_sprite:
 		remove_child(_current_carta_sprite)
 		_current_carta_sprite.queue_free()
 		_current_carta_sprite = null
 
-	var cartas_sorteadas = sortear_cartas(1)
-	var nova_carta = cartas_sorteadas[0]
+	# Aplica o impacto da carta anterior (se houver)
+	if carta_anterior != null:
+		print("Aplicando impacto da carta anterior: %s" % carta_anterior.nicho)
+		mudar_valor_acoes(carta_anterior)
 
-	mudar_valor_acoes(nova_carta.nicho, nova_carta.informacao)
-	exibir_carta(nova_carta)
+	# Sorteia uma nova carta e exibe sem aplicar impacto ainda
+	var cartas_sorteadas = sortear_cartas(1)
+	carta_anterior = cartas_sorteadas[0]
+	print("Nova carta sorteada: %s" % carta_anterior.nicho)
+	exibir_carta(carta_anterior)
 
 func sortear_cartas(quantidade: int) -> Array:
 	var cartas = []
@@ -143,59 +159,22 @@ func _ready() -> void:
 	inicializar_acoes()
 	
 	var label_Lucro_Atual: Label = $Lucro/LucroAtual
-	#Criar a instancia do Lucro e imprimir o valor
-	#saldo = saldos.new(100.0)
-	#label_Lucro_Atual.text = " %.2f" % saldo.puxar_saldo()
-
 	
-	var label_valor_alim: Label = $ticketAlimentacao/valorInvestido
-	label_valor_alim.text = "R$ 0,00"
-
-	
-	var label_valor_sider: Label = $ticketSiderúgica/valorInvestido
-	label_valor_sider.text = "R$ 0,00"
-	
-	var label_valor_tecno: Label = $ticketTecnologia/valorInvestido
-	label_valor_tecno.text = "R$ 0,00"
-	
-	var label_valor_trasp: Label = $ticketTrasporte/valorInvestido
-	label_valor_trasp.text = "R$ 0,00"
-	
-	var label_valor_sau: Label = $ticketSaúde/valorInvestido
-	label_valor_sau.text = "R$ 0,00"
-	
-	
-	
+	# Inicializa valores dos investimentos
+	$ticketAlimentacao/valorInvestido.text = "R$ 0,00"
+	$ticketSiderúgica/valorInvestido.text = "R$ 0,00"
+	$ticketTecnologia/valorInvestido.text = "R$ 0,00"
+	$ticketTrasporte/valorInvestido.text = "R$ 0,00"
+	$ticketSaúde/valorInvestido.text = "R$ 0,00"
 
 	print("Ações iniciais:")
 	for acao in acoes_lista:
 		print("Nicho: %s, Preço: %f" % [acao.nicho, acao.preco])
-
-	var cartas_sorteadas = sortear_cartas(1)
-	for carta in cartas_sorteadas:
-		print("Carta sorteada - Nicho: %s, Impacto Positivo: %s" % [carta.nicho, str(carta.informacao)])
 		
-
-	exibir_carta(cartas_sorteadas[0])
-
-	print("---------------------------------------------------------------------------------------------")
-	print("Ações após aplicação da carta:")
-	for acao in acoes_lista:
-		print("Nicho: %s, Preço: %f" % [acao.nicho, acao.preco])
-		
-	# Inicializa o saldo e a interface
-	
-	label_saldo_valor.text = "R$ %.2f" % saldo.puxar_saldo()
-
-	
-	
-	# Restante da inicialização do tabuleiro
+	# Inicia o jogo com a primeira rodada
+	nova_rodada()
 	print("Inicialização do Tabuleiro.")
-	
-	# Aqui você pode adicionar uma lógica para começar o jogo
-	# e rodar o jogo. Chame a nova_rodada durante o ciclo do jogo.
-	#nova_rodada()  # Por exemplo, chamada ao iniciar ou após ações do jogador
-	
+
 
 #Metodos de Realizar comprar
 # Função para verificar a vitória e mudar para a cena de vitória

@@ -97,6 +97,7 @@ script = ExtResource("1_iwsqn")
 
 [node name="Transição" type="CanvasLayer" parent="."]
 layer = 2
+visible = false
 
 [node name="Fill 2" type="ColorRect" parent="Transição"]
 material = SubResource("ShaderMaterial_81cwj")
@@ -551,8 +552,8 @@ theme = ExtResource("17_xucgm")
 text = "Proximo Turno->"
 
 [node name="ÁreaDaCarta" type="Sprite2D" parent="."]
-position = Vector2(1422, 636)
-scale = Vector2(0.860972, 0.795591)
+position = Vector2(1424, 655)
+scale = Vector2(0.867672, 0.811623)
 texture = ExtResource("17_ultk0")
 
 [node name="Lucro" type="Sprite2D" parent="."]
