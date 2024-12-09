@@ -190,7 +190,7 @@ func _ready() -> void:
 #Metodos de Realizar comprar
 # Função para verificar a vitória e mudar para a cena de vitória
 func verificar_vitoria():
-	if saldo.puxar_saldo() >= 120:  # Verifica se o saldo é maior ou igual a 1000
+	if saldo.puxar_saldo() >= 500:  # Verifica se o saldo é maior ou igual a 1000
 		get_tree().change_scene_to_file("res://Cenas/Atos/Cena_vitória.tscn")  # Troca de cena para a vitória
 
 

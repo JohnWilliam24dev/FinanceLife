@@ -172,7 +172,7 @@ offset_bottom = 3.0
 theme = ExtResource("3_qutbl")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "R$ 1000.00"
+text = "R$ 500.00"
 
 [node name="SituaçAçãoTrans" type="Sprite2D" parent="."]
 position = Vector2(831, 573)
