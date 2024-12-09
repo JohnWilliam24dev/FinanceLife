@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dmakr200f36o3"]
+[gd_scene load_steps=14 format=3 uid="uid://dmakr200f36o3"]
 
 [ext_resource type="Theme" uid="uid://e4phmqgo0wcg" path="res://Scrips/Menu/fonte_Menu.tres" id="1_7mkby"]
 [ext_resource type="Script" path="res://Scrips/cena_vitória/cena_vitória.gd" id="1_gnk21"]
 [ext_resource type="Shader" uid="uid://c41kmqlrs4dya" path="res://Utilitarios/CenaDeTransicao/Shaders_Transition.tres" id="2_ukurd"]
+[ext_resource type="FontFile" uid="uid://cgygq4u5j0y1w" path="res://assents/Fontes e Temas/Menu/RevMiniPixel.ttf" id="3_jkklf"]
 [ext_resource type="Texture2D" uid="uid://bnrhlde46dxi5" path="res://assents/Cenarios/Menu/Background Tela de crédito/1.png" id="5_1md0h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6nvyb"]
@@ -65,7 +66,13 @@ _data = {
 "Transição": SubResource("Animation_2ggjj")
 }
 
+[sub_resource type="Theme" id="Theme_dgpiy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8ybhn"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nv5nq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nfqs5"]
 
 [node name="Cena_vitória" type="Node2D"]
 script = ExtResource("1_gnk21")
@@ -95,35 +102,48 @@ libraries = {
 autoplay = "Transição"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-offset_left = 505.0
-offset_top = 333.0
-offset_right = 707.0
-offset_bottom = 472.0
+texture_filter = 1
+offset_left = 324.0
+offset_top = 361.0
+offset_right = 579.0
+offset_bottom = 500.0
 rotation = 3.14159
 scale = Vector2(-6.96605, -4.58593)
 pivot_offset = Vector2(68.3652, 59.3156)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 3
 layout_mode = 2
-text = "         🎉 VITÓRIA!!!🎉"
+size_flags_stretch_ratio = 0.35
+theme = SubResource("Theme_dgpiy")
+theme_override_fonts/font = ExtResource("3_jkklf")
+theme_override_font_sizes/font_size = 20
+text = "          🎉 VITÓRIA!!!🎉"
+label_settings = SubResource("LabelSettings_8ybhn")
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_nv5nq")
 
 [node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 3
 layout_mode = 2
+theme = ExtResource("1_7mkby")
+theme_override_font_sizes/font_size = 18
 text = "PARABÉNS VOCÊ CHEGOU 
 A R$1000 DE LUCRO! 🏆🏅"
+label_settings = SubResource("LabelSettings_nfqs5")
 
 [node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2

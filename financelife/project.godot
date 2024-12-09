@@ -23,6 +23,7 @@ DialogManager="*res://singletons/dialog_manager.gd"
 
 window/size/viewport_width=1600
 window/size/viewport_height=900
+window/size/mode=3
 
 [dotnet]
 
@@ -53,4 +54,6 @@ cancel={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

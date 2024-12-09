@@ -73,10 +73,10 @@ tracks/1/path = NodePath("MarginContainer:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.633333, 1.03333),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.0333333, 0.633333, 1.03333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-47, 500), Vector2(-47, 137)]
+"values": [Vector2(-47, 600), Vector2(-47, 600), Vector2(-47, 137)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -88,7 +88,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(1.06667, 1.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-445.523, -900), Vector2(-445.523, -481.731)]
+"values": [Vector2(-445.6, -950), Vector2(-445.523, -481.731)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rosih"]
@@ -131,7 +131,7 @@ scale = Vector2(2.06759, 2.15962)
 
 [node name="Camada 5" type="Sprite2D" parent="bg/AnimaçãoBackgroud"]
 texture_filter = 1
-scale = Vector2(1.35, 1.35)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_aj20m")
 script = ExtResource("5_lupii")
 

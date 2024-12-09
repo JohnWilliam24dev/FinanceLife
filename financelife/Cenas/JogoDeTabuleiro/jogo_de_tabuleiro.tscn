@@ -121,11 +121,11 @@ autoplay = "Transição"
 [node name="Background" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(801.5, 409.5)
-scale = Vector2(1.66216, 1.65741)
+scale = Vector2(1.8, 1.8)
 texture = ExtResource("2_lu2ht")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(809, 763)
+position = Vector2(814, 808)
 scale = Vector2(0.915885, 0.881481)
 texture = ExtResource("3_f4sdg")
 
@@ -257,10 +257,10 @@ text = "(valor)"
 
 [node name="ticketAlimentacao" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 11.0
-offset_top = 12.0
-offset_right = 271.0
-offset_bottom = 164.0
+offset_left = 18.0
+offset_top = 62.0
+offset_right = 278.0
+offset_bottom = 214.0
 texture = ExtResource("11_oslgv")
 expand_mode = 2
 
@@ -300,9 +300,9 @@ text = "Vender
 [node name="ticketSiderúgica" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 13.0
-offset_top = 318.0
+offset_top = 367.0
 offset_right = 273.0
-offset_bottom = 470.0
+offset_bottom = 519.0
 texture = ExtResource("13_dkp5k")
 expand_mode = 1
 
@@ -363,10 +363,10 @@ text = "Vender
 
 [node name="ticketTecnologia" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 13.0
-offset_top = 620.0
-offset_right = 273.0
-offset_bottom = 772.0
+offset_left = 11.0
+offset_top = 671.0
+offset_right = 271.0
+offset_bottom = 823.0
 texture = ExtResource("14_545ae")
 expand_mode = 1
 
@@ -428,9 +428,9 @@ text = "Vender
 [node name="ticketTrasporte" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 13.0
-offset_top = 470.0
+offset_top = 521.0
 offset_right = 273.0
-offset_bottom = 622.0
+offset_bottom = 673.0
 texture = ExtResource("15_ycac5")
 expand_mode = 1
 
@@ -491,10 +491,10 @@ text = "Vender
 
 [node name="ticketSaúde" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 13.0
-offset_top = 165.0
-offset_right = 273.0
-offset_bottom = 317.0
+offset_left = 17.0
+offset_top = 215.0
+offset_right = 277.0
+offset_bottom = 367.0
 texture = ExtResource("12_4eak6")
 expand_mode = 1
 
