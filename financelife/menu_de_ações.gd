@@ -28,8 +28,18 @@ func atualizar_preco_em_tempo_real(nicho: String, quantidade: int) -> void:
 	var preco_total = calcular_preco_total(nicho, quantidade)
 	print("Preço total para comprar %d ações de %s: %f" % [quantidade, nicho, preco_total])
 
+func get_preco(nicho:String)->float:
+	var acao = tabuleiro_ref._buscar_acao_por_nicho(nicho)
+	return acao.preco
 # Compra a ação com base na quantidade atual
 func comprar_acao(nicho:String,quantidade:int) -> void:
+	var preco_total = get_preco(nicho)
+	valor_de_compra=preco_total
+	if saldo_ref.subtrair_saldo(preco_total):
+		print("Compra realizada: 1 ação de %s por %f cada." % [ nicho, preco_total / quantidade_atual])
+		
+	else:
+		print("Compra não realizada. Saldo insuficiente.")
 	if nicho == "Alimentação":
 		tabuleiro_ref.quantiAcaoAlim=tabuleiro_ref.quantiAcaoAlim+1
 		return
@@ -45,18 +55,20 @@ func comprar_acao(nicho:String,quantidade:int) -> void:
 	elif nicho == "Saúde":
 		tabuleiro_ref.quantiAcaoSau=tabuleiro_ref.quantiAcaoSau+1
 		return
-	var preco_total = calcular_preco_total(nicho, quantidade)
-	valor_de_compra=preco_total
-	if saldo_ref.subtrair_saldo(preco_total):
-		print("Compra realizada: %d ações de %s por %f cada." % [quantidade, nicho_atual, preco_total / quantidade_atual])
-		
-	else:
-		print("Compra não realizada. Saldo insuficiente.")
+	
 
 
 
 # Vende a ação com base na quantidade atual
 func vender_acao(nicho:String,quantidades:int) -> void:
+	var acao = tabuleiro_ref._buscar_acao_por_nicho(nicho_atual)
+	
+
+
+	var valor_total = get_preco(nicho)
+	
+	saldo_ref.adicionar_saldo(valor_total)
+	print("Venda realizada: 1 ação de %s por %f ." % [ nicho_atual, valor_total / quantidade_atual])
 	if nicho == "Alimentação":
 		tabuleiro_ref.quantiAcaoAlim=tabuleiro_ref.quantiAcaoAlim-1
 		return
@@ -73,17 +85,7 @@ func vender_acao(nicho:String,quantidades:int) -> void:
 		tabuleiro_ref.quantiAcaoSau=tabuleiro_ref.quantiAcaoSau-1
 		return
 
-	var acao = tabuleiro_ref._buscar_acao_por_nicho(nicho_atual)
 	
-
-	if acao.quantidade < quantidades:
-		print("Venda não realizada. Quantidade insuficiente de ações.")
-		return
-
-	var valor_total = calcular_preco_total(nicho, quantidades)
-	acao.quantidade -= quantidades
-	saldo_ref.adicionar_saldo(valor_total)
-	print("Venda realizada: %d ações de %s por %f cada." % [quantidades, nicho_atual, valor_total / quantidade_atual])
 
    
 	   

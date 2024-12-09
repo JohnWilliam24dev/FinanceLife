@@ -183,11 +183,10 @@ func _ready() -> void:
 		print("Nicho: %s, Preço: %f" % [acao.nicho, acao.preco])
 		
 	# Inicializa o saldo e a interface
-	saldo = saldos.new(100.0)  # Exemplo de valor inicial
+	
 	label_saldo_valor.text = "R$ %.2f" % saldo.puxar_saldo()
 
-	menu = MenuDeAcoes.new()
-	menu.configurar(self, saldo)
+	
 	
 	# Restante da inicialização do tabuleiro
 	print("Inicialização do Tabuleiro.")
@@ -205,10 +204,12 @@ func verificar_vitoria():
 
 
 func _on_btn_comprar_alim_pressed() -> void:
-	print(1)
+	
 	var label_valor_alim: Label = $ticketAlimentacao/valorInvestido
 	label_valor_alim.text = "R$ %.2f" % menu.calcular_preco_total("Alimentação",quantiAcaoAlim)
-	
+	var label_saldo_valor: Label = $Sprite2D/SaldoValor
+	label_saldo_valor.text = "R$ %.2f" % saldo.puxar_saldo()
+	print("R$ %.2f" % saldo.puxar_saldo())
 	menu.comprar_acao("Alimentação",quantiAcaoAlim)
 	
 	
@@ -217,6 +218,7 @@ func _on_btn_comprar_side_pressed() -> void:
 	var label_valor_sider: Label = $ticketSiderúgica/valorInvestido
 	label_valor_sider.text = "R$ %.2f" % menu.calcular_preco_total("Siderúrgica",quantiAcaoSider)
 	menu.comprar_acao("Siderúrgica",quantiAcaoSider)
+	var label_saldo_valor: Label = $Sprite2D/SaldoValor
 	label_saldo_valor.text = "R$ %.2f" % saldo.puxar_saldo()
 	print("R$ %.2f" % saldo.puxar_saldo())
 
@@ -243,6 +245,7 @@ func _on_btn_vender_alim_pressed() -> void:
 	var label_valor_alim: Label = $ticketAlimentacao/valorInvestido
 	label_valor_alim.text = "R$ %.2f" % menu.calcular_preco_total("Alimentação", quantiAcaoAlim)
 	menu.vender_acao("Alimentação",quantiAcaoAlim)
+	print("R$ %.2f" % saldo.puxar_saldo())
 func _on_btn_vender_side_pressed() -> void:
 	var label_valor_sider: Label = $ticketSiderúgica/valorInvestido
 	label_valor_sider.text = "R$ %.2f" % menu.calcular_preco_total("Siderúrgica", quantiAcaoSider)
