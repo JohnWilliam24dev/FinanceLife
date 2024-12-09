@@ -1,7 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://djkpwwnuhpoe2"]
+[gd_scene load_steps=28 format=3 uid="uid://djkpwwnuhpoe2"]
 
 [ext_resource type="Script" path="res://tabuleiro.gd" id="1_iwsqn"]
 [ext_resource type="Texture2D" uid="uid://dxfcolaj3p1yq" path="res://assents/tabuleiro/BackGroud/image.png" id="2_lu2ht"]
+[ext_resource type="Shader" uid="uid://c41kmqlrs4dya" path="res://Utilitarios/CenaDeTransicao/Shaders_Transition.tres" id="2_uoqxv"]
 [ext_resource type="Texture2D" uid="uid://cx20a35fbvyxl" path="res://assents/tabuleiro/Saldo/Calculadora.png" id="3_f4sdg"]
 [ext_resource type="Theme" uid="uid://e4phmqgo0wcg" path="res://Scrips/Menu/fonte_Menu.tres" id="3_qutbl"]
 [ext_resource type="Texture2D" uid="uid://buqgrihxmdp25" path="res://assents/tabuleiro/Metas/Meta (1).png" id="5_dtynq"]
@@ -21,6 +22,66 @@
 [ext_resource type="Theme" uid="uid://bje24vjgkssut" path="res://assents/Fontes e Temas/Menu/menuTema.tres" id="17_xucgm"]
 [ext_resource type="Texture2D" uid="uid://c1nwl347qagwx" path="res://assents/tabuleiro/Metas/Meta (2).png" id="20_5g8dt"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_81cwj"]
+shader = ExtResource("2_uoqxv")
+shader_parameter/screen_width = 1920.0
+shader_parameter/screen_height = 1080.0
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/player = Vector2(0.5, 0.5)
+shader_parameter/progress = 1.0
+shader_parameter/pixel_size = 15.0
+shader_parameter/circle_size = 1.5
+shader_parameter/curtains = 1.0
+shader_parameter/type = 2
+
+[sub_resource type="Animation" id="Animation_by18x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2ggjj"]
+resource_name = "Transição"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7p6lu"]
+_data = {
+"RESET": SubResource("Animation_by18x"),
+"Transição": SubResource("Animation_2ggjj")
+}
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u4gqx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g775d"]
@@ -33,6 +94,28 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iwsqn")
+
+[node name="Transição" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Fill 2" type="ColorRect" parent="Transição"]
+material = SubResource("ShaderMaterial_81cwj")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -174.0
+offset_top = -40.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Transição/Fill 2"]
+libraries = {
+"": SubResource("AnimationLibrary_7p6lu")
+}
+autoplay = "Transição"
 
 [node name="Background" type="Sprite2D" parent="."]
 texture_filter = 1

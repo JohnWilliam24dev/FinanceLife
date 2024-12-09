@@ -27,8 +27,9 @@ bg_color = Color(0.557415, 0.435473, 0.256157, 1)
 bg_color = Color(1, 0.752941, 0.796078, 1)
 
 [resource]
-default_font_size = 5
-Button/colors/font_color = Color(0, 0, 0, 1)
+default_font = ExtResource("1_0vktm")
+default_font_size = 93
+Button/colors/font_color = Color(0.00784314, 0.0156863, 0.0117647, 1)
 Button/font_sizes/font_size = 32
 Button/fonts/font = ExtResource("1_0vktm")
 Button/styles/focus = SubResource("StyleBoxFlat_0rsny")

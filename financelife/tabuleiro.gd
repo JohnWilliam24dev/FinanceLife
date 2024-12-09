@@ -125,7 +125,7 @@ func exibir_carta(carta: carta_informacao):
 				sprite.texture = preload("res://assents/Cartas/Carta em baixa Alimentação.png")
 
 	var janela_tamanho = get_viewport().get_visible_rect().size
-	sprite.position = janela_tamanho - Vector2(sprite.texture.get_size().x * -0.3 + 20, sprite.texture.get_size().y * 0.4 + 20)
+	sprite.position = janela_tamanho - Vector2(sprite.texture.get_size().x * 0.5 + 20, sprite.texture.get_size().y * 0.55 + 20)
 	sprite.scale = Vector2(0.8, 0.8)
 	add_child(sprite)
 	_current_carta_sprite = sprite
@@ -178,7 +178,9 @@ func _ready() -> void:
 	for acao in acoes_lista:
 		print("Nicho: %s, Preço: %f" % [acao.nicho, acao.preco])
 		
-	var fim =saldo.meta
+	var fim = saldo.meta  # Atribuição separada.
+	if fim == saldo.meta:  # Comparação usando '=='.
+		get_tree().change_scene_to_file("res://Cenas/Atos/Cena_vitória.tscn")
 	
 
 #Metodos de Realizar comprar
