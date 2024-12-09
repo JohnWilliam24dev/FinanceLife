@@ -18,7 +18,8 @@ func calcular_preco_total(nicho: String, quantidade: int) -> float:
 	if not acao:
 		print("Ação não encontrada!")
 		return 0.0
-
+	elif quantidade==0:
+		return 0.0
 	return acao.preco * quantidade
 
 # Atualiza a quantidade e exibe o preço total
@@ -68,24 +69,53 @@ func vender_acao(nicho:String,quantidades:int) -> void:
 
 	var valor_total = get_preco(nicho)
 	
-	saldo_ref.adicionar_saldo(valor_total)
-	print("Venda realizada: 1 ação de %s por %f ." % [ nicho, valor_total / quantidade_atual])
+	
 	if nicho == "Alimentação":
-		tabuleiro_ref.quantiAcaoAlim=tabuleiro_ref.quantiAcaoAlim-1
-		return
+		if tabuleiro_ref.quantiAcaoAlim==0:
+			print("Você não tem ações para vender nesse nicho")
+			return
+		else:
+			tabuleiro_ref.quantiAcaoAlim=tabuleiro_ref.quantiAcaoAlim-1
+			saldo_ref.adicionar_saldo(valor_total)
+			print("Venda realizada: 1 ação de %s por %f ." % [ nicho, valor_total / quantidade_atual])
+			return
+			
 	elif nicho == "Transporte":
-		tabuleiro_ref.quantiAcaoTrans=tabuleiro_ref.quantiAcaoTrans-1
-		return
+		if tabuleiro_ref.quantiAcaoTrans==0:
+			print("Você não tem ações para vender nesse nicho")
+			return
+		else:
+			tabuleiro_ref.quantiAcaoTrans=tabuleiro_ref.quantiAcaoTrans-1
+			saldo_ref.adicionar_saldo(valor_total)
+			print("Venda realizada: 1 ação de %s por %f ." % [ nicho, valor_total / quantidade_atual])
+			return
 	elif nicho == "Tecnologia":
-		tabuleiro_ref.quantiAcaoTecno=tabuleiro_ref.quantiAcaoTecno-1
-		return
+		if tabuleiro_ref.quantiAcaoTecno==0:
+			print("Você não tem ações para vender nesse nicho")
+			return
+		else:
+			tabuleiro_ref.quantiAcaoTecno=tabuleiro_ref.quantiAcaoTecno-1
+			saldo_ref.adicionar_saldo(valor_total)
+			print("Venda realizada: 1 ação de %s por %f ." % [ nicho, valor_total / quantidade_atual])
+			return
 	elif nicho == "Siderúrgica":
-		tabuleiro_ref.quantiAcaoSider=tabuleiro_ref.quantiAcaoSider-1
-		return
+		if tabuleiro_ref.quantiAcaoSider==0:
+			print("Você não tem ações para vender nesse nicho")
+			return
+		else:
+			tabuleiro_ref.quantiAcaoSider=tabuleiro_ref.quantiAcaoSider-1
+			saldo_ref.adicionar_saldo(valor_total)
+			print("Venda realizada: 1 ação de %s por %f ." % [ nicho, valor_total / quantidade_atual])
+			return
 	elif nicho == "Saúde":
-		tabuleiro_ref.quantiAcaoSau=tabuleiro_ref.quantiAcaoSau-1
-		return
-
+		if tabuleiro_ref.quantiAcaoSau==0:
+			print("Você não tem ações para vender nesse nicho")
+			return
+		else:
+			tabuleiro_ref.quantiAcaoSau=tabuleiro_ref.quantiAcaoSau-1
+			saldo_ref.adicionar_saldo(valor_total)
+			print("Venda realizada: 1 ação de %s por %f ." % [ nicho, valor_total / quantidade_atual])
+			return
 	
 
    

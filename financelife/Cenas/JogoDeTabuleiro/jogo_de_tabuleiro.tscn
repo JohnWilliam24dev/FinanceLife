@@ -97,7 +97,6 @@ script = ExtResource("1_iwsqn")
 
 [node name="Transição" type="CanvasLayer" parent="."]
 layer = 2
-visible = false
 
 [node name="Fill 2" type="ColorRect" parent="Transição"]
 material = SubResource("ShaderMaterial_81cwj")
