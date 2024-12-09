@@ -178,13 +178,26 @@ func _ready() -> void:
 	for acao in acoes_lista:
 		print("Nicho: %s, Preço: %f" % [acao.nicho, acao.preco])
 		
-	var fim = saldo.meta  # Atribuição separada.
-	if fim == saldo.meta:  # Comparação usando '=='.
-		get_tree().change_scene_to_file("res://Cenas/Atos/Cena_vitória.tscn")
+	# Inicializa o saldo e a interface
+	saldo = saldos.new(100.0)  # Exemplo de valor inicial
+	label_saldo_valor.text = "R$ %.2f" % saldo.puxar_saldo()
+
+	menu = MenuDeAcoes.new()
+	menu.configurar(self, saldo)
+	
+	# Restante da inicialização do tabuleiro
+	print("Inicialização do Tabuleiro.")
+	
+	# Aqui você pode adicionar uma lógica para começar o jogo
+	# e rodar o jogo. Chame a nova_rodada durante o ciclo do jogo.
+	nova_rodada()  # Por exemplo, chamada ao iniciar ou após ações do jogador
 	
 
 #Metodos de Realizar comprar
-
+# Função para verificar a vitória e mudar para a cena de vitória
+func verificar_vitoria():
+	if saldo.puxar_saldo() >= 1000:  # Verifica se o saldo é maior ou igual a 1000
+		get_tree().change_scene_to_file("res://Cenas/Atos/Cena_vitória.tscn")  # Troca de cena para a vitória
 
 
 func _on_btn_comprar_alim_pressed() -> void:

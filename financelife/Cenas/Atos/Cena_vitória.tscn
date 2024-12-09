@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://dmakr200f36o3"]
+[gd_scene load_steps=10 format=3 uid="uid://dmakr200f36o3"]
 
 [ext_resource type="Theme" uid="uid://e4phmqgo0wcg" path="res://Scrips/Menu/fonte_Menu.tres" id="1_7mkby"]
 [ext_resource type="Script" path="res://Scrips/cena_vitória/cena_vitória.gd" id="1_gnk21"]
-[ext_resource type="Theme" uid="uid://bje24vjgkssut" path="res://assents/Fontes e Temas/Menu/menuTema.tres" id="2_qf18t"]
 [ext_resource type="Shader" uid="uid://c41kmqlrs4dya" path="res://Utilitarios/CenaDeTransicao/Shaders_Transition.tres" id="2_ukurd"]
 [ext_resource type="Texture2D" uid="uid://bnrhlde46dxi5" path="res://assents/Cenarios/Menu/Background Tela de crédito/1.png" id="5_1md0h"]
 
@@ -136,27 +135,6 @@ layout_mode = 2
 theme = ExtResource("1_7mkby")
 text = "CLIQUE AQUI PARA FINALIZAR.
 "
-
-[node name="Label" type="Label" parent="."]
-visible = false
-offset_left = 468.0
-offset_top = 93.0
-offset_right = 1058.0
-offset_bottom = 284.0
-theme = ExtResource("2_qf18t")
-text = "🎉 Vitória!!!🎉
-       
-"
-
-[node name="Label2" type="Label" parent="."]
-visible = false
-offset_left = 234.0
-offset_top = 385.0
-offset_right = 1234.0
-offset_bottom = 548.0
-theme = ExtResource("2_qf18t")
-text = "Parabéns você chegou 
-a R$1000 de lucro! 🏆🏅"
 
 [node name="capa" type="Sprite2D" parent="."]
 show_behind_parent = true

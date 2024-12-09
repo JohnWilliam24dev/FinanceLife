@@ -97,6 +97,7 @@ script = ExtResource("1_iwsqn")
 
 [node name="Transição" type="CanvasLayer" parent="."]
 layer = 2
+visible = false
 
 [node name="Fill 2" type="ColorRect" parent="Transição"]
 material = SubResource("ShaderMaterial_81cwj")
@@ -540,9 +541,6 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_g775d")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_g775d")
 text = "Vender
 "
-
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(1347, 573)
 
 [node name="BotaoProximoTurno" type="Button" parent="."]
 layout_mode = 0
