@@ -87,6 +87,16 @@ func _buscar_acao_por_nicho(nicho: String) -> acoes:
 	return null
 
 func nova_rodada():
+	var label_valor_alim: Label = $ticketAlimentacao/valorInvestido
+	label_valor_alim.text = "R$ %.2f" % menu.calcular_preco_total("Alimentação",quantiAcaoAlim)
+	var label_valor_sider: Label = $ticketSiderúgica/valorInvestido
+	label_valor_sider.text = "R$ %.2f" % menu.calcular_preco_total("Siderúrgica",quantiAcaoSider)
+	var label_valor_tecno: Label = $ticketTecnologia/valorInvestido
+	label_valor_tecno.text = "R$ %.2f" % menu.calcular_preco_total("Tecnologia",quantiAcaoTecno)
+	var label_valor_trasp: Label = $ticketTrasporte/valorInvestido
+	label_valor_trasp.text = "R$ %.2f" % menu.calcular_preco_total("Transporte",quantiAcaoTrans)
+	var label_valor_sau: Label = $ticketSaúde/valorInvestido
+	label_valor_sau.text = "R$ %.2f" % menu.calcular_preco_total("Saúde",quantiAcaoSau)
 	# Remove a carta exibida anteriormente, se houver
 	if _current_carta_sprite:
 		remove_child(_current_carta_sprite)
