@@ -269,6 +269,7 @@ func _on_btn_vender_alim_pressed() -> void:
 	lucroAtualAlim = menu.mostrar_lucro("Alimentação",quantiAcaoAlim-1)
 	lucroTotal = (lucroAtualAlim + lucroAtualSider + lucroAtualTecno + lucroAtualTrans + lucroAtualSaude)
 	label_Lucro_Atual.text = " %.2f" % lucroTotal 
+	verificar_vitoria()
 	print("R$ %.2f" % saldo.puxar_saldo())
 	
 func _on_btn_vender_side_pressed() -> void:
@@ -281,6 +282,7 @@ func _on_btn_vender_side_pressed() -> void:
 	lucroAtualSider = menu.mostrar_lucro("Siderúrgica",quantiAcaoSider-1)
 	lucroTotal = (lucroAtualAlim + lucroAtualSider + lucroAtualTecno + lucroAtualTrans + lucroAtualSaude)
 	label_Lucro_Atual.text = " %.2f" % lucroTotal 
+	verificar_vitoria()
 	
 func _on_btn_vender_tecno_pressed() -> void:
 	var label_valor_tecno: Label = $ticketTecnologia/valorInvestido
@@ -292,6 +294,7 @@ func _on_btn_vender_tecno_pressed() -> void:
 	lucroAtualTecno = menu.mostrar_lucro("Tecnologia",quantiAcaoTecno-1)
 	lucroTotal = (lucroAtualAlim + lucroAtualSider + lucroAtualTecno + lucroAtualTrans + lucroAtualSaude)
 	label_Lucro_Atual.text = " %.2f" % lucroTotal 
+	verificar_vitoria()
 	
 func _on_btn_vender_trans_pressed() -> void:
 	var label_valor_transp: Label = $ticketTrasporte/valorInvestido
@@ -303,6 +306,7 @@ func _on_btn_vender_trans_pressed() -> void:
 	lucroAtualTrans = menu.mostrar_lucro("Transporte",quantiAcaoTrans-1)
 	lucroTotal = (lucroAtualAlim + lucroAtualSider + lucroAtualTecno + lucroAtualTrans + lucroAtualSaude)
 	label_Lucro_Atual.text = " %.2f" % lucroTotal
+	verificar_vitoria()
 	
 func _on_btn_vender_sau_pressed() -> void:
 	var label_valor_sau: Label = $ticketSaúde/valorInvestido
@@ -314,4 +318,5 @@ func _on_btn_vender_sau_pressed() -> void:
 	lucroAtualSaude = menu.mostrar_lucro("Saúde",quantiAcaoSau-1)
 	lucroTotal = (lucroAtualAlim + lucroAtualSider + lucroAtualTecno + lucroAtualTrans + lucroAtualSaude)
 	label_Lucro_Atual.text = " %.2f" % lucroTotal 
+	verificar_vitoria()
 	
