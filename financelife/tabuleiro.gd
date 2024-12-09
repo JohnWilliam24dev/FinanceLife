@@ -243,8 +243,8 @@ func _on_btn_vender_alim_pressed() -> void:
 		return
 	else:
 		label_valor_alim.text = "R$ %.2f" % menu.calcular_preco_total("Alimentação", quantiAcaoAlim)
-	menu.vender_acao("Alimentação",quantiAcaoAlim)
-	label_valor_alim.text = "R$ %.2f" % menu.calcular_preco_total("Alimentação", quantiAcaoAlim-1)
+	menu.vender_acao("Alimentação",quantiAcaoAlim -1)
+	label_valor_alim.text = "R$ %.2f" % menu.calcular_preco_total("Alimentação", quantiAcaoAlim)
 	var label_saldo_valor: Label = $Sprite2D/SaldoValor
 	label_saldo_valor.text = "R$ %.2f" % saldo.puxar_saldo()
 	print("R$ %.2f" % saldo.puxar_saldo())
@@ -261,8 +261,8 @@ func _on_btn_vender_side_pressed() -> void:
 		return
 	else:
 		label_valor_sider.text = "R$ %.2f" % menu.calcular_preco_total("Siderúrgica", quantiAcaoSider)
-	menu.vender_acao("Siderúrgica",quantiAcaoSider)
-	label_valor_sider.text = "R$ %.2f" % menu.calcular_preco_total("Siderúrgica", quantiAcaoSider-1)
+	menu.vender_acao("Siderúrgica",quantiAcaoSider -1 )
+	label_valor_sider.text = "R$ %.2f" % menu.calcular_preco_total("Siderúrgica", quantiAcaoSider)
 	var label_saldo_valor: Label = $Sprite2D/SaldoValor
 	label_saldo_valor.text = "R$ %.2f" % saldo.puxar_saldo()
 	
@@ -277,8 +277,8 @@ func _on_btn_vender_tecno_pressed() -> void:
 		return
 	else:
 		label_valor_tecno.text = "R$ %.2f" % menu.calcular_preco_total("Tecnologia", quantiAcaoTecno)
-	menu.vender_acao("Tecnologia",quantiAcaoTecno)
-	label_valor_tecno.text = "R$ %.2f" % menu.calcular_preco_total("Tecnologia", quantiAcaoTecno-1)
+	menu.vender_acao("Tecnologia",quantiAcaoTecno -1)
+	label_valor_tecno.text = "R$ %.2f" % menu.calcular_preco_total("Tecnologia", quantiAcaoTecno)
 	var label_saldo_valor: Label = $Sprite2D/SaldoValor
 	label_saldo_valor.text = "R$ %.2f" % saldo.puxar_saldo()
 	
@@ -293,8 +293,8 @@ func _on_btn_vender_trans_pressed() -> void:
 		return
 	else:
 		label_valor_transp.text = "R$ %.2f" % menu.calcular_preco_total("Transporte", quantiAcaoTrans)
-	menu.vender_acao("Transporte",quantiAcaoTrans)
-	label_valor_transp.text = "R$ %.2f" % menu.calcular_preco_total("Transporte", quantiAcaoTrans-1)
+	menu.vender_acao("Transporte",quantiAcaoTrans -1)
+	label_valor_transp.text = "R$ %.2f" % menu.calcular_preco_total("Transporte", quantiAcaoTrans)
 	var label_saldo_valor: Label = $Sprite2D/SaldoValor
 	label_saldo_valor.text = "R$ %.2f" % saldo.puxar_saldo()
 	
@@ -304,13 +304,13 @@ func _on_btn_vender_sau_pressed() -> void:
 		label_valor_sau.text="R$ %.2f" % 0.00
 		return
 	elif  quantiAcaoSau==1:
-		menu.vender_acao("Saúde",quantiAcaoSau)
+		menu.vender_acao("Saúde",quantiAcaoSau )
 		label_valor_sau.text="R$ %.2f" % 0.00
 		return
 	else:
 		label_valor_sau.text = "R$ %.2f" % menu.calcular_preco_total("Saúde", quantiAcaoSau)
-	menu.vender_acao("Saúde",quantiAcaoSau)
-	label_valor_sau.text = "R$ %.2f" % menu.calcular_preco_total("Saúde", quantiAcaoSau-1)
+	menu.vender_acao("Saúde",quantiAcaoSau - 1)
+	label_valor_sau.text = "R$ %.2f" % menu.calcular_preco_total("Saúde", quantiAcaoSau)
 	var label_saldo_valor: Label = $Sprite2D/SaldoValor
 	label_saldo_valor.text = "R$ %.2f" % saldo.puxar_saldo()
 	
