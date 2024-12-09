@@ -10,11 +10,21 @@ var quantiAcaoTecno: int=1
 var quantiAcaoTrans: int=1
 var quantiAcaoSau: int=1
 
+var lucroAtualAlim: float 
+var lucroAtualSider: float 
+var lucroAtualTecno: float
+var lucroAtualTrans: float
+var lucroAtualSaude: float
+var lucroTotal:float
+
+@onready var label_Lucro_Atual: Label = $Lucro/LucroAtual
+
 @onready var label_saldo_valor: Label = $Sprite2D/SaldoValor
 
 var acoes_lista: Array = []  
 var saldo: saldos
 var menu: MenuDeAcoes
+
 
 func D6() -> int:
 	return floor(randf_range(1, 6))
@@ -142,10 +152,11 @@ func _ready() -> void:
 	menu.configurar(self, saldo)
 	inicializar_acoes()
 	
-	var label_Lucro_Atual: Label = $Lucro/LucroAtual
-	#Criar a instancia do Lucro e imprimir o valor
-	#saldo = saldos.new(100.0)
-	#label_Lucro_Atual.text = " %.2f" % saldo.puxar_saldo()
+	var lucroAtualAlim: float = menu.mostrar_lucro("Alimentação",quantiAcaoAlim-1)
+	var lucroAtualSider: float = menu.mostrar_lucro("Siderúrgica",quantiAcaoSider-1)
+	var lucroAtualTecno: float = menu.mostrar_lucro("Tecnologia",quantiAcaoTecno-1)
+	var lucroAtualTrans: float = menu.mostrar_lucro("Transporte",quantiAcaoTrans-1)
+	var lucroAtualSaude: float = menu.mostrar_lucro("Saúde",quantiAcaoSau-1)	
 
 	
 	var label_valor_alim: Label = $ticketAlimentacao/valorInvestido
@@ -200,7 +211,7 @@ func _ready() -> void:
 #Metodos de Realizar comprar
 # Função para verificar a vitória e mudar para a cena de vitória
 func verificar_vitoria():
-	if saldo.puxar_saldo() >= 1000:  # Verifica se o saldo é maior ou igual a 1000
+	if  lucroTotal >= 1000:  # Verifica se o saldo é maior ou igual a 1000
 		get_tree().change_scene_to_file("res://Cenas/Atos/Cena_vitória.tscn")  # Troca de cena para a vitória
 
 
@@ -255,6 +266,9 @@ func _on_btn_vender_alim_pressed() -> void:
 	label_valor_alim.text = "R$ %.2f" % menu.calcular_preco_total("Alimentação", quantiAcaoAlim-1)
 	var label_saldo_valor: Label = $Sprite2D/SaldoValor
 	label_saldo_valor.text = "R$ %.2f" % saldo.puxar_saldo()
+	lucroAtualAlim = menu.mostrar_lucro("Alimentação",quantiAcaoAlim-1)
+	lucroTotal = (lucroAtualAlim + lucroAtualSider + lucroAtualTecno + lucroAtualTrans + lucroAtualSaude)
+	label_Lucro_Atual.text = " %.2f" % lucroTotal 
 	print("R$ %.2f" % saldo.puxar_saldo())
 	
 func _on_btn_vender_side_pressed() -> void:
@@ -264,6 +278,9 @@ func _on_btn_vender_side_pressed() -> void:
 	label_valor_sider.text = "R$ %.2f" % menu.calcular_preco_total("Siderúrgica", quantiAcaoSider-1)
 	var label_saldo_valor: Label = $Sprite2D/SaldoValor
 	label_saldo_valor.text = "R$ %.2f" % saldo.puxar_saldo()
+	lucroAtualSider = menu.mostrar_lucro("Siderúrgica",quantiAcaoSider-1)
+	lucroTotal = (lucroAtualAlim + lucroAtualSider + lucroAtualTecno + lucroAtualTrans + lucroAtualSaude)
+	label_Lucro_Atual.text = " %.2f" % lucroTotal 
 	
 func _on_btn_vender_tecno_pressed() -> void:
 	var label_valor_tecno: Label = $ticketTecnologia/valorInvestido
@@ -272,6 +289,9 @@ func _on_btn_vender_tecno_pressed() -> void:
 	label_valor_tecno.text = "R$ %.2f" % menu.calcular_preco_total("Tecnologia", quantiAcaoTecno-1)
 	var label_saldo_valor: Label = $Sprite2D/SaldoValor
 	label_saldo_valor.text = "R$ %.2f" % saldo.puxar_saldo()
+	lucroAtualTecno = menu.mostrar_lucro("Tecnologia",quantiAcaoTecno-1)
+	lucroTotal = (lucroAtualAlim + lucroAtualSider + lucroAtualTecno + lucroAtualTrans + lucroAtualSaude)
+	label_Lucro_Atual.text = " %.2f" % lucroTotal 
 	
 func _on_btn_vender_trans_pressed() -> void:
 	var label_valor_transp: Label = $ticketTrasporte/valorInvestido
@@ -280,6 +300,9 @@ func _on_btn_vender_trans_pressed() -> void:
 	label_valor_transp.text = "R$ %.2f" % menu.calcular_preco_total("Transporte", quantiAcaoTrans-1)
 	var label_saldo_valor: Label = $Sprite2D/SaldoValor
 	label_saldo_valor.text = "R$ %.2f" % saldo.puxar_saldo()
+	lucroAtualTrans = menu.mostrar_lucro("Transporte",quantiAcaoTrans-1)
+	lucroTotal = (lucroAtualAlim + lucroAtualSider + lucroAtualTecno + lucroAtualTrans + lucroAtualSaude)
+	label_Lucro_Atual.text = " %.2f" % lucroTotal
 	
 func _on_btn_vender_sau_pressed() -> void:
 	var label_valor_sau: Label = $ticketSaúde/valorInvestido
@@ -288,4 +311,7 @@ func _on_btn_vender_sau_pressed() -> void:
 	label_valor_sau.text = "R$ %.2f" % menu.calcular_preco_total("Saúde", quantiAcaoSau-1)
 	var label_saldo_valor: Label = $Sprite2D/SaldoValor
 	label_saldo_valor.text = "R$ %.2f" % saldo.puxar_saldo()
+	lucroAtualSaude = menu.mostrar_lucro("Saúde",quantiAcaoSau-1)
+	lucroTotal = (lucroAtualAlim + lucroAtualSider + lucroAtualTecno + lucroAtualTrans + lucroAtualSaude)
+	label_Lucro_Atual.text = " %.2f" % lucroTotal 
 	
