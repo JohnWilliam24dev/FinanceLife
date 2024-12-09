@@ -193,7 +193,7 @@ func _ready() -> void:
 	
 	# Aqui você pode adicionar uma lógica para começar o jogo
 	# e rodar o jogo. Chame a nova_rodada durante o ciclo do jogo.
-	nova_rodada()  # Por exemplo, chamada ao iniciar ou após ações do jogador
+	#nova_rodada()  # Por exemplo, chamada ao iniciar ou após ações do jogador
 	
 
 #Metodos de Realizar comprar
