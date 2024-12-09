@@ -68,7 +68,7 @@ func vender_acao(nicho:String,quantidades:int) -> void:
 	var valor_total = get_preco(nicho)
 	
 	saldo_ref.adicionar_saldo(valor_total)
-	print("Venda realizada: 1 ação de %s por %f ." % [ nicho_atual, valor_total / quantidade_atual])
+	print("Venda realizada: 1 ação de %s por %f ." % [ nicho, valor_total / quantidade_atual])
 	if nicho == "Alimentação":
 		tabuleiro_ref.quantiAcaoAlim=tabuleiro_ref.quantiAcaoAlim-1
 		return
