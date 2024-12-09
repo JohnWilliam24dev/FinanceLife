@@ -40,6 +40,7 @@ func comprar_acao(nicho:String,quantidade:int) -> void:
 		
 	else:
 		print("Compra não realizada. Saldo insuficiente.")
+		return
 	if nicho == "Alimentação":
 		tabuleiro_ref.quantiAcaoAlim=tabuleiro_ref.quantiAcaoAlim+1
 		return
