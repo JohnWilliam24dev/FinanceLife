@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://djkpwwnuhpoe2"]
+[gd_scene load_steps=27 format=3 uid="uid://djkpwwnuhpoe2"]
 
 [ext_resource type="Script" path="res://tabuleiro.gd" id="1_iwsqn"]
 [ext_resource type="Texture2D" uid="uid://dxfcolaj3p1yq" path="res://assents/tabuleiro/BackGroud/image.png" id="2_lu2ht"]
@@ -20,7 +20,6 @@
 [ext_resource type="Texture2D" uid="uid://bmedw88bfikbu" path="res://assents/tabuleiro/Menu de Ações/Transporte.png" id="15_ycac5"]
 [ext_resource type="Texture2D" uid="uid://ck2410coto4ek" path="res://assents/tabuleiro/Área da carta/Área da carta.png" id="17_ultk0"]
 [ext_resource type="Theme" uid="uid://bje24vjgkssut" path="res://assents/Fontes e Temas/Menu/menuTema.tres" id="17_xucgm"]
-[ext_resource type="Texture2D" uid="uid://c1nwl347qagwx" path="res://assents/tabuleiro/Metas/Meta (2).png" id="20_5g8dt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_81cwj"]
 shader = ExtResource("2_uoqxv")
@@ -173,7 +172,7 @@ offset_bottom = 3.0
 theme = ExtResource("3_qutbl")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "R$ 1000.00"
+text = "R$ 500.00"
 
 [node name="SituaçAçãoTrans" type="Sprite2D" parent="."]
 position = Vector2(831, 573)
@@ -555,33 +554,6 @@ text = "Proximo Turno->"
 position = Vector2(1424, 655)
 scale = Vector2(0.867672, 0.811623)
 texture = ExtResource("17_ultk0")
-
-[node name="Lucro" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(1357, 55)
-scale = Vector2(0.733668, 0.706897)
-texture = ExtResource("20_5g8dt")
-
-[node name="Label" type="Label" parent="Lucro"]
-offset_left = -184.007
-offset_top = 24.0488
-offset_right = 70.9931
-offset_bottom = 64.0488
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("8_b5nva")
-theme_override_font_sizes/font_size = 30
-text = "Lucro Atual: R$"
-
-[node name="LucroAtual" type="Label" parent="Lucro"]
-texture_filter = 1
-offset_left = 61.3356
-offset_top = 25.4634
-offset_right = 316.336
-offset_bottom = 65.4634
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("8_b5nva")
-theme_override_font_sizes/font_size = 30
-text = " 0,00"
 
 [connection signal="pressed" from="ticketAlimentacao/btnComprarAlim" to="." method="_on_btn_comprar_alim_pressed"]
 [connection signal="pressed" from="ticketAlimentacao/btnVenderAlim" to="." method="_on_btn_vender_alim_pressed"]
