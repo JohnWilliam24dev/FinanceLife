@@ -142,7 +142,7 @@ layout_mode = 2
 theme = ExtResource("1_7mkby")
 theme_override_font_sizes/font_size = 18
 text = "PARABÉNS VOCÊ CHEGOU 
-A R$1000 DE LUCRO! 🏆🏅"
+A R$500 DE LUCRO! 🏆🏅"
 label_settings = SubResource("LabelSettings_nfqs5")
 
 [node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]

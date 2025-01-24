@@ -2,6 +2,7 @@ extends Control
 class_name tabuleiroclass
 
 @onready var botao_proximo_turno: Button = $BotaoProximoTurno
+@onready var lucro: Sprite2D = $Lucro
 
 var _current_carta_sprite: Sprite2D = null
 var quantiAcaoAlim: int=abs(0)
@@ -87,7 +88,6 @@ func _buscar_acao_por_nicho(nicho: String) -> acoes:
 	return null
 
 func nova_rodada():
-	
 	# Remove a carta exibida anteriormente, se houver
 	if _current_carta_sprite:
 		remove_child(_current_carta_sprite)
@@ -104,16 +104,6 @@ func nova_rodada():
 	carta_anterior = cartas_sorteadas[0]
 	print("Nova carta sorteada: %s" % carta_anterior.nicho)
 	exibir_carta(carta_anterior)
-	var label_valor_alim: Label = $ticketAlimentacao/valorInvestido
-	label_valor_alim.text = "R$ %.2f" % menu.calcular_preco_total("Alimentação",quantiAcaoAlim)
-	var label_valor_sider: Label = $ticketSiderúgica/valorInvestido
-	label_valor_sider.text = "R$ %.2f" % menu.calcular_preco_total("Siderúrgica",quantiAcaoSider)
-	var label_valor_tecno: Label = $ticketTecnologia/valorInvestido
-	label_valor_tecno.text = "R$ %.2f" % menu.calcular_preco_total("Tecnologia",quantiAcaoTecno)
-	var label_valor_trasp: Label = $ticketTrasporte/valorInvestido
-	label_valor_trasp.text = "R$ %.2f" % menu.calcular_preco_total("Transporte",quantiAcaoTrans)
-	var label_valor_sau: Label = $ticketSaúde/valorInvestido
-	label_valor_sau.text = "R$ %.2f" % menu.calcular_preco_total("Saúde",quantiAcaoSau)
 
 func sortear_cartas(quantidade: int) -> Array:
 	var cartas = []
@@ -159,6 +149,12 @@ func exibir_carta(carta: carta_informacao):
 	add_child(sprite)
 	_current_carta_sprite = sprite
 
+# Função para atualizar o lucro
+func atualizar_lucro():
+	var lucro_atual = saldo.puxar_saldo() - 100.0
+	var label_lucro: Label = $Lucro/LucroAtual
+	label_lucro.text = "R$ %.2f" % lucro_atual
+
 func _ready() -> void:
 	botao_proximo_turno.connect("pressed", Callable(self, "nova_rodada"))
 	
@@ -170,6 +166,7 @@ func _ready() -> void:
 	inicializar_acoes()
 	
 	var label_Lucro_Atual: Label = $Lucro/LucroAtual
+	atualizar_lucro()  # Atualiza o lucro inicial
 	
 	# Inicializa valores dos investimentos
 	$ticketAlimentacao/valorInvestido.text = "R$ 0,00"
@@ -203,6 +200,7 @@ func _on_btn_comprar_alim_pressed() -> void:
 	label_valor_alim.text = "R$ %.2f" % menu.calcular_preco_total("Alimentação",quantiAcaoAlim)
 	var label_saldo_valor: Label = $Sprite2D/SaldoValor
 	label_saldo_valor.text = "R$ %.2f" % saldo.puxar_saldo()
+	atualizar_lucro()
 	
 	
 
@@ -214,6 +212,7 @@ func _on_btn_comprar_side_pressed() -> void:
 	var label_saldo_valor: Label = $Sprite2D/SaldoValor
 	label_saldo_valor.text = "R$ %.2f" % saldo.puxar_saldo()
 	print("R$ %.2f" % saldo.puxar_saldo())
+	atualizar_lucro()
 
 
 func _on_btn_comprar_tecno_pressed() -> void:
@@ -223,7 +222,7 @@ func _on_btn_comprar_tecno_pressed() -> void:
 	label_valor_tecno.text = "R$ %.2f" % menu.calcular_preco_total("Tecnologia",quantiAcaoTecno)
 	var label_saldo_valor: Label = $Sprite2D/SaldoValor
 	label_saldo_valor.text = "R$ %.2f" % saldo.puxar_saldo()
-
+	atualizar_lucro()
 
 func _on_btn_comprar_trans_pressed() -> void:
 	var label_valor_trasp: Label = $ticketTrasporte/valorInvestido
@@ -232,6 +231,7 @@ func _on_btn_comprar_trans_pressed() -> void:
 	label_valor_trasp.text = "R$ %.2f" % menu.calcular_preco_total("Transporte",quantiAcaoTrans)
 	var label_saldo_valor: Label = $Sprite2D/SaldoValor
 	label_saldo_valor.text = "R$ %.2f" % saldo.puxar_saldo()
+	atualizar_lucro()
 
 
 func _on_btn_comprar_sau_pressed() -> void:
@@ -241,6 +241,7 @@ func _on_btn_comprar_sau_pressed() -> void:
 	label_valor_sau.text = "R$ %.2f" % menu.calcular_preco_total("Saúde",quantiAcaoSau)
 	var label_saldo_valor: Label = $Sprite2D/SaldoValor
 	label_saldo_valor.text = "R$ %.2f" % saldo.puxar_saldo()
+	atualizar_lucro()
 	
 # Métodos de realizar vendas unitárias
 func _on_btn_vender_alim_pressed() -> void:
@@ -260,6 +261,7 @@ func _on_btn_vender_alim_pressed() -> void:
 	label_saldo_valor.text = "R$ %.2f" % saldo.puxar_saldo()
 	print("R$ %.2f" % saldo.puxar_saldo())
 	print(quantiAcaoAlim)
+	atualizar_lucro()
 	
 func _on_btn_vender_side_pressed() -> void:
 	var label_valor_sider: Label = $ticketSiderúgica/valorInvestido
@@ -276,6 +278,7 @@ func _on_btn_vender_side_pressed() -> void:
 	label_valor_sider.text = "R$ %.2f" % menu.calcular_preco_total("Siderúrgica", quantiAcaoSider)
 	var label_saldo_valor: Label = $Sprite2D/SaldoValor
 	label_saldo_valor.text = "R$ %.2f" % saldo.puxar_saldo()
+	atualizar_lucro()
 	
 func _on_btn_vender_tecno_pressed() -> void:
 	var label_valor_tecno: Label = $ticketTecnologia/valorInvestido
@@ -292,6 +295,7 @@ func _on_btn_vender_tecno_pressed() -> void:
 	label_valor_tecno.text = "R$ %.2f" % menu.calcular_preco_total("Tecnologia", quantiAcaoTecno)
 	var label_saldo_valor: Label = $Sprite2D/SaldoValor
 	label_saldo_valor.text = "R$ %.2f" % saldo.puxar_saldo()
+	atualizar_lucro()
 	
 func _on_btn_vender_trans_pressed() -> void:
 	var label_valor_transp: Label = $ticketTrasporte/valorInvestido
@@ -308,6 +312,7 @@ func _on_btn_vender_trans_pressed() -> void:
 	label_valor_transp.text = "R$ %.2f" % menu.calcular_preco_total("Transporte", quantiAcaoTrans)
 	var label_saldo_valor: Label = $Sprite2D/SaldoValor
 	label_saldo_valor.text = "R$ %.2f" % saldo.puxar_saldo()
+	atualizar_lucro()
 	
 func _on_btn_vender_sau_pressed() -> void:
 	var label_valor_sau: Label = $ticketSaúde/valorInvestido
@@ -324,4 +329,5 @@ func _on_btn_vender_sau_pressed() -> void:
 	label_valor_sau.text = "R$ %.2f" % menu.calcular_preco_total("Saúde", quantiAcaoSau)
 	var label_saldo_valor: Label = $Sprite2D/SaldoValor
 	label_saldo_valor.text = "R$ %.2f" % saldo.puxar_saldo()
+	atualizar_lucro()
 	
