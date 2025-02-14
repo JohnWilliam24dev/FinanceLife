@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://dq4nux2n3mbmj"]
+
+[ext_resource type="Texture2D" uid="uid://cu0behinkly0l" path="res://assents/Cenarios/Cenas Jogo/Ato 1/Casa_Cena 2/NightForest/Layers/1.png" id="1_8jel0"]
+[ext_resource type="Texture2D" uid="uid://848mtvku2n03" path="res://assents/Cenarios/Cenas Jogo/Ato 1/Casa_Cena 2/NightForest/Layers/2.png" id="2_hgtjc"]
+[ext_resource type="Texture2D" uid="uid://ctduynx0uc6dw" path="res://assents/Cenarios/Cenas Jogo/Ato 1/Casa_Cena 2/NightForest/Layers/3.png" id="3_4s3vi"]
+[ext_resource type="Texture2D" uid="uid://bwlgodgrfl07k" path="res://assents/Cenarios/Cenas Jogo/Ato 1/Casa_Cena 2/NightForest/Layers/4.png" id="4_5qhqo"]
+[ext_resource type="Texture2D" uid="uid://okwuxa4kii1y" path="res://assents/Cenarios/Cenas Jogo/Ato 1/Casa_Cena 2/NightForest/Layers/5.png" id="5_m644x"]
+[ext_resource type="Texture2D" uid="uid://6a8omwmwnf5h" path="res://assents/Cenarios/Cenas Jogo/Ato 1/Casa_Cena 2/NightForest/Layers/6.png" id="6_hqe8n"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="1" type="ParallaxLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="1"]
+texture_filter = 1
+position = Vector2(1824, 548)
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("1_8jel0")
+
+[node name="2" type="ParallaxLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="2"]
+texture_filter = 1
+position = Vector2(1824, 548)
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("2_hgtjc")
+
+[node name="3" type="ParallaxLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="3"]
+texture_filter = 1
+position = Vector2(1824, 548)
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("3_4s3vi")
+
+[node name="4" type="ParallaxLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="4"]
+texture_filter = 1
+position = Vector2(1824, 548)
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("4_5qhqo")
+
+[node name="5" type="ParallaxLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="5"]
+texture_filter = 1
+position = Vector2(1824, 548)
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("5_m644x")
+
+[node name="6" type="ParallaxLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="6"]
+texture_filter = 1
+position = Vector2(1824, 548)
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("6_hqe8n")

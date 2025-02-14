@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://2bg7pgg8tg84"]
+[gd_scene load_steps=31 format=3 uid="uid://2bg7pgg8tg84"]
 
 [ext_resource type="Script" path="res://Scrips/Menu/créditos_Menu.gd" id="1_8lotx"]
 [ext_resource type="Texture2D" uid="uid://bnrhlde46dxi5" path="res://assents/Cenarios/Menu/Background Tela de crédito/1.png" id="1_vbnjr"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dm3lrx2gdslkd" path="res://assents/Cenarios/Menu/Background Tela de crédito/4.png" id="5_6d0lj"]
 [ext_resource type="Theme" uid="uid://e4phmqgo0wcg" path="res://Scrips/Menu/fonte_Menu.tres" id="6_l584k"]
 [ext_resource type="FontFile" uid="uid://cgygq4u5j0y1w" path="res://assents/Fontes e Temas/Menu/RevMiniPixel.ttf" id="7_06t8p"]
+[ext_resource type="Shader" uid="uid://c41kmqlrs4dya" path="res://Utilitarios/CenaDeTransicao/Shaders_Transition.tres" id="9_ytir7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1t7u3"]
 font_size = 40
@@ -44,22 +45,22 @@ font_size = 30
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_31k3t"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xj7h3"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yak2y"]
 bg_color = Color(0.2, 0.2, 0.2, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8xd5"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13eev"]
 bg_color = Color(0.2, 0.2, 0.2, 0.12549)
 
 [sub_resource type="Theme" id="Theme_xwbqu"]
 default_font = ExtResource("7_06t8p")
 Button/font_sizes/font_size = 45
 Button/fonts/font = ExtResource("7_06t8p")
-Button/styles/focus = SubResource("StyleBoxFlat_xj7h3")
-Button/styles/normal = SubResource("StyleBoxFlat_q8xd5")
+Button/styles/focus = SubResource("StyleBoxFlat_yak2y")
+Button/styles/normal = SubResource("StyleBoxFlat_13eev")
 
 [sub_resource type="Animation" id="Animation_wvpum"]
 resource_name = "AnimaCrédito"
-length = 1.3
+length = 1.5
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -72,6 +73,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0.392157), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimaCredito/CanvasLayer/Fill 2:material:shader_parameter/progress")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_c2b5i"]
@@ -88,12 +101,36 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimaCredito/CanvasLayer/Fill 2:material:shader_parameter/progress")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b5tdu"]
 _data = {
 "AnimaCrédito": SubResource("Animation_wvpum"),
 "RESET": SubResource("Animation_c2b5i")
 }
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_me1tr"]
+shader = ExtResource("9_ytir7")
+shader_parameter/screen_width = 1920.0
+shader_parameter/screen_height = 1080.0
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/player = Vector2(0.1, 0.1)
+shader_parameter/progress = 1.0
+shader_parameter/pixel_size = 15.0
+shader_parameter/circle_size = 1.5
+shader_parameter/curtains = 1.0
+shader_parameter/type = 2
 
 [node name="Créditos" type="Control"]
 layout_mode = 3
@@ -125,22 +162,25 @@ expand_mode = 2
 
 [node name="Camada 4" type="Sprite2D" parent="bg/Animação Céu Estrelado"]
 texture_filter = 1
+scale = Vector2(1.3, 1.3)
 texture = ExtResource("1_vbnjr")
 script = ExtResource("2_12iko")
 
 [node name="Camada 3" type="Sprite2D" parent="bg/Animação Céu Estrelado"]
 texture_filter = 1
-position = Vector2(3.18182, -26.5246)
+scale = Vector2(1.3, 1.3)
 texture = ExtResource("3_gg8hv")
 script = ExtResource("2_12iko")
 
 [node name="Camada 2" type="Sprite2D" parent="bg/Animação Céu Estrelado"]
 texture_filter = 1
+scale = Vector2(1.3, 1.3)
 texture = ExtResource("4_bhpwv")
 script = ExtResource("2_12iko")
 
 [node name="Camada 1" type="Sprite2D" parent="bg/Animação Céu Estrelado"]
 texture_filter = 1
+scale = Vector2(1.3, 1.3)
 texture = ExtResource("5_6d0lj")
 script = ExtResource("2_12iko")
 
@@ -194,7 +234,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_jtnqt")
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("6_l584k")
-text = "*João*
+text = "*João Guilherme*
 "
 label_settings = SubResource("LabelSettings_syfba")
 horizontal_alignment = 1
@@ -207,7 +247,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_b0vox")
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("6_l584k")
-text = "*Daniel*"
+text = "*Daniel Santos*"
 label_settings = SubResource("LabelSettings_nambk")
 horizontal_alignment = 1
 
@@ -231,7 +271,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_5dy0h")
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("6_l584k")
-text = "*Matheus*"
+text = "*Matheus Alcantara*"
 label_settings = SubResource("LabelSettings_i57nk")
 horizontal_alignment = 1
 
@@ -243,7 +283,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_vjyac")
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("6_l584k")
-text = "*Liedson*"
+text = "*Liédson Paiva*"
 label_settings = SubResource("LabelSettings_f2o0l")
 horizontal_alignment = 1
 
@@ -266,5 +306,23 @@ libraries = {
 "": SubResource("AnimationLibrary_b5tdu")
 }
 autoplay = "AnimaCrédito"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="AnimaCredito"]
+scale = Vector2(2.2, 2.2)
+transform = Transform2D(2.2, 0, 0, 2.2, 0, 0)
+
+[node name="Fill 2" type="ColorRect" parent="AnimaCredito/CanvasLayer"]
+material = SubResource("ShaderMaterial_me1tr")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -391.818
+offset_top = -358.636
+offset_right = -391.818
+offset_bottom = -358.636
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/volta_menu" to="." method="_on_volta_menu_pressed"]

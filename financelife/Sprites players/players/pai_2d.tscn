@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://1selqikp4t70"]
+
+[ext_resource type="Texture2D" uid="uid://c76iibcx38gi7" path="res://Sprites players/players/Untitled 10-24-2024 02-32-50.png" id="1_hqlj2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bewye"]
+atlas = ExtResource("1_hqlj2")
+region = Rect2(188, 256, 79, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nbes"]
+atlas = ExtResource("1_hqlj2")
+region = Rect2(266, 256, 79, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tlef"]
+atlas = ExtResource("1_hqlj2")
+region = Rect2(348, 256, 79, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2002p"]
+atlas = ExtResource("1_hqlj2")
+region = Rect2(11, 256, 79, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yyu3h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bewye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nbes")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tlef")
+}],
+"loop": true,
+"name": &"Pai andando",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2002p")
+}],
+"loop": true,
+"name": &"Pai parado",
+"speed": 5.0
+}]
+
+[node name="Pai" type="Node2D"]
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+position = Vector2(10.25, 21.5)
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_yyu3h")
+animation = &"Pai parado"
+flip_h = true

@@ -1,0 +1,165 @@
+[gd_scene load_steps=14 format=3 uid="uid://dmakr200f36o3"]
+
+[ext_resource type="Theme" uid="uid://e4phmqgo0wcg" path="res://Scrips/Menu/fonte_Menu.tres" id="1_7mkby"]
+[ext_resource type="Script" path="res://Scrips/cena_vitória/cena_vitória.gd" id="1_gnk21"]
+[ext_resource type="Shader" uid="uid://c41kmqlrs4dya" path="res://Utilitarios/CenaDeTransicao/Shaders_Transition.tres" id="2_ukurd"]
+[ext_resource type="FontFile" uid="uid://cgygq4u5j0y1w" path="res://assents/Fontes e Temas/Menu/RevMiniPixel.ttf" id="3_jkklf"]
+[ext_resource type="Texture2D" uid="uid://bnrhlde46dxi5" path="res://assents/Cenarios/Menu/Background Tela de crédito/1.png" id="5_1md0h"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6nvyb"]
+shader = ExtResource("2_ukurd")
+shader_parameter/screen_width = 1920.0
+shader_parameter/screen_height = 1080.0
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/player = Vector2(0.5, 0.5)
+shader_parameter/progress = 1.0
+shader_parameter/pixel_size = 15.0
+shader_parameter/circle_size = 1.5
+shader_parameter/curtains = 1.0
+shader_parameter/type = 2
+
+[sub_resource type="Animation" id="Animation_by18x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2ggjj"]
+resource_name = "Transição"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7p6lu"]
+_data = {
+"RESET": SubResource("Animation_by18x"),
+"Transição": SubResource("Animation_2ggjj")
+}
+
+[sub_resource type="Theme" id="Theme_dgpiy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8ybhn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nv5nq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nfqs5"]
+
+[node name="Cena_vitória" type="Node2D"]
+script = ExtResource("1_gnk21")
+
+[node name="Transição" type="CanvasLayer" parent="."]
+layer = 2
+visible = false
+
+[node name="Fill 2" type="ColorRect" parent="Transição"]
+material = SubResource("ShaderMaterial_6nvyb")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -174.0
+offset_top = -40.0
+offset_right = 111.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Transição/Fill 2"]
+libraries = {
+"": SubResource("AnimationLibrary_7p6lu")
+}
+autoplay = "Transição"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+texture_filter = 1
+offset_left = 324.0
+offset_top = 361.0
+offset_right = 579.0
+offset_bottom = 500.0
+rotation = 3.14159
+scale = Vector2(-6.96605, -4.58593)
+pivot_offset = Vector2(68.3652, 59.3156)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 3
+layout_mode = 2
+size_flags_stretch_ratio = 0.35
+theme = SubResource("Theme_dgpiy")
+theme_override_fonts/font = ExtResource("3_jkklf")
+theme_override_font_sizes/font_size = 20
+text = "          🎉 VITÓRIA!!!🎉"
+label_settings = SubResource("LabelSettings_8ybhn")
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_nv5nq")
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 3
+layout_mode = 2
+theme = ExtResource("1_7mkby")
+theme_override_font_sizes/font_size = 18
+text = "PARABÉNS VOCÊ CHEGOU 
+A R$500 DE LUCRO! 🏆🏅"
+label_settings = SubResource("LabelSettings_nfqs5")
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_nv5nq")
+
+[node name="cena_final" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("1_7mkby")
+text = "CLIQUE AQUI PARA FINALIZAR.
+"
+
+[node name="capa" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(789, 465)
+scale = Vector2(2.90625, 3.06173)
+texture = ExtResource("5_1md0h")
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/cena_final" to="." method="_on_cena_final_pressed"]

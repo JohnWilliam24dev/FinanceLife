@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://bn8knsdpk1n57"]
+
+[ext_resource type="Texture2D" uid="uid://c76iibcx38gi7" path="res://Sprites players/players/Untitled 10-24-2024 02-32-50.png" id="1_1wa4l"]
+[ext_resource type="Script" path="res://Scrips/Ato 1/mensagem_pai.gd" id="1_mrknm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_308gm"]
+size = Vector2(203, 174)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42rj1"]
+atlas = ExtResource("1_1wa4l")
+region = Rect2(0, 256, 86, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ojv8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42rj1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="mensagem_pai" type="Node2D"]
+script = ExtResource("1_mrknm")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 11
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.5, -13)
+shape = SubResource("RectangleShape2D_308gm")
+
+[node name="textura" type="AnimatedSprite2D" parent="."]
+position = Vector2(7.49999, -21.5)
+scale = Vector2(1.54651, 1.44141)
+sprite_frames = SubResource("SpriteFrames_1ojv8")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -76.0
+offset_top = -218.0
+offset_right = 73.0
+offset_bottom = -163.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

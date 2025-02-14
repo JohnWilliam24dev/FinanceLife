@@ -1,0 +1,334 @@
+[gd_scene load_steps=17 format=3 uid="uid://cybvohepbvhm4"]
+
+[ext_resource type="Script" path="res://Scrips/Ato 1/cena_final.gd" id="1_bimt3"]
+[ext_resource type="Texture2D" uid="uid://bnrhlde46dxi5" path="res://assents/Cenarios/Menu/Background Tela de crédito/1.png" id="1_jdq3j"]
+[ext_resource type="Texture2D" uid="uid://c1ed26xpwfc8k" path="res://assents/Cenarios/Menu/Background Tela de crédito/2.png" id="2_nk1uq"]
+[ext_resource type="Script" path="res://Scrips/Menu/movingBackground.gd" id="2_x124t"]
+[ext_resource type="Texture2D" uid="uid://bpxlsupw27h2w" path="res://assents/Cenarios/Menu/Background Tela de crédito/3.png" id="3_8hjdw"]
+[ext_resource type="Texture2D" uid="uid://dm3lrx2gdslkd" path="res://assents/Cenarios/Menu/Background Tela de crédito/4.png" id="4_6ryd2"]
+[ext_resource type="Shader" uid="uid://c41kmqlrs4dya" path="res://Utilitarios/CenaDeTransicao/Shaders_Transition.tres" id="5_huijx"]
+[ext_resource type="Theme" uid="uid://e4phmqgo0wcg" path="res://Scrips/Menu/fonte_Menu.tres" id="6_ab1l1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_stkcj"]
+font_size = 40
+
+[sub_resource type="Animation" id="Animation_wvpum"]
+resource_name = "AnimaCrédito"
+length = 1.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bg:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.392157), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimaCredito/CanvasLayer/Fill 2:material:shader_parameter/progress")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_c2b5i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bg:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimaCredito/CanvasLayer/Fill 2:material:shader_parameter/progress")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b5tdu"]
+_data = {
+"AnimaCrédito": SubResource("Animation_wvpum"),
+"RESET": SubResource("Animation_c2b5i")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pfr6a"]
+shader = ExtResource("5_huijx")
+shader_parameter/screen_width = 1920.0
+shader_parameter/screen_height = 1080.0
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/player = Vector2(0.1, 0.1)
+shader_parameter/progress = 1.0
+shader_parameter/pixel_size = 15.0
+shader_parameter/circle_size = 1.5
+shader_parameter/curtains = 1.0
+shader_parameter/type = 2
+
+[sub_resource type="Animation" id="Animation_83atn"]
+resource_name = "Final"
+length = 20.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3, 3.2, 7.1, 9.4, 11.1, 14.2, 17.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Créditos:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 9.1, 9.3, 9.5, 17.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": ["\"Eu não sabia naquela epoca
+mas meu pai ,mudou a minha vida naquele dia\"", "\"Eu não sabia naquela epoca
+mas meu pai ,mudou a minha vida naquele dia\"", "", "\"Graças a atitude dele, 
+
+hoje eu consigo ter uma vida tranquila para mim e minha familia\"
+", "\"Graças a atitude dele, 
+
+hoje eu consigo ter uma vida tranquila para mim e minha familia\"
+"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("bg:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(17.7, 19.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cortina Finais/Fill 2:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(17.7, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5nav2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Créditos:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["\"Eu não sabia naquela epoca
+mas meu pai ,mudou a minha vida naquele dia\""]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("bg:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.392157)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cortina Finais/Fill 2:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vkbkp"]
+_data = {
+"Final": SubResource("Animation_83atn"),
+"RESET": SubResource("Animation_5nav2")
+}
+
+[node name="Final" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_bimt3")
+
+[node name="bg" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 851.125
+offset_top = 482.5
+offset_right = 891.125
+offset_bottom = 522.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+expand_mode = 2
+
+[node name="Animação Céu Estrelado" type="Node2D" parent="bg"]
+
+[node name="Camada 4" type="Sprite2D" parent="bg/Animação Céu Estrelado"]
+texture_filter = 1
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("1_jdq3j")
+script = ExtResource("2_x124t")
+
+[node name="Camada 3" type="Sprite2D" parent="bg/Animação Céu Estrelado"]
+texture_filter = 1
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("2_nk1uq")
+script = ExtResource("2_x124t")
+
+[node name="Camada 2" type="Sprite2D" parent="bg/Animação Céu Estrelado"]
+texture_filter = 1
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("3_8hjdw")
+script = ExtResource("2_x124t")
+
+[node name="Camada 1" type="Sprite2D" parent="bg/Animação Céu Estrelado"]
+texture_filter = 1
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_6ryd2")
+script = ExtResource("2_x124t")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 380.0
+offset_top = 280.0
+offset_right = 1155.0
+offset_bottom = 682.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Créditos" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("6_ab1l1")
+text = "\"Eu não sabia naquela epoca
+mas meu pai ,mudou a minha vida naquele dia\""
+label_settings = SubResource("LabelSettings_stkcj")
+horizontal_alignment = 1
+
+[node name="AnimaCredito" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_b5tdu")
+}
+autoplay = "AnimaCrédito"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="AnimaCredito"]
+visible = false
+scale = Vector2(2.2, 2.2)
+transform = Transform2D(2.2, 0, 0, 2.2, 0, 0)
+
+[node name="Fill 2" type="ColorRect" parent="AnimaCredito/CanvasLayer"]
+material = SubResource("ShaderMaterial_pfr6a")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -391.818
+offset_top = -358.636
+offset_right = -391.818
+offset_bottom = -358.636
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Final" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vkbkp")
+}
+
+[node name="Cortina Finais" type="CanvasLayer" parent="."]
+scale = Vector2(2.2, 2.2)
+transform = Transform2D(2.2, 0, 0, 2.2, 0, 0)
+
+[node name="Fill 2" type="ColorRect" parent="Cortina Finais"]
+material = SubResource("ShaderMaterial_pfr6a")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -391.818
+offset_top = -358.636
+offset_right = -391.818
+offset_bottom = -358.636
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)

@@ -1,0 +1,595 @@
+[gd_scene load_steps=28 format=3 uid="uid://djkpwwnuhpoe2"]
+
+[ext_resource type="Script" path="res://tabuleiro.gd" id="1_iwsqn"]
+[ext_resource type="Texture2D" uid="uid://dxfcolaj3p1yq" path="res://assents/tabuleiro/BackGroud/image.png" id="2_lu2ht"]
+[ext_resource type="Shader" uid="uid://c41kmqlrs4dya" path="res://Utilitarios/CenaDeTransicao/Shaders_Transition.tres" id="2_uoqxv"]
+[ext_resource type="Texture2D" uid="uid://cx20a35fbvyxl" path="res://assents/tabuleiro/Saldo/Calculadora.png" id="3_f4sdg"]
+[ext_resource type="Theme" uid="uid://e4phmqgo0wcg" path="res://Scrips/Menu/fonte_Menu.tres" id="3_qutbl"]
+[ext_resource type="Texture2D" uid="uid://buqgrihxmdp25" path="res://assents/tabuleiro/Metas/Meta (1).png" id="5_dtynq"]
+[ext_resource type="Texture2D" uid="uid://bbw0tj17fgnlo" path="res://assents/tabuleiro/SituaAção/Ação transporte.png" id="6_rf2sk"]
+[ext_resource type="Texture2D" uid="uid://ottdcllwsvoy" path="res://assents/tabuleiro/SituaAção/Ação tecnologia.png" id="7_m4pth"]
+[ext_resource type="FontFile" uid="uid://cgygq4u5j0y1w" path="res://assents/Fontes e Temas/Menu/RevMiniPixel.ttf" id="8_b5nva"]
+[ext_resource type="Texture2D" uid="uid://cufhuj66bd30p" path="res://assents/tabuleiro/SituaAção/Ação Siderugica.png" id="8_ogrb2"]
+[ext_resource type="Texture2D" uid="uid://b1d5bgenap4yt" path="res://assents/tabuleiro/SituaAção/Ação Saúde.png" id="9_yobsh"]
+[ext_resource type="Texture2D" uid="uid://bg7m73nyk5cmg" path="res://assents/tabuleiro/SituaAção/Ação alimentação.png" id="10_2dime"]
+[ext_resource type="Texture2D" uid="uid://b56hnar4lqjx8" path="res://assents/tabuleiro/Menu de Ações/Alimentação.png" id="11_oslgv"]
+[ext_resource type="Texture2D" uid="uid://ds02j31watdop" path="res://assents/tabuleiro/Menu de Ações/Saúde.png" id="12_4eak6"]
+[ext_resource type="Theme" uid="uid://dj2njkwmt72f" path="res://Utilitarios/Fontes/fonte_menu_acao.tres" id="13_03x08"]
+[ext_resource type="Texture2D" uid="uid://3dab0driso43" path="res://assents/tabuleiro/Menu de Ações/Siderurgica.png" id="13_dkp5k"]
+[ext_resource type="Texture2D" uid="uid://dk2r0pr5xjp5t" path="res://assents/tabuleiro/Menu de Ações/Tecnologia.png" id="14_545ae"]
+[ext_resource type="Texture2D" uid="uid://bmedw88bfikbu" path="res://assents/tabuleiro/Menu de Ações/Transporte.png" id="15_ycac5"]
+[ext_resource type="Texture2D" uid="uid://ck2410coto4ek" path="res://assents/tabuleiro/Área da carta/Área da carta.png" id="17_ultk0"]
+[ext_resource type="Theme" uid="uid://bje24vjgkssut" path="res://assents/Fontes e Temas/Menu/menuTema.tres" id="17_xucgm"]
+[ext_resource type="Texture2D" uid="uid://c1nwl347qagwx" path="res://assents/tabuleiro/Metas/Meta (2).png" id="20_5g8dt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_81cwj"]
+shader = ExtResource("2_uoqxv")
+shader_parameter/screen_width = 1920.0
+shader_parameter/screen_height = 1080.0
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/player = Vector2(0.5, 0.5)
+shader_parameter/progress = 1.0
+shader_parameter/pixel_size = 15.0
+shader_parameter/circle_size = 1.5
+shader_parameter/curtains = 1.0
+shader_parameter/type = 2
+
+[sub_resource type="Animation" id="Animation_by18x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2ggjj"]
+resource_name = "Transição"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7p6lu"]
+_data = {
+"RESET": SubResource("Animation_by18x"),
+"Transição": SubResource("Animation_2ggjj")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u4gqx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g775d"]
+
+[node name="JogoDeTabuleiro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iwsqn")
+
+[node name="Transição" type="CanvasLayer" parent="."]
+layer = 2
+visible = false
+
+[node name="Fill 2" type="ColorRect" parent="Transição"]
+material = SubResource("ShaderMaterial_81cwj")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -174.0
+offset_top = -40.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Transição/Fill 2"]
+libraries = {
+"": SubResource("AnimationLibrary_7p6lu")
+}
+autoplay = "Transição"
+
+[node name="Background" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(801.5, 409.5)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("2_lu2ht")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(814, 808)
+scale = Vector2(0.915885, 0.881481)
+texture = ExtResource("3_f4sdg")
+
+[node name="Saldo" type="Label" parent="Sprite2D"]
+offset_left = -301.0
+offset_top = -14.0
+offset_right = -51.0
+offset_bottom = 66.0
+theme = ExtResource("3_qutbl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "Saldo:"
+
+[node name="SaldoValor" type="Label" parent="Sprite2D"]
+offset_left = -35.7578
+offset_top = -7.94118
+offset_right = 291.242
+offset_bottom = 72.0588
+theme = ExtResource("3_qutbl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+
+[node name="Metas" type="Sprite2D" parent="."]
+position = Vector2(816, 69)
+scale = Vector2(1.20409, 0.955278)
+texture = ExtResource("5_dtynq")
+
+[node name="TituloMeta" type="Label" parent="Metas"]
+texture_filter = 1
+offset_left = -46.508
+offset_top = -59.6685
+offset_right = 41.492
+offset_bottom = -23.6685
+theme = ExtResource("3_qutbl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "Meta"
+
+[node name="Meta" type="Label" parent="Metas"]
+texture_filter = 1
+offset_left = -87.0
+offset_top = -28.0
+offset_right = 78.0
+offset_bottom = 3.0
+theme = ExtResource("3_qutbl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "R$ 1000.00"
+
+[node name="SituaçAçãoTrans" type="Sprite2D" parent="."]
+position = Vector2(831, 573)
+scale = Vector2(0.555208, 0.559259)
+texture = ExtResource("6_rf2sk")
+
+[node name="ValorAçãoTrans" type="Label" parent="SituaçAçãoTrans"]
+offset_left = -118.874
+offset_top = 21.457
+offset_right = 161.126
+offset_bottom = 143.457
+theme = ExtResource("3_qutbl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_b5nva")
+theme_override_font_sizes/font_size = 60
+text = "(valor)"
+
+[node name="SituaçAçãoTecno" type="Sprite2D" parent="."]
+position = Vector2(645, 185)
+scale = Vector2(0.555208, 0.559259)
+texture = ExtResource("7_m4pth")
+
+[node name="ValorAçãoTecno" type="Label" parent="SituaçAçãoTecno"]
+offset_left = -95.4597
+offset_top = 21.457
+offset_right = 184.54
+offset_bottom = 143.457
+theme = ExtResource("3_qutbl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_b5nva")
+theme_override_font_sizes/font_size = 60
+text = "(valor)"
+
+[node name="SituaçAçãoSider" type="Sprite2D" parent="."]
+position = Vector2(646, 384)
+scale = Vector2(0.555208, 0.559259)
+texture = ExtResource("8_ogrb2")
+
+[node name="ValorAçãoSider" type="Label" parent="SituaçAçãoSider"]
+offset_left = -91.8575
+offset_top = 10.7285
+offset_right = 188.143
+offset_bottom = 132.728
+theme = ExtResource("3_qutbl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_b5nva")
+theme_override_font_sizes/font_size = 60
+text = "(valor)"
+
+[node name="SituaçAçãoSaúde" type="Sprite2D" parent="."]
+position = Vector2(1056, 187)
+scale = Vector2(0.555208, 0.559259)
+texture = ExtResource("9_yobsh")
+
+[node name="ValorAçãoSau" type="Label" parent="SituaçAçãoSaúde"]
+offset_left = -99.062
+offset_top = 17.8808
+offset_right = 180.938
+offset_bottom = 139.881
+theme = ExtResource("3_qutbl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_b5nva")
+theme_override_font_sizes/font_size = 60
+text = "(valor)"
+
+[node name="SituaçAçãoAlimen" type="Sprite2D" parent="."]
+position = Vector2(1065, 387)
+scale = Vector2(0.555208, 0.559259)
+texture = ExtResource("10_2dime")
+
+[node name="ValorAçãoAlime" type="Label" parent="SituaçAçãoAlimen"]
+offset_left = -115.272
+offset_top = 12.5165
+offset_right = 164.728
+offset_bottom = 134.517
+theme = ExtResource("3_qutbl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_b5nva")
+theme_override_font_sizes/font_size = 60
+text = "(valor)"
+
+[node name="ticketAlimentacao" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 62.0
+offset_right = 278.0
+offset_bottom = 214.0
+texture = ExtResource("11_oslgv")
+expand_mode = 2
+
+[node name="valorInvestido" type="Label" parent="ticketAlimentacao"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 91.0
+offset_top = 71.0
+offset_right = 210.0
+offset_bottom = 90.0
+theme = ExtResource("3_qutbl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "R$ 0000,00"
+
+[node name="btnComprarAlim" type="Button" parent="ticketAlimentacao"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 45.0
+offset_top = 84.0
+offset_right = 122.0
+offset_bottom = 115.0
+theme = ExtResource("13_03x08")
+text = "Comprar"
+
+[node name="btnVenderAlim" type="Button" parent="ticketAlimentacao"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 147.0
+offset_top = 86.0
+offset_right = 211.0
+offset_bottom = 117.0
+theme = ExtResource("13_03x08")
+text = "Vender
+"
+
+[node name="ticketSiderúgica" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 367.0
+offset_right = 273.0
+offset_bottom = 519.0
+texture = ExtResource("13_dkp5k")
+expand_mode = 1
+
+[node name="valorInvestido" type="Label" parent="ticketSiderúgica"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 94.0
+offset_top = 72.0
+offset_right = 213.0
+offset_bottom = 91.0
+theme = ExtResource("3_qutbl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "R$ 0000,00"
+
+[node name="btnComprarSide" type="Button" parent="ticketSiderúgica"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 45.0
+offset_top = 88.0
+offset_right = 122.0
+offset_bottom = 119.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_u4gqx")
+text = "Comprar"
+
+[node name="btnVenderSide" type="Button" parent="ticketSiderúgica"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 147.0
+offset_top = 89.0
+offset_right = 211.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g775d")
+text = "Vender
+"
+
+[node name="ticketTecnologia" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 671.0
+offset_right = 271.0
+offset_bottom = 823.0
+texture = ExtResource("14_545ae")
+expand_mode = 1
+
+[node name="valorInvestido" type="Label" parent="ticketTecnologia"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 106.0
+offset_top = 71.0
+offset_right = 225.0
+offset_bottom = 90.0
+theme = ExtResource("3_qutbl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "R$ 0000,00"
+
+[node name="btnComprarTecno" type="Button" parent="ticketTecnologia"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 46.0
+offset_top = 83.0
+offset_right = 123.0
+offset_bottom = 114.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_u4gqx")
+text = "Comprar"
+
+[node name="btnVenderTecno" type="Button" parent="ticketTecnologia"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 150.0
+offset_top = 87.0
+offset_right = 214.0
+offset_bottom = 118.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g775d")
+text = "Vender
+"
+
+[node name="ticketTrasporte" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 521.0
+offset_right = 273.0
+offset_bottom = 673.0
+texture = ExtResource("15_ycac5")
+expand_mode = 1
+
+[node name="valorInvestido" type="Label" parent="ticketTrasporte"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 105.0
+offset_top = 74.0
+offset_right = 224.0
+offset_bottom = 93.0
+theme = ExtResource("3_qutbl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "R$ 0000,00"
+
+[node name="btnComprarTrans" type="Button" parent="ticketTrasporte"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 44.0
+offset_top = 89.0
+offset_right = 121.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_u4gqx")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_u4gqx")
+text = "Comprar"
+
+[node name="btnVenderTrans" type="Button" parent="ticketTrasporte"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 150.0
+offset_top = 93.0
+offset_right = 214.0
+offset_bottom = 124.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g775d")
+text = "Vender
+"
+
+[node name="ticketSaúde" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 215.0
+offset_right = 277.0
+offset_bottom = 367.0
+texture = ExtResource("12_4eak6")
+expand_mode = 1
+
+[node name="valorInvestido" type="Label" parent="ticketSaúde"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 89.0
+offset_top = 70.0
+offset_right = 208.0
+offset_bottom = 91.0
+theme = ExtResource("3_qutbl")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "R$ 0000,00"
+
+[node name="btnComprarSau" type="Button" parent="ticketSaúde"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 45.0
+offset_top = 85.0
+offset_right = 122.0
+offset_bottom = 116.0
+theme = ExtResource("13_03x08")
+text = "Comprar"
+
+[node name="btnVenderSau" type="Button" parent="ticketSaúde"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 144.0
+offset_top = 87.0
+offset_right = 208.0
+offset_bottom = 118.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_g775d")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g775d")
+text = "Vender
+"
+
+[node name="BotaoProximoTurno" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1204.0
+offset_top = 188.0
+offset_right = 1537.0
+offset_bottom = 257.0
+theme = ExtResource("17_xucgm")
+text = "Proximo Turno->"
+
+[node name="ÁreaDaCarta" type="Sprite2D" parent="."]
+position = Vector2(1424, 655)
+scale = Vector2(0.867672, 0.811623)
+texture = ExtResource("17_ultk0")
+
+[node name="Lucro" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1357, 55)
+scale = Vector2(0.733668, 0.706897)
+texture = ExtResource("20_5g8dt")
+
+[node name="Label" type="Label" parent="Lucro"]
+offset_left = -184.007
+offset_top = 24.0488
+offset_right = 70.9931
+offset_bottom = 64.0488
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_b5nva")
+theme_override_font_sizes/font_size = 30
+text = "Lucro Atual: R$"
+
+[node name="LucroAtual" type="Label" parent="Lucro"]
+texture_filter = 1
+offset_left = 61.3356
+offset_top = 25.4634
+offset_right = 316.336
+offset_bottom = 65.4634
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_b5nva")
+theme_override_font_sizes/font_size = 30
+text = " 0,00"
+
+[connection signal="pressed" from="ticketAlimentacao/btnComprarAlim" to="." method="_on_btn_comprar_alim_pressed"]
+[connection signal="pressed" from="ticketAlimentacao/btnVenderAlim" to="." method="_on_btn_vender_alim_pressed"]
+[connection signal="pressed" from="ticketSiderúgica/btnComprarSide" to="." method="_on_btn_comprar_side_pressed"]
+[connection signal="pressed" from="ticketSiderúgica/btnVenderSide" to="." method="_on_btn_vender_side_pressed"]
+[connection signal="pressed" from="ticketTecnologia/btnComprarTecno" to="." method="_on_btn_comprar_tecno_pressed"]
+[connection signal="pressed" from="ticketTecnologia/btnVenderTecno" to="." method="_on_btn_vender_tecno_pressed"]
+[connection signal="pressed" from="ticketTrasporte/btnComprarTrans" to="." method="_on_btn_comprar_trans_pressed"]
+[connection signal="pressed" from="ticketTrasporte/btnVenderTrans" to="." method="_on_btn_vender_trans_pressed"]
+[connection signal="pressed" from="ticketSaúde/btnComprarSau" to="." method="_on_btn_comprar_sau_pressed"]
+[connection signal="pressed" from="ticketSaúde/btnVenderSau" to="." method="_on_btn_vender_sau_pressed"]
